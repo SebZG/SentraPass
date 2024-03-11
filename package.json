@@ -13,6 +13,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "bootstrap": "^5.3.3",
     "firebase": "^10.8.1",
     "react": "^18.2.0",
