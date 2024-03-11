@@ -1,5 +1,134 @@
 
 /* Variables */
 :root {
+    /** FONT FAMILY */
+    --F-Family: 'Montserrat', sans-serif;
 
+    /** FONT SIZES */
+    --F-SM: 0.75rem;
+    --F-NORMAL: 1rem;
+    --F-M: 1.25rem;
+    --F-L: 1.5rem;
+    --F-XL: 1.75rem;
+    --F-XXL: 2rem;
+
+    /** COLORS */
+    --Color-Text: white;
+    --Color-Primary: #6748FA;
+    --Color-Secondary: #FAE33E;
+    --Color-Tertiary: #6C60A5;
+    --Color-Background: #4A4952;
 }
+
+/* Global Styles */
+body {
+    background-color: var(--Color-Background);
+    color: var(--Color-Text);
+    font-family: var(--F-Family);
+    margin: 0;
+    padding: 0;
+    font-size: var(--F-NORMAL);
+    /* Default font size for body text */
+}
+
+/* Header Styles */
+header {
+    background-color: var(--Color-Primary);
+    color: var(--Color-Text);
+    padding: 1rem;
+    font-size: var(--F-XXL);
+    /* Font size for headers */
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--Color-Secondary);
+    color: var(--Color-Text);
+    padding: 1rem;
+    font-size: var(--F-NORMAL);
+    /* Font size for footer text */
+}
+
+/* Heading Styles */
+h1 {
+    color: var(--Color-Primary);
+    font-size: var(--F-XXL);
+    /* Font size for H1 */
+}
+
+h2 {
+    color: var(--Color-Primary);
+    font-size: var(--F-XL);
+    /* Font size for H2 */
+}
+
+h3 {
+    color: var(--Color-Primary);
+    font-size: var(--F-L);
+    /* Font size for H3 */
+}
+
+/* Navigation Styles */
+nav {
+    background-color: var(--Color-Tertiary);
+    color: var(--Color-Text);
+    padding: 1rem;
+}
+
+/* Generic Container Styles */
+div {
+    background-color: var(--Color-Tertiary);
+    color: var(--Color-Text);
+    padding: 1.5rem;
+    margin: 1rem;
+}
+
+/* Paragraph Styles */
+p {
+    color: var(--Color-Text);
+    font-size: var(--F-NORMAL);
+    /* Font size for paragraphs */
+}
+
+/* Link Styles */
+a {
+    color: var(--Color-Secondary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: lighten(var(--Color-Secondary), 20%);
+    /* Example: Lighten color on hover */
+}
+
+/* List Styles */
+ol,
+ul {
+    list-style-type: none;
+}
+
+li {
+    color: var(--Color-Text);
+}
+
+/* Button Styles */
+button {
+    background-color: var(--Color-Primary);
+    color: var(--Color-Text);
+    padding: 1rem 1.5rem;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darken(var(--Color-Primary), 10%);
+    /* Example: Darken color on hover */
+}
+
+/* Input Styles */
+input {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border: 1px solid var(--Color-Primary);
+    border-radius: 0.5rem;
+}		
