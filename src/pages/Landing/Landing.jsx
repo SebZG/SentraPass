@@ -10,7 +10,7 @@ import Header from "../../Components/GeneralComponents/Header/Header.jsx"
 import Footer from "../../Components/GeneralComponents/Footer/Footer.jsx"
 
 //specific components//
-import LandingPlaceHolder from "../../Components/LandingPageCoponents/PlaceholderFile.jsx"
+import LandingPlaceHolder from "../../Components/LandingPageCoponents/PlaceHolder.jsx"
 
 const Landing = () => {
    return (
