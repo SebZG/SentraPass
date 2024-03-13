@@ -1,24 +1,19 @@
-//Landing.jsx
-
-// git add . && git commit -m "message" && git push
-
-//css//
-import './Landing.css'
-
 //global components//
-import Header from "../../Components/GeneralComponents/Header/Header.jsx"
-import Footer from "../../Components/GeneralComponents/Footer/Footer.jsx"
+import Header from "../../Components/GeneralComponents/Header"
+import Footer from "../../Components/GeneralComponents/Footer"
 
 //specific components//
-import LandingPlaceHolder from "../../Components/LandingPageCoponents/PlaceHolder.jsx"
+import Hero from "../../Components/LandingPageCoponents/Hero"
+
+import './Landing.css'
 
 const Landing = () => {
    return (
-      <>
+      <div id="landing">
          <Header />
-         <LandingPlaceHolder />
+         <Hero />
          <Footer />
-      </>
+      </div>
    )
 }
 export default Landing;
