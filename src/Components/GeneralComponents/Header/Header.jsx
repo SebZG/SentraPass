@@ -2,6 +2,7 @@ import "./Header.css";
 import logo from "../../../assets/images/finalLogo.jpg";
 
 const Header = () => {
+
   return (
     <header className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
       <a
