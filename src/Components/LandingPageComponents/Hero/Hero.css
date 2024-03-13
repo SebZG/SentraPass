@@ -1,0 +1,28 @@
+.col-lg-6  {
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+.display-5 {
+  margin: 30px 30px 30px 30px;
+}
+
+.lead {
+  margin: 30px 30px 30px 30px;
+}
+
+.btn-primary {
+  margin: 30px 30px 30px 30px;
+}
+.background-image-container {
+  background-image: url('../../assets/images/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+div h1 {
+  color: #FFE347;
+  font-weight: bold;
+}
