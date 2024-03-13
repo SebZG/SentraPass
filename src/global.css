@@ -19,6 +19,23 @@
 	--Color-Background: #4A4952;
 }
 
+/* footer containment */
+
+html,
+body,
+#root {
+	height: 100%;
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+}
+
+footer: {
+	margin-top: auto;
+}
+
 /* Global Styles */
 body {
 	background-color: var(--Color-Background);
