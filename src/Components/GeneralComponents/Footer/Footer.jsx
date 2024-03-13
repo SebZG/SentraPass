@@ -8,7 +8,7 @@ const Footer = () => {
       id="footer"
       className="d-flex flex-wrap justify-content-between align-items-center py-3 border-top fixed-bottom"
     >
-      <p className="col-md-4 mb-0 text-body-secondary">
+      <p className="col-md-4 mb-0 text-body-secondary copyright">
         © {new Date().getFullYear()} SentraPass
       </p>
 

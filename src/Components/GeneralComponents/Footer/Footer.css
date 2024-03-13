@@ -12,3 +12,9 @@ ul {
 
 }
 
+.copyright {
+	padding-left: 2rem;
+	font-size: large;
+	font-weight: bold;
+	color: var(--Color-Primary);
+}
