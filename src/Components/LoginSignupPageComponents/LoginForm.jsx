@@ -55,7 +55,7 @@ const LoginForm = () => {
         </div>
         <p>Already registered?</p>
         <span className="line">
-          {}
+          {/* {} */}
           <a href="#">Login</a>
         </span>
       </Form>
