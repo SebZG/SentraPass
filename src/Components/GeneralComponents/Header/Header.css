@@ -1,0 +1,5 @@
+header {
+	background-color: var(--Color-Primary);
+	color: var(--Color-Text);
+	font-size: var(--F-XXL);
+}
