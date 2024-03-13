@@ -12,6 +12,9 @@ margin-right: auto;
   margin: 30px 30px 30px 30px;
 }
 
+.btn-primary {
+  margin: 30px 30px 30px 30px;
+}
 .background-image-container {
   background-image: url('../../assets/images/background.png');
   background-size: cover;
