@@ -1,5 +1,6 @@
 import "./Footer.css";
 import logo from "../../../assets/images/finalLogo.jpg";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -26,31 +27,12 @@ const Footer = () => {
       </a>
 
       <ul className="nav col-md-4 justify-content-end">
-        <li className="btn">
-          <a href="#" className="">
-            Home
-          </a>
-        </li>
-        <li className="btn">
-          <a href="#" className="">
-            Login
-          </a>
-        </li>
-        <li className="btn">
-          <a href="#" className="">
-            Dashboard
-          </a>
-        </li>
-        <li className="btn">
-          <a href="#" className="">
-            My Account
-          </a>
-        </li>
-        <li className="btn">
-          <a href="#" className="">
-            Contact/About
-          </a>
-        </li>
+      <li className="btn"><Link to="/" className="">Home</Link></li>
+        		<li className="btn"><Link to="/login" className="">Login/Register</Link></li>
+        		<li className="btn"><Link to="/dash" className="">Dashboard</Link></li>
+        		<li className="btn"><Link to="/account" className="">My Account</Link></li>
+        		<li className="btn"><Link to="/aboutcontact" className="">Contact/About</Link></li>
+      	
       </ul>
     </footer>
   );
