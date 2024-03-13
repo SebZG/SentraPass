@@ -1,3 +1,9 @@
+//Footer.jsx
+
+// git add . && git commit -m "message" && git push
+
+//css//
+
 import './Footer.css'
 
 const Footer = () => {
