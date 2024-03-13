@@ -17,7 +17,6 @@ const Header = () => {
       </a>
 
       <ul className="nav nav-pills">
-        <button type="button" class="btn btn-primary">Login/Register</button>
         <li className="nav-item"><a href="#" className="nav-link">Home</a></li>
         <li className="nav-item"><a href="#" className="nav-link">Dashboard</a></li>
         <li className="nav-item"><a href="#" className="nav-link">My Account</a></li>

@@ -4,3 +4,8 @@
 .nav-item a {
   color: white;
 }
+
+.me-2 {
+  display: block;
+  margin-left: auto;
+}
