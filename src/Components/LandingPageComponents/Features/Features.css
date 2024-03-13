@@ -12,6 +12,7 @@
 	border: 1px solid #dee2e6;
 	margin-bottom: 20px;
 	border-radius: 8px;
+	background-color: #6457a6c1;;
 }
 
 h3 {
@@ -30,7 +31,7 @@ h3 {
 }
 
 .feature-item h3 {
-	color: white;
+	color: #FFE347;
 	font-weight: bold;
 }
 
