@@ -28,6 +28,14 @@ body,
 }
 
 #root {
+    background-color: #1C110A; /* Fallback color */
+    background-image: url('../src/assets/images/background.png');
+    background-size: contain;
+    background-repeat: repeat;
+    background-position: center;
+ }
+
+#root {
 	display: flex;
 	flex-direction: column;
 }
