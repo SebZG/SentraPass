@@ -13,8 +13,8 @@ const LoginForm = () => {
     >
       <Form id="sign-in-form" className="text-center p-3">
         <img className="mb-4 sentra-logo" src={Logo} alt="Own logo" />
-        <h1 className="mb-3 fs-3 fw-normal">Please sign in</h1>
-        <Form.Group controlId="sign-in-email-address">
+        <h1 className="mb-3 fs-3 fw-normal">Create an account</h1>
+        <Form.Group className="mb-3" controlId="sign-in-email-address">
           <Form.Control
             type="email"
             size="lg"
@@ -32,17 +32,28 @@ const LoginForm = () => {
             className="position-relative"
           />
         </Form.Group>
+        <Form.Group className="mb-3" controlId="confirm-password">
+          <Form.Control
+            type="password"
+            size="lg"
+            placeholder="Confirm Password"
+            autoComplete="confirm-password"
+            className="position-relative"
+          />
+        </Form.Group>
         <Form.Group
           className="d-flex justify-content-center mb-4"
           controlId="remember-me"
         >
           <Form.Check label="Remember me" />
         </Form.Group>
-        <div className="d-grid">
+        <div className="d-grid mb-3">
           <Button id="sign-in-button" size="lg">
-            Sign in
+            Sign up
           </Button>
         </div>
+        <p>Already registered?</p>
+        <p>Login</p>
       </Form>
     </Container>
   );
