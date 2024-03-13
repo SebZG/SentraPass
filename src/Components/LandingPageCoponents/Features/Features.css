@@ -1,6 +1,5 @@
 .features-section {
    padding: 80px 0;
-   background-color: #f8f9fa;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -14,26 +13,16 @@
    margin-bottom: 20px;
    border-radius: 8px;
  }
- 
- h3 {
-   color: #6457A6;
- }
- 
 
- .background-image-container {
-   background-image: url('../../assets/images/background.png');
-   background-size: cover;
-   background-position: center;
-   background-repeat: repeat;
- }
+
 
 .feature-item p {
    color: white;
  }
 
  .feature-item h3 {
-   color: white;
-   font-weight: bold;
+  color: var(--Color-Secondary);
+  font-weight: bold;
  }
 
  .row {

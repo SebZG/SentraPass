@@ -4,7 +4,7 @@ import Footer from "../../Components/GeneralComponents/Footer"
 
 //specific components//
 import Hero from "../../Components/LandingPageCoponents/Hero"
-import Features from "../../Components/LandingPageCoponents/Features"
+import Features from "../../Components/LandingPageCoponents/Features/Features"
 
 import './Landing.css'
 import FAQ from "../../Components/LandingPageCoponents/FAQ/FAQ";
