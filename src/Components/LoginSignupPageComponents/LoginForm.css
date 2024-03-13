@@ -6,6 +6,10 @@
    max-width: 330px;
 }
 
+#title {
+   color: white;
+}
+
 .sentra-logo {
    width: 72px;
    height: 72px;
@@ -18,4 +22,12 @@
 #sign-in-button {
    background-color: #6457A6;
    border: none
+}
+
+body {
+   background-image: url('../../assets/images/background.png');
+   background-size: cover;
+   margin: 0;
+   padding: 0;
+   height: 100vh;
 }

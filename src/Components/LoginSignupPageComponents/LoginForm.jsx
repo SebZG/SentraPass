@@ -13,7 +13,9 @@ const LoginForm = () => {
     >
       <Form id="sign-in-form" className="text-center p-3">
         <img className="mb-4 sentra-logo" src={Logo} alt="Own logo" />
-        <h1 className="mb-3 fs-3 fw-normal">Create an account</h1>
+        <h1 id="title" className="mb-3 fs-3 fw-normal">
+          Create an account
+        </h1>
         <Form.Group className="mb-3" controlId="sign-in-email-address">
           <Form.Control
             type="email"
@@ -53,7 +55,10 @@ const LoginForm = () => {
           </Button>
         </div>
         <p>Already registered?</p>
-        <p>Login</p>
+        <span className="line">
+          {}
+          <a href="#">Login</a>
+        </span>
       </Form>
     </Container>
   );
