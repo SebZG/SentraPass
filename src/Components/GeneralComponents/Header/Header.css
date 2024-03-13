@@ -2,7 +2,9 @@ header {
 	background-color: var(--Color-Primary);
 	color: var(--Color-Text);
 	font-size: var(--F-XXL);
-	padding: 3rem;
+	padding: 4rem;
+	position: relative; /* Ensure proper stacking context */
+
 }
 
 img {
