@@ -31,7 +31,7 @@ body,
     background-color: var(--Color-Background); /* Fallback color */
     background-image: url('../src/assets/images/background.png');
     background-size: contain;
-    background-repeat: repeat;
+    background-repeat: repeat-x;
     background-position: center;
  }
 
