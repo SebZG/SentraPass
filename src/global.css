@@ -19,21 +19,22 @@
 	--Color-Background: #1C110A;
 }
 
-/* footer containment */
+/* Background image */
+body {
+	 background-color: var(--Color-Background); /* Fallback color */
+	 background-image: url('../src/assets/images/background.png');
+	 background-size: cover;
+	 background-repeat: repeat;
+	 background-position: center;
+	 background-attachment: fixed;
+ }
 
+/* footer containment */
 html,
 body,
 #root {
 	height: 100%;
 }
-
-#root {
-    background-color: var(--Color-Background); /* Fallback color */
-    background-image: url('../src/assets/images/background.png');
-    background-size: contain;
-    background-repeat: repeat-x;
-    background-position: center;
- }
 
 #root {
 	display: flex;

@@ -2,7 +2,7 @@ import './Features.css';
 
 const Features = () => {
 	return (
-		<section className="features-section background-image-container">
+		<section id="features" className="features-section">
 			<div className="container">
 				<div className="row">
 					<div className="col-md-4">

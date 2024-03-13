@@ -23,11 +23,3 @@
    background-color: #6457A6;
    border: none
 }
-
-body {
-   background-image: url('../../assets/images/background.png');
-   background-size: cover;
-   margin: 0;
-   padding: 0;
-   height: 100vh;
-}

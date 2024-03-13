@@ -4,12 +4,10 @@ footer {
 	padding: 4rem;
 	font-size: var(--F-NORMAL);
 	position: relative;
-
 }
 
-ul {
+footer ul {
 	padding-right: 0rem;
-
 }
 
 .copyright {
