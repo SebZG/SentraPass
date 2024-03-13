@@ -16,7 +16,6 @@ const Landing = () => {
    return (
       <>
          <Header />
-         <div>Landing</div>
          <LandingPlaceHolder />
          <Footer />
       </>
