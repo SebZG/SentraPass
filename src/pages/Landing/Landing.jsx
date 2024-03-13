@@ -4,6 +4,7 @@ import Footer from "../../Components/GeneralComponents/Footer"
 
 //specific components//
 import Hero from "../../Components/LandingPageCoponents/Hero"
+import Features from "../../Components/LandingPageCoponents/Features"
 
 import './Landing.css'
 
@@ -12,6 +13,7 @@ const Landing = () => {
       <div id="landing">
          <Header />
          <Hero />
+         <Features />
          <Footer />
       </div>
    )
