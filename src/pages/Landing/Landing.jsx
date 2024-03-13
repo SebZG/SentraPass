@@ -7,6 +7,7 @@ import Hero from "../../Components/LandingPageCoponents/Hero"
 import Features from "../../Components/LandingPageCoponents/Features"
 
 import './Landing.css'
+import FAQ from "../../Components/LandingPageCoponents/FAQ/FAQ";
 
 const Landing = () => {
    return (
@@ -14,6 +15,7 @@ const Landing = () => {
          <Header />
          <Hero />
          <Features />
+         <FAQ />
          <Footer />
       </div>
    )
