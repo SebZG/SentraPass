@@ -23,16 +23,8 @@ const Features = () => {
             <div className="feature-item">
               <h3>Passwords for all your accounts</h3>
               <p>Between online shopping, entertainment and work we have passwords for all kinds of things in life 
-               and it can get difficult to remember all of them. No longer. With SentraPass you can store your passwords 
+               and it can get difficult to remember all of them. With SentraPass you can store your passwords 
                and set categories for all your accounts avoiding confusion and hassle of remembering them all. </p>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="feature-item">
-              <h3>Security insights</h3>
-              <p>SentraPass also provides an easy-to-use dashboard to keep track of your security and compare the security of your passwords with the top most common
-               utilized passwords. Get access to security insights 
-              </p>
             </div>
           </div>
         </div>

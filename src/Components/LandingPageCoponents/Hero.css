@@ -4,8 +4,12 @@ margin-left: auto;
 margin-right: auto;
 }
 
+.display-5 {
+  margin: 30px 30px 30px 30px;
+}
+
 .lead {
-  margin-top: 30px;
+  margin: 30px 30px 30px 30px;
 }
 
 .background-image-container {
