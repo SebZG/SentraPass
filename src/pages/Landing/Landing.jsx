@@ -10,13 +10,15 @@ import Header from "../../Components/GeneralComponents/Header/Header.jsx"
 import Footer from "../../Components/GeneralComponents/Footer/Footer.jsx"
 
 //specific components//
-import LandingPlaceHolder from "../../Components/LandingPageCoponents/PlaceHolder.jsx"
+import LandingPlaceHolder from "../../Components/LandingPageCoponents/Hero.jsx"
+import Features from "../../Components/LandingPageCoponents/Features.jsx"
 
 const Landing = () => {
    return (
       <>
          <Header />
          <LandingPlaceHolder />
+         <Features />
          <Footer />
       </>
    )

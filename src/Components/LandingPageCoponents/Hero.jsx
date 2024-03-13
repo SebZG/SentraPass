@@ -3,7 +3,7 @@
 // git add . && git commit -m "message" && git push
 
 //css//
-import "./PlaceHolder.css";
+import "./Hero.css";
 
 const LandingPlaceHolder = () => {
   return (
@@ -20,7 +20,7 @@ const LandingPlaceHolder = () => {
           />
         </div>
         <div className="col-lg-6 text-start">
-          <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+          <h1 className="display-5 fw-bold lh-1 mb-3">
             Welcome to SentraPass –
           </h1>
           <p className="lead">
