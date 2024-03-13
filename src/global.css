@@ -13,10 +13,10 @@
 
 	/** COLORS */
 	--Color-Text: white;
-	--Color-Primary: #6748FA;
+	--Color-Primary: #6457A6;
 	--Color-Secondary: #FAE33E;
-	--Color-Tertiary: #6C60A5;
-	--Color-Background: #4A4952;
+	--Color-Tertiary: #79B4A9;
+	--Color-Background: #1C110A;
 }
 
 /* footer containment */
@@ -32,7 +32,7 @@ body,
 	flex-direction: column;
 }
 
-footer: {
+footer {
 	margin-top: auto;
 }
 
@@ -41,47 +41,27 @@ body {
 	background-color: var(--Color-Background);
 	color: var(--Color-Text);
 	font-family: var(--F-Family);
-	margin: 0;
-	padding: 0;
 	font-size: var(--F-NORMAL);
-	/* Default font size for body text */
 }
 
-/* Header Styles */
-header {
-	background-color: var(--Color-Primary);
-	color: var(--Color-Text);
-	padding: 1rem;
-	font-size: var(--F-XXL);
-	/* Font size for headers */
-}
-
-/* Footer Styles */
-footer {
-	background-color: var(--Color-Secondary);
-	color: var(--Color-Text);
-	padding: 1rem;
-	font-size: var(--F-NORMAL);
-	/* Font size for footer text */
+.row {
+   margin-right: 0;
 }
 
 /* Heading Styles */
 h1 {
 	color: var(--Color-Primary);
 	font-size: var(--F-XXL);
-	/* Font size for H1 */
 }
 
 h2 {
 	color: var(--Color-Primary);
 	font-size: var(--F-XL);
-	/* Font size for H2 */
 }
 
 h3 {
 	color: var(--Color-Primary);
 	font-size: var(--F-L);
-	/* Font size for H3 */
 }
 
 /* Navigation Styles */
@@ -93,17 +73,13 @@ nav {
 
 /* Generic Container Styles */
 div {
-	background-color: var(--Color-Tertiary);
 	color: var(--Color-Text);
-	padding: 1.5rem;
-	margin: 1rem;
 }
 
 /* Paragraph Styles */
 p {
 	color: var(--Color-Text);
 	font-size: var(--F-NORMAL);
-	/* Font size for paragraphs */
 }
 
 /* Link Styles */
@@ -114,7 +90,6 @@ a {
 
 a:hover {
 	color: lighten(var(--Color-Secondary), 20%);
-	/* Example: Lighten color on hover */
 }
 
 /* List Styles */
@@ -138,7 +113,6 @@ button {
 
 button:hover {
 	background-color: darken(var(--Color-Primary), 10%);
-	/* Example: Darken color on hover */
 }
 
 /* Input Styles */

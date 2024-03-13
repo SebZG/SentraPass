@@ -1,7 +1,3 @@
-//App.jsx
-
-// git add . && git commit -m "message" && git push
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Landing from './pages/Landing'

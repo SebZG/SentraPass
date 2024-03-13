@@ -1,11 +1,5 @@
-.d-flex{
-  background-color: #79B4A9;
-}
-.nav-item a {
-  color: white;
-}
-
-.me-2 {
-  display: block;
-  margin-left: auto;
+header {
+	background-color: var(--Color-Primary);
+	color: var(--Color-Text);
+	font-size: var(--F-XXL);
 }

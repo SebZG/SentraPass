@@ -1,0 +1,10 @@
+/* #hero {
+   background-image: url('../../../assets/images/background.png');
+   background-size: contain;
+   background-repeat: repeat;
+   background-position: center;
+} */
+
+#hero h1 {
+   color: var(--Color-Secondary);
+}

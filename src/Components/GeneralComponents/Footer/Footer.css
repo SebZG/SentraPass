@@ -1,0 +1,6 @@
+footer {
+	background-color: var(--Color-Primary);
+	color: var(--Color-Text);
+	padding: 1rem;
+	font-size: var(--F-NORMAL);
+}
