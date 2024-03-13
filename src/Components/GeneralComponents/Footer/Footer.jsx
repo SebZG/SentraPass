@@ -19,8 +19,7 @@ const Footer = () => {
           src={logo}
           className="logo"
           alt="logo"
-          width="175"
-          height="175"
+          height="40rem"
           loading="lazy"
         />
         <span className="fs-4">SentraPass</span>
