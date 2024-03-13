@@ -1,17 +1,21 @@
-.masthead {
-   min-height: 100vh;
-   position: relative;
+#main-container {
+   place-items: center center;
 }
 
-.color-overlay {
-   position: absolute;
-   background-color: rgba(0, 0, 0, 0.2);
-   height: 100%;
-   width: 100%;
-   mix-blend-mode: normal;
+#sign-in-form {
+   max-width: 330px;
 }
 
-.form {
-   background-color: white;
-   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+.sentra-logo {
+   width: 72px;
+   height: 72px;
+}
+
+.form-control:focus {
+   z-index: 5;
+}
+
+#sign-in-button {
+   background-color: #6457A6;
+   border: none
 }
