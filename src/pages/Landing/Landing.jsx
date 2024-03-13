@@ -3,8 +3,8 @@ import Header from "../../Components/GeneralComponents/Header"
 import Footer from "../../Components/GeneralComponents/Footer"
 
 //specific components//
-import Hero from "../../Components/LandingPageCoponents/Hero"
-import Features from "../../Components/LandingPageCoponents/Features/Features"
+import Hero from "../../Components/LandingPageComponents/Hero"
+import Features from "../../Components/LandingPageComponents/Features"
 
 import './Landing.css'
 import FAQ from "../../Components/LandingPageCoponents/FAQ/FAQ";
