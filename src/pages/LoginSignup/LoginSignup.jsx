@@ -1,8 +1,16 @@
-import './LoginSignup.css'
+import LoginForm from "../../Components/LoginSignupPageComponents";
+import Header from "../../Components/GeneralComponents/Header";
+import Footer from "../../Components/GeneralComponents/Footer";
+
+import "./LoginSignup.css";
 
 const LoginSignup = () => {
-   return (
-      <div>LoginSignup</div>
-   )
-}
+  return (
+    <div>
+      <Header />
+      <LoginForm />
+    </div>
+  );
+};
+
 export default LoginSignup;

@@ -2,4 +2,21 @@ header {
 	background-color: var(--Color-Primary);
 	color: var(--Color-Text);
 	font-size: var(--F-XXL);
+	padding: 4rem;
+	/* Ensure proper stacking context */
+	position: relative;
+}
+
+header img {
+	/* border: 1px solid var(--Color-Secondary); */
+}
+
+header span {
+	/* padding-left: 2rem; */
+	/* text-shadow: 2px 2px 4px var(--Color-Secondary); */
+	font-weight: bold;
+}
+
+header ul {
+	/* padding-right: 7rem; */
 }
