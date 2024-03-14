@@ -27,3 +27,12 @@
 .tagcloud--item:hover {
     color: var(--Color-Secondary);
 }
+
+.hide-skills {
+    cursor: pointer;
+    color: var(--Color-Secondary);
+    text-shadow: 2px 2px 5px var(--Color-Secondary);
+    position: relative;
+    align-items: center;
+    top: 20%;
+}

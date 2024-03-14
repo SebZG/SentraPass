@@ -11,9 +11,9 @@ const creatorsdata =
          {
             "id": 1,
             "showSkills": false,
-            "name": "Sebastian",
+            "name": "Seb",
             "img": "src/assets/images/seb_profile_pic.png",
-            "desc": "Full Stack Developer",
+            "desc": "Back End Bandit & Server Sorcerer",
             "github": "https://github.com/SebZG",
             "linkedin": "https://www.linkedin.com/in/sebastian-z-g/",
             "email": "pCZ8x@example.com",
@@ -24,7 +24,7 @@ const creatorsdata =
             "showSkills": false,
             "name": "Ana",
             "img": "src/assets/images/ana_profile_pic.png",
-            "desc": "Front End Developer",
+            "desc": "React Sorceress & JavaScript Jester",
             "github": "https://github.com/anadomuta",
             "linkedin": "https://www.linkedin.com/in/ana-domuta/",
             "email": "pCZ8x@example.com",
@@ -35,7 +35,7 @@ const creatorsdata =
             "showSkills": false,
             "name": "Harry",
             "img": "src/assets/images/harry_profile_pic.png",
-            "desc": "Front End Developer",
+            "desc": "Script Juggler & Exception Exterminator",
             "github": "https://github.com/hpro97",
             "linkedin": "https://www.linkedin.com/in/harryprobert/",
             "email": "pCZ8x@example.com",
@@ -46,7 +46,7 @@ const creatorsdata =
             "showSkills": false,
             "name": "Aaron",
             "img": "src/assets/images/aaron_profile_pic.png",
-            "desc": "Front End Developer",
+            "desc": "Array Avenger & Coding Chameleon",
             "github": "https://github.com/aaron1490",
             "linkedin": "https://www.linkedin.com/in/aaron-armstrong-%E8%89%BE%E4%BF%8A%E6%A8%82-80986ba5/",
             "email": "pCZ8x@example.com",
@@ -57,22 +57,22 @@ const creatorsdata =
             "showSkills": false,
             "name": "Conor",
             "img": "src/assets/images/conner_profile_pic.png",
-            "desc": "Front End Developer",
+            "desc": "Bootstrap Buccaneer & Script Scribe",
             "github": "https://github.com/Crar96",
             "linkedin": "https://www.linkedin.com/in/conor-grogan-a09a7a216/",
             "email": "pCZ8x@example.com",
-            "skills": ["HTML", "CSS", "SASS", "JavaScript", "React", "Vue", "Nuxt", "NodeJS", "Babel", "Jquery", "ES6", "GIT", "GITHUB"]
+            "skills": ["HTML", "CSS", "JavaScript", "Bootstrap", "React", "Jquery", "GIT", "GITHUB"]
          },
          {
             "id": 6,
             "showSkills": false,
-            "name": "Tommy Boi",
+            "name": "Tom",
             "img": "src/assets/images/tom_profile_pic.png",
-            "desc": "Full Stack Developer",
+            "desc": "CSS Magician & SASS Sauron",
             "github": "https://github.com/DrWho1369",
             "linkedin": "https://www.linkedin.com/in/thomas-baker-anutr-0b9758222/",
             "email": "tbaker.bhb@gmail.com",
-            "skills": ["HTML", "CSS", "SASS", "JavaScript", "React", "Vue", "Nuxt", "NodeJS", "Babel", "Jquery", "ES6", "GIT", "GITHUB"]
+            "skills": ["Python", "Django", "HTML", "CSS", "SASS", "JavaScript", "React", "NodeJS", "Jquery", "ES6", "GIT", "GITHUB"]
          }
    ]
 
@@ -89,11 +89,11 @@ const AboutContact = () => {
       <>
          <Header />
          <div className='row'>
-            <h1>The Creators</h1>
+            <h1 className="creators">The Creators</h1>
          </div>
          <div className="row">
             {creators.map(creator => (
-               <div key={creator.id} className="col-md-4">
+               <div key={creator.id} className="col-md-6 col-lg-4">
                   <CreatorCard setShowSkills={setShowSkills} id={creator.id} showSkills={creator.showSkills} img={creator.img} name={creator.name} desc={creator.desc} github={creator.github} linkedin={creator.linkedin} email={creator.email} skills={creator.skills} />
                </div>  
                
