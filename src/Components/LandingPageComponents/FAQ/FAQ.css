@@ -1,0 +1,40 @@
+
+.faq-section {
+  width: 100%;
+  text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+.container {
+  padding: 20px 0;
+  background-image: url('../../assets/images/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+ }
+
+
+ .container h2 {
+   color: #FFE347;
+   margin: 20px auto;
+   font-size: 32px;
+ }
+
+ .container h3 {
+   color: #FFE347;
+ }
+ 
+ .faq-item {
+   margin-bottom: 30px;
+ }
+ 
+ .faq-item h3 {
+   color: var(color-secondary);
+ }
+ 
+ .faq-item p {
+   color: white;
+   font-size: 18px;
+ }
