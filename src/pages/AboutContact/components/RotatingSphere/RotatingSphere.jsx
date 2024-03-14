@@ -1,16 +1,27 @@
 import React, { useEffect} from 'react';
+import { useState } from 'react';
 import './RotatingSphere.css';
 import TagCloud from 'TagCloud';
+import AboutContact from '../../AboutContact';
 
 const RotatingSphere = (props) => {
-    // Animation settings for Text Cloud
+    // const [hideSkills, setHideSkills] = useState(false);
+
+    const handleClick = () => {
+      props.setShowSkills(props.id); 
+    }
+
+    // if (hideSkills) {
+    //   return <AboutContact />
+    // }
+
     useEffect(() => {
       return () => {
         const container = ".tagcloud";
         const texts = props.skills;
   
         const options = {
-          radius: 300,
+          radius: 150,
           maxSpeed: "normal",
           initSpeed: "normal",
           keep: true,
@@ -22,10 +33,12 @@ const RotatingSphere = (props) => {
   
     return (
       <>
-        <div className="text-shpere">
-          {/* span tag className must be "tagcloud"  */}
+        <p onClick={handleClick}>HIDE SKILLS</p>
+        <div className="text-sphere">
           <span className="tagcloud"></span>
         </div>
+        
+        
       </>
     );
   };
