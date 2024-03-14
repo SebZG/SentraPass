@@ -1,4 +1,31 @@
 .col-lg-6 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.display-5, .lead {
+	margin: 30px;
+}
+
+#hero h1 {
+	color: #FFE347;
+	font-weight: bold;
+	align-items: flex-start;
+	display: flex;
+}
+
+@media screen and (max-width: 1200px) {
+	#hero .btn {
+
+		display: flex;
+		justify-content: center;
+		text-align: center;
+
+	}
+}
+
+.col-lg-6 {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -15,4 +42,12 @@
 #hero h1 {
 	color: #FFE347;
 	font-weight: bold;
+}
+
+.btn {
+	margin-left: 0.5rem;
+}
+
+#welcomeHeader {
+	text-align: left;
 }
