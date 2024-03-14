@@ -3,8 +3,54 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Logo from "../../assets/images/finalLogo.jpg";
 import "./LoginForm.css";
+import React, { useState, useEffect } from "react";
 
 const LoginForm = () => {
+  const [formData, setFormData] = useState({
+    // Set the component's initial state
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const [rememberMe, setRememberMe] = useState(false);
+
+  useEffect(() => {
+    const rememberedEmail = localStorage.getItem("rememberedEmail");
+    const rememberedPassword = localStorage.getItem("rememberedPassword");
+
+    if (rememberedEmail && rememberedPassword && rememberMe) {
+      setFormData({
+        ...formData,
+        email: rememberedEmail,
+        password: rememberedPassword,
+      });
+    }
+  }, [rememberMe]);
+
+  const handleRememberMeChange = () => {
+    setRememberMe(!rememberMe);
+  };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    console.log(`email is ${formData.email}`);
+    console.log(`password is ${formData.password}`);
+    console.log(`confirmed password is ${formData.confirmPassword}`);
+
+    if (rememberMe) {
+      localStorage.setItem("rememberedEmail", formData.email);
+      localStorage.setItem("rememberedPassword", formData.password);
+    }
+
+    setFormData({
+      email: "",
+      password: "",
+      confirmPassword: "",
+    });
+  };
+
   return (
     <Container
       id="main-container"
@@ -22,6 +68,9 @@ const LoginForm = () => {
             placeholder="Email address"
             autoComplete="username"
             className="position-relative"
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="sign-in-password">
@@ -31,6 +80,9 @@ const LoginForm = () => {
             placeholder="Password"
             autoComplete="current-password"
             className="position-relative"
+            onChange={(e) =>
+              setFormData({ ...formData, password: e.target.value })
+            }
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="confirm-password">
@@ -40,16 +92,24 @@ const LoginForm = () => {
             placeholder="Confirm Password"
             autoComplete="confirm-password"
             className="position-relative"
+            value={formData.confirmPassword}
+            onChange={(e) =>
+              setFormData({ ...formData, confirmPassword: e.target.value })
+            }
           />
         </Form.Group>
         <Form.Group
           className="d-flex justify-content-center mb-4"
           controlId="remember-me"
         >
-          <Form.Check label="Remember me" />
+          <Form.Check
+            label="Remember me"
+            checked={rememberMe}
+            onChange={handleRememberMeChange}
+          />
         </Form.Group>
         <div className="d-grid mb-3">
-          <Button id="sign-in-button" size="lg">
+          <Button id="sign-in-button" size="lg" onClick={handleFormSubmit}>
             Sign up
           </Button>
         </div>
