@@ -61,18 +61,18 @@ const creatorsdata =
             "github": "https://github.com/Crar96",
             "linkedin": "https://www.linkedin.com/in/conor-grogan-a09a7a216/",
             "email": "pCZ8x@example.com",
-            "skills": ["HTML", "CSS", "SASS", "JavaScript", "React", "Vue", "Nuxt", "NodeJS", "Babel", "Jquery", "ES6", "GIT", "GITHUB"]
+            "skills": ["HTML", "CSS", "JavaScript", "Bootstrap", "React", "Jquery", "GIT", "GITHUB"]
          },
          {
             "id": 6,
             "showSkills": false,
-            "name": "Tommy Boi",
+            "name": "Tom",
             "img": "src/assets/images/tom_profile_pic.png",
             "desc": "Full Stack Developer",
             "github": "https://github.com/DrWho1369",
             "linkedin": "https://www.linkedin.com/in/thomas-baker-anutr-0b9758222/",
             "email": "tbaker.bhb@gmail.com",
-            "skills": ["HTML", "CSS", "SASS", "JavaScript", "React", "Vue", "Nuxt", "NodeJS", "Babel", "Jquery", "ES6", "GIT", "GITHUB"]
+            "skills": ["Python", "Django", "HTML", "CSS", "SASS", "JavaScript", "React", "NodeJS", "Jquery", "ES6", "GIT", "GITHUB"]
          }
    ]
 
@@ -93,7 +93,7 @@ const AboutContact = () => {
          </div>
          <div className="row">
             {creators.map(creator => (
-               <div key={creator.id} className="col-md-4">
+               <div key={creator.id} className="col-md-6 col-lg-4">
                   <CreatorCard setShowSkills={setShowSkills} id={creator.id} showSkills={creator.showSkills} img={creator.img} name={creator.name} desc={creator.desc} github={creator.github} linkedin={creator.linkedin} email={creator.email} skills={creator.skills} />
                </div>  
                
