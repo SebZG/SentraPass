@@ -8,6 +8,8 @@ import RotatingSphere from '../RotatingSphere/RotatingSphere'
 
 function CreatorCard(props) {
 
+   // const [showSkills, setShowSkills] = useState(false);
+
    const handleClick = () => {
       props.setShowSkills(props.id); 
    }
@@ -17,27 +19,13 @@ function CreatorCard(props) {
       return <RotatingSphere id={props.id} setShowSkills={props.setShowSkills} skills={props.skills} />
    }
 
-   const [isHover, setHover] = useState(false);
-
-   const handleMouseEnter = () => {
-      setHover(true);
-   };
-
-   const handleMouseLeave = () => {
-      setHover(false);
-   };
-
    return (
       <>
-         <div className="card" id='card'
-         onMouseEnter={handleMouseEnter}
-         onMouseLeave={handleMouseLeave}
-         >
-            <div className={`card-hover-bg ${isHover ? 'show' : ''}`}/>
+         <div className="card" id='card'>
             <div className="img-container">
                <img src={props.img} alt="" />
             </div>
-            <h3>{props.name}</h3>
+            <h3 class="props.name">{props.name}</h3>
             <p>{props.desc}</p>
             <p onClick={handleClick}>VIEW SKILLS</p>
             <div className="icons">
