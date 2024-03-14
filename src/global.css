@@ -59,8 +59,8 @@ body {
 
 /* Heading Styles */
 h1 {
-	color: var(--Color-Primary);
-	font-size: var(--F-XXL);
+	color: #FFE347;
+	font-weight: bold;
 }
 
 h2 {
