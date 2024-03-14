@@ -2,6 +2,9 @@
 .faq-section {
   width: 100%;
   text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
 }
 
 .container {
@@ -33,4 +36,5 @@
  
  .faq-item p {
    color: white;
+   font-size: 18px;
  }
