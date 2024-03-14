@@ -1,3 +1,13 @@
+@media screen and (max-width: 1200px) {
+	#hero .btn {
+
+		display: flex;
+		justify-content: center;
+		text-align: center;
+
+	}
+}
+
 .col-lg-6 {
 	display: block;
 	margin-left: auto;
@@ -19,4 +29,8 @@
 
 .btn {
 	margin-left: 0.5rem;
+}
+
+#welcomeHeader {
+	text-align: left;
 }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Hero = () => {
 	return (
-		<div id="hero" className="row flex-lg-row-reverse align-items-center py-5">
+		<div id="hero" className="row flex-lg-row-reverse align-items-center py-5 ">
 			<div className="col-10 col-sm-8 col-lg-6">
 				<img
 					src="https://placehold.co/700x500"
@@ -14,8 +14,8 @@ const Hero = () => {
 					loading="lazy"
 				/>
 			</div>
-			<div className="col-lg-6 text-start">
-				<h1 className="display-5 fw-bold lh-1 mb-3">Welcome to SentraPass</h1>
+			<div className="col-lg-6 text-start display-flex">
+				<h1 id= "welcomeHeader" className="display-5 fw-bold lh-1 mb-3">Welcome to SentraPass</h1>
 				<p className="lead">
 					Streamlined Password Management SentraPass offers free and secure
 					access to your passwords and usernames directly in your browser,
