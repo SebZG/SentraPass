@@ -2,26 +2,12 @@ import React, { useEffect} from 'react';
 import './RotatingSphere.css';
 import TagCloud from 'TagCloud';
 
-const RotatingSphere = () => {
+const RotatingSphere = (props) => {
     // Animation settings for Text Cloud
     useEffect(() => {
       return () => {
         const container = ".tagcloud";
-        const texts = [
-          "HTML",
-          "CSS",
-          "SASS",
-          "JavaScript",
-          "React",
-          "Vue",
-          "Nuxt",
-          "NodeJS",
-          "Babel",
-          "Jquery",
-          "ES6",
-          "GIT",
-          "GITHUB",
-        ];
+        const texts = props.skills;
   
         const options = {
           radius: 300,

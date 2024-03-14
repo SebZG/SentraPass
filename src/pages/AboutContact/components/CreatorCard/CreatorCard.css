@@ -1,0 +1,22 @@
+.card {
+    box-shadow: 0 0 2.2em rgba(25, 0, 58, 0.15);
+    padding: 3.5em 1em;
+    border-radius: 0.6em;
+    color: #1f003b;
+    cursor: pointer;
+}
+
+.card .img-container {
+    width: 8em;
+    height: 8em;
+    background-color: #a993ff;
+    padding: 0.5em;
+    border-radius: 50%;
+    margin: 0 auto 2em auto;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 50%;
+
+}
