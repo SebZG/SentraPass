@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Logo from "../../assets/images/finalLogo.jpg";
 import "./LoginForm.css";
 import React, { useState, useEffect } from "react";
+import Modal from "react-bootstrap/Modal";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +15,13 @@ const LoginForm = () => {
   });
 
   const [loginMode, setLoginMode] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
+  const [passwordsMatch, setPasswordsMatch] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
 
   const handleModeChange = () => {
     setLoginMode(!loginMode);
@@ -25,8 +33,6 @@ const LoginForm = () => {
       });
     }
   };
-
-  const [rememberMe, setRememberMe] = useState(false);
 
   useEffect(() => {
     const rememberedEmail = localStorage.getItem("rememberedEmail");
@@ -48,14 +54,11 @@ const LoginForm = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    console.log(`email is ${formData.email}`);
-    console.log(`password is ${formData.password}`);
-    console.log(`confirmed password is ${formData.confirmPassword}`);
-
     if (rememberMe) {
       localStorage.setItem("rememberedEmail", formData.email);
       localStorage.setItem("rememberedPassword", formData.password);
     }
+    setShowModal(true);
 
     setFormData({
       email: "",
@@ -63,6 +66,14 @@ const LoginForm = () => {
       confirmPassword: "",
     });
   };
+
+  const checkPasswordMatch = () => {
+    setPasswordsMatch(formData.password === formData.confirmPassword);
+  };
+
+  useEffect(() => {
+    checkPasswordMatch();
+  }, [formData.password, formData.confirmPassword]);
 
   return (
     <Container
@@ -80,7 +91,7 @@ const LoginForm = () => {
             size="lg"
             placeholder="Email address"
             autoComplete="username"
-            className="position-relative"
+            className="custom-input"
             onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })
             }
@@ -92,7 +103,7 @@ const LoginForm = () => {
             size="lg"
             placeholder="Password"
             autoComplete="current-password"
-            className="position-relative"
+            className="custom-input"
             onChange={(e) =>
               setFormData({ ...formData, password: e.target.value })
             }
@@ -107,12 +118,17 @@ const LoginForm = () => {
             size="lg"
             placeholder="Confirm Password"
             autoComplete="confirm-password"
-            className="position-relative"
+            className="custom-input"
             value={formData.confirmPassword}
             onChange={(e) =>
               setFormData({ ...formData, confirmPassword: e.target.value })
             }
           />
+          {!passwordsMatch && (
+            <Form.Text className="text-danger">
+              Password do not match.
+            </Form.Text>
+          )}
         </Form.Group>
         <Form.Group
           className="d-flex justify-content-center mb-4"
@@ -137,6 +153,21 @@ const LoginForm = () => {
           </a>
         </span>
       </Form>
+
+      <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Email Confirmation</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Please check your email inbox and follow the instructions to confirm
+          your email address.
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 };

@@ -3,7 +3,7 @@
 }
 
 #sign-in-form {
-   max-width: 330px;
+   max-width: 600px;
 }
 
 #title {
@@ -11,8 +11,12 @@
 }
 
 .sentra-logo {
-   width: 72px;
-   height: 72px;
+   width: 80px;
+   height: 80px;
+}
+
+.form-control {
+   width: fit-content;
 }
 
 .form-control:focus {
@@ -20,6 +24,17 @@
 }
 
 #sign-in-button {
-   background-color: #6457A6;
+   background-color: #79B4A9;
    border: none
+}
+
+.custom-input {
+   height: 50px;
+   width: 120%;
+   margin: auto;
+}
+
+.modal-body,
+.modal-title {
+   color: #000;
 }
