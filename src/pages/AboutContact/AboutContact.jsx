@@ -3,6 +3,8 @@ import './AboutContact.css'
 import ContactUsForm from './components/ContactUsForm/ContactUsForm';
 import CreatorCard from './components/CreatorCard/CreatorCard';
 import RotatingSphere from './components/RotatingSphere/RotatingSphere';
+import Header from '../../Components/GeneralComponents/Header';
+import Footer from '../../Components/GeneralComponents/Footer';
 
 
 const AboutContact = () => {
@@ -71,19 +73,32 @@ const AboutContact = () => {
    ]
    return (
       <>
+         <Header />
          <div className='row'>
             <h1>The Creators</h1>
          </div>
-         
-         <div className="column">
-            <CreatorCard img={creators[0].img} name={creators[0].name} desc={creators[0].desc}  />
-            <CreatorCard img={creators[1].img} name={creators[1].name} desc={creators[1].desc} />
-            <CreatorCard img={creators[2].img} name={creators[2].name} desc={creators[2].desc} />
-            <CreatorCard img={creators[3].img} name={creators[3].name} desc={creators[3].desc} />
-            <CreatorCard img={creators[4].img} name={creators[4].name} desc={creators[4].desc} />
-            <CreatorCard img={creators[5].img} name={creators[5].name} desc={creators[5].desc} />
+         <div className="row">
+         <div className="col-md-4">
+            <CreatorCard img={creators[0].img} name={creators[0].name} desc={creators[0].desc} github={creators[0].github} linkedin={creators[0].linkedin} email={creators[0].email}  />
+         </div>  
+         <div className="col-md-4">
+            <CreatorCard img={creators[1].img} name={creators[1].name} desc={creators[1].desc} github={creators[1].github} linkedin={creators[1].linkedin} email={creators[1].email} />
          </div>
-         {/* <RotatingSphere /> */}
+         <div className="col-md-4">
+            <CreatorCard img={creators[2].img} name={creators[2].name} desc={creators[2].desc} github={creators[2].github} linkedin={creators[2].linkedin} email={creators[2].email} />
+         </div>
+         <div className="col-md-4">
+            <CreatorCard img={creators[3].img} name={creators[3].name} desc={creators[3].desc} github={creators[3].github} linkedin={creators[3].linkedin} email={creators[3].email} />
+         </div>
+         <div className="col-md-4">   
+            <CreatorCard img={creators[4].img} name={creators[4].name} desc={creators[4].desc} github={creators[4].github} linkedin={creators[4].linkedin} email={creators[4].email} />
+         </div>
+         <div className="col-md-4">   
+            <CreatorCard img={creators[5].img} name={creators[5].name} desc={creators[5].desc} github={creators[5].github} linkedin={creators[5].linkedin} email={creators[5].email} />
+         </div>
+         </div>
+         
+         <Footer />
       </>
    )
 }
