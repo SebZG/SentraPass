@@ -1,4 +1,5 @@
 import "./Hero.css";
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
 	return (
@@ -22,6 +23,7 @@ const Hero = () => {
 					credentials. Experience convenience without compromise. Welcome to a
 					worry-free online journey with SentraPass.
 				</p>
+				<Link to="/login" className="btn"><button type="button" className="btn btn-primary btn-lg px-4">Login</button></Link>
 				<div className="d-grid gap-2 d-md-flex justify-content-md-start"></div>
 			</div>
 		</div>
@@ -31,3 +33,4 @@ const Hero = () => {
 export default Hero;
 
 //@connor se lines 13 to 19 and replace with product demo/ features (as appropriate)
+//

@@ -27,11 +27,9 @@ const Footer = () => {
 
       <ul className="nav col-md-4 justify-content-end">
       <li className="btn"><Link to="/" className="">Home</Link></li>
-        		<li className="btn"><Link to="/login" className="">Login/Register</Link></li>
-        		<li className="btn"><Link to="/dash" className="">Dashboard</Link></li>
-        		<li className="btn"><Link to="/account" className="">My Account</Link></li>
-        		<li className="btn"><Link to="/aboutcontact" className="">Contact/About</Link></li>
-      	
+      <li className="btn"><Link to="/dash" className="">Dashboard</Link></li>
+      <li className="btn"><Link to="/account" className="">My Account</Link></li>
+      <li className="btn"><Link to="/aboutcontact" className="">Contact/About</Link></li>
       </ul>
     </footer>
   );
