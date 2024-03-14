@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './AboutContact.css'
-import Carosel from './components/Carosel/Carosel';
 import ContactUsForm from './components/ContactUsForm/ContactUsForm';
 import CreatorCard from './components/CreatorCard/CreatorCard';
 import RotatingSphere from './components/RotatingSphere/RotatingSphere';
@@ -75,7 +74,7 @@ const AboutContact = () => {
          <div className='row'>
             <h1>The Creators</h1>
          </div>
-         {creators.length > 0 ? ( 
+         
          <div className="column">
             <CreatorCard img={creators[0].img} name={creators[0].name} desc={creators[0].desc}  />
             <CreatorCard img={creators[1].img} name={creators[1].name} desc={creators[1].desc} />
@@ -84,11 +83,7 @@ const AboutContact = () => {
             <CreatorCard img={creators[4].img} name={creators[4].name} desc={creators[4].desc} />
             <CreatorCard img={creators[5].img} name={creators[5].name} desc={creators[5].desc} />
          </div>
-         ) : (
-            <div>Loading...</div>
-         )}
-         <Carosel />
-         <RotatingSphere />
+         {/* <RotatingSphere /> */}
       </>
    )
 }

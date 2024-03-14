@@ -15,13 +15,13 @@ function CreatorCard(props) {
             <p>{props.desc}</p>
             <div className="icons">
                <a href={props.github}>
-                  <FontAwesomeIcon icon={faGithub} />
+                  <FontAwesomeIcon icon={faGithub} color="var(--Color-Tertiary)" className="anchor-icon" />
                </a>
                <a href={props.linkedin}>
-                  <FontAwesomeIcon icon={faLinkedin} />
+                  <FontAwesomeIcon icon={faLinkedin} color="var(--Color-Tertiary)" className="anchor-icon"/>
                </a>
                <a href={props.email}>
-                  <FontAwesomeIcon icon={faEnvelope} />
+                  <FontAwesomeIcon icon={faEnvelope} color="var(--Color-Tertiary)" className="anchor-icon" />
                </a>
             </div>
          </div>
