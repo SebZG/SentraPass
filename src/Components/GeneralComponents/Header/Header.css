@@ -4,8 +4,25 @@ header {
 	font-size: var(--F-XXL);
 	padding: 4rem;
 	position: relative; /* Ensure proper stacking context */
-
 }
+
+.nav {
+	display: flex;
+	justify-content: center;
+}
+
+.nav li {
+	margin: 0 10px;
+}
+
+.nav li a {
+	transition: color 0.3s ease-in-out;
+}
+
+.nav li a:hover {
+	color: white;
+}
+
 
 img {
 	border : 1px solid var(--Color-Secondary);

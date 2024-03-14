@@ -1,9 +1,10 @@
 import './Features.css';
 
 const Features = () => {
-	return (
+	return (	
 		<section className="features-section background-image-container">
 			<div className="container">
+			<h1>Features</h1>
 				<div className="row">
 					<div className="col-md-4">
 						<div className="feature-item">

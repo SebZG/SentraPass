@@ -5,9 +5,9 @@ import Footer from "../../Components/GeneralComponents/Footer"
 //specific components//
 import Hero from "../../Components/LandingPageComponents/Hero"
 import Features from "../../Components/LandingPageComponents/Features"
+import FAQ from "../../Components/LandingPageComponents/FAQ/FAQ";
 
-import './Landing.css'
-import FAQ from "../../Components/LandingPageCoponents/FAQ/FAQ";
+
 
 const Landing = () => {
    return (

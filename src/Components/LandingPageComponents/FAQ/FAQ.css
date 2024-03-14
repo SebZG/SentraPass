@@ -1,13 +1,30 @@
+
+.faq-section {
+  width: 100%;
+  text-align: center;
+}
+
 .container {
-  padding: 80px 0;
+  padding: 20px 0;
   background-image: url('../../assets/images/background.png');
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
  }
+
+
+ .container h2 {
+   color: #FFE347;
+   margin: 20px auto;
+   font-size: 32px;
+ }
+
+ .container h3 {
+   color: #FFE347;
+ }
  
  .faq-item {
-   margin-bottom: 20px;
+   margin-bottom: 30px;
  }
  
  .faq-item h3 {
@@ -15,5 +32,5 @@
  }
  
  .faq-item p {
-   color: #6c757d;
+   color: white;
  }
