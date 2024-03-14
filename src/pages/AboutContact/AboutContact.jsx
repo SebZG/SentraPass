@@ -6,12 +6,11 @@ import RotatingSphere from './components/RotatingSphere/RotatingSphere';
 import Header from '../../Components/GeneralComponents/Header';
 import Footer from '../../Components/GeneralComponents/Footer';
 
-
-const AboutContact = () => {
-      let creators = 
+const creatorsdata = 
       [
          {
             "id": 1,
+            "showSkills": false,
             "name": "Sebastian",
             "img": "src/assets/images/seb_profile_pic.png",
             "desc": "Full Stack Developer",
@@ -22,6 +21,7 @@ const AboutContact = () => {
          },
          {
             "id": 2,
+            "showSkills": false,
             "name": "Ana",
             "img": "src/assets/images/ana_profile_pic.png",
             "desc": "Front End Developer",
@@ -32,6 +32,7 @@ const AboutContact = () => {
          },
          {
             "id": 3,
+            "showSkills": false,
             "name": "Harry",
             "img": "src/assets/images/harry_profile_pic.png",
             "desc": "Front End Developer",
@@ -42,6 +43,7 @@ const AboutContact = () => {
          },
          {
             "id": 4,
+            "showSkills": false,
             "name": "Aaron",
             "img": "src/assets/images/aaron_profile_pic.png",
             "desc": "Front End Developer",
@@ -52,16 +54,18 @@ const AboutContact = () => {
          },
          {
             "id": 5,
-            "name": "Conner",
+            "showSkills": false,
+            "name": "Conor",
             "img": "src/assets/images/conner_profile_pic.png",
             "desc": "Front End Developer",
             "github": "https://github.com/Crar96",
-            "linkedin": "https://www.linkedin.com/in/sebastian-ziegler/",
+            "linkedin": "https://www.linkedin.com/in/conor-grogan-a09a7a216/",
             "email": "pCZ8x@example.com",
             "skills": ["HTML", "CSS", "SASS", "JavaScript", "React", "Vue", "Nuxt", "NodeJS", "Babel", "Jquery", "ES6", "GIT", "GITHUB"]
          },
          {
             "id": 6,
+            "showSkills": false,
             "name": "Tommy Boi",
             "img": "src/assets/images/tom_profile_pic.png",
             "desc": "Full Stack Developer",
@@ -71,6 +75,16 @@ const AboutContact = () => {
             "skills": ["HTML", "CSS", "SASS", "JavaScript", "React", "Vue", "Nuxt", "NodeJS", "Babel", "Jquery", "ES6", "GIT", "GITHUB"]
          }
    ]
+
+const AboutContact = () => {
+   const [creators, setCreators] = useState(creatorsdata);
+   const setShowSkills = (id) => {
+      const currentCreator = creators.find(creator => creator.id === id)
+      const creatorIndex = creators.indexOf(currentCreator);
+      const newCreators = [...creators];
+      newCreators[creatorIndex].showSkills = !currentCreator.showSkills;
+      setCreators(newCreators);
+   }
    return (
       <>
          <Header />
@@ -78,24 +92,12 @@ const AboutContact = () => {
             <h1>The Creators</h1>
          </div>
          <div className="row">
-         <div className="col-md-4">
-            <CreatorCard img={creators[0].img} name={creators[0].name} desc={creators[0].desc} github={creators[0].github} linkedin={creators[0].linkedin} email={creators[0].email}  />
-         </div>  
-         <div className="col-md-4">
-            <CreatorCard img={creators[1].img} name={creators[1].name} desc={creators[1].desc} github={creators[1].github} linkedin={creators[1].linkedin} email={creators[1].email} />
-         </div>
-         <div className="col-md-4">
-            <CreatorCard img={creators[2].img} name={creators[2].name} desc={creators[2].desc} github={creators[2].github} linkedin={creators[2].linkedin} email={creators[2].email} />
-         </div>
-         <div className="col-md-4">
-            <CreatorCard img={creators[3].img} name={creators[3].name} desc={creators[3].desc} github={creators[3].github} linkedin={creators[3].linkedin} email={creators[3].email} />
-         </div>
-         <div className="col-md-4">   
-            <CreatorCard img={creators[4].img} name={creators[4].name} desc={creators[4].desc} github={creators[4].github} linkedin={creators[4].linkedin} email={creators[4].email} />
-         </div>
-         <div className="col-md-4">   
-            <CreatorCard img={creators[5].img} name={creators[5].name} desc={creators[5].desc} github={creators[5].github} linkedin={creators[5].linkedin} email={creators[5].email} />
-         </div>
+            {creators.map(creator => (
+               <div key={creator.id} className="col-md-4">
+                  <CreatorCard setShowSkills={setShowSkills} id={creator.id} showSkills={creator.showSkills} img={creator.img} name={creator.name} desc={creator.desc} github={creator.github} linkedin={creator.linkedin} email={creator.email} skills={creator.skills} />
+               </div>  
+               
+            ))}
          </div>
          
          <Footer />
