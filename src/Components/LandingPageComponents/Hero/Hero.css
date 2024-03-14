@@ -20,3 +20,7 @@
 .btn {
 	margin-left: 0.5rem;
 }
+
+#welcomeHeader {
+	text-align: left;
+}
