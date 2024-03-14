@@ -1,8 +1,8 @@
 import './Features.css';
 
 const Features = () => {
-	return (	
-		<section className="features-section background-image-container">
+	return (
+		<section id="features" className="features-section">
 			<div className="container">
 			<h1>Features</h1>
 				<div className="row">

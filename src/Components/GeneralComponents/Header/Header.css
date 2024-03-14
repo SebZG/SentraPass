@@ -21,20 +21,21 @@ header {
 
 .nav li a:hover {
  	color: white;
+	/* Ensure proper stacking context */
+	position: relative;
 }
 
 
-img {
-	border : 1px solid var(--Color-Secondary);
+header img {
+	/* border: 1px solid var(--Color-Secondary); */
 }
 
-span {
-	padding-left: 2rem;
-	text-shadow: 2px 2px 4px var(--Color-Secondary);
+header span {
+	/* padding-left: 2rem; */
+	/* text-shadow: 2px 2px 4px var(--Color-Secondary); */
 	font-weight: bold;
 }
 
-ul {
-	padding-right: 7rem;
-
+header ul {
+	/* padding-right: 7rem; */
 }
