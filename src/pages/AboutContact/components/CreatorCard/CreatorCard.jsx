@@ -25,7 +25,7 @@ function CreatorCard(props) {
             <div className="img-container">
                <img src={props.img} alt="" />
             </div>
-            <h3>{props.name}</h3>
+            <h3 class="props.name">{props.name}</h3>
             <p>{props.desc}</p>
             <p onClick={handleClick}>VIEW SKILLS</p>
             <div className="icons">

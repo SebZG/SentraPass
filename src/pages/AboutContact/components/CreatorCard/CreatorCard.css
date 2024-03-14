@@ -5,21 +5,15 @@
     text-align: center;
 }
 
-h1 {
-    width: 100%;
-    text-align: center;
-    font-size: 3.5em;
-    color: var(--Color-Secondary);
-}
-
 .card {
     box-shadow: 0 0 2.2em rgba(25, 0, 58, 0.15);
     padding: 3.5em 1em;
     margin: 2em;
     border-radius: 0.6em;
-    background: #91a9cb;
+    background: var(--Color-Tertiary);
     cursor: pointer;
-    transition: 0.3s;
+    /* transition: background 1s ease; */
+    
 }
 
 .card:hover {
@@ -28,6 +22,7 @@ h1 {
 
 .card:hover .img-container {
     transform: scale(2);
+    transition: 3s ease;
 }
 
 .card .img-container {

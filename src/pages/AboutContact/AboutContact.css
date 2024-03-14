@@ -1,0 +1,7 @@
+
+.creators {
+    text-align: center;
+    font-size: 3.5em;
+    color: var(--Color-Secondary);
+    text-shadow: 2px 2px 5px var(--Color-Secondary);
+}
