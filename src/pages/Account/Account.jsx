@@ -1,10 +1,8 @@
-import Navbar from "../../Components/AccountPageComponents/Navbar";
+import './Account.css'
 
 const Account = () => {
-  return (
-    <div>
-      <Navbar />
-    </div>
-  );
-};
+	return (
+		<div>Account</div>
+	)
+}
 export default Account;
