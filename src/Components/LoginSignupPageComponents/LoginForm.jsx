@@ -1,12 +1,31 @@
-import Form from "react-bootstrap/Form";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  onAuthStateChanged,
+  sendEmailVerification,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
+import { auth, db } from "../../firebase/init";
+
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
 import Logo from "../../assets/images/finalLogo.jpg";
+
 import "./LoginForm.css";
 import React, { useState, useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
 
 const LoginForm = () => {
+  // User Object
+  const auth = getAuth();
+  const user = auth.currentUser;
+
   const [formData, setFormData] = useState({
     // Set the component's initial state
     email: "",
@@ -34,6 +53,10 @@ const LoginForm = () => {
     }
   };
 
+  const [rememberMe, setRememberMe] = useState(false);
+
+  const navigate = useNavigate();
+
   useEffect(() => {
     const rememberedEmail = localStorage.getItem("rememberedEmail");
     const rememberedPassword = localStorage.getItem("rememberedPassword");
@@ -45,6 +68,25 @@ const LoginForm = () => {
         password: rememberedPassword,
       });
     }
+
+    onAuthStateChanged(auth, (user) => {
+      if (user && !user.emailVerified) {
+        // navigate("/");
+        sendEmailVerification(user).then(() => {
+          // setShowEmailVerification(true);
+          // signOut(auth);
+          console.log("Email verification sent");
+        });
+      } else if (user && user.emailVerified) {
+        // navigate("/dash");
+      } else {
+        // navigate("/");
+      }
+
+      // setInterval(() => {
+      // 	setIsLoading(false);
+      // }, 500);
+    });
   }, [rememberMe]);
 
   const handleRememberMeChange = () => {
@@ -65,15 +107,32 @@ const LoginForm = () => {
       password: "",
       confirmPassword: "",
     });
-  };
 
-  const checkPasswordMatch = () => {
-    setPasswordsMatch(formData.password === formData.confirmPassword);
+    if (loginMode) {
+      signInWithEmailAndPassword(auth, formData.email, formData.password)
+        .then((userCred) => {
+          // const user = userCred.user;
+          // navigate("/dash");
+          console.log("Logged in");
+        })
+        .catch((error) => {
+          // setError(error.code);
+          console.log(error.code);
+        });
+    } else if (!loginMode) {
+      createUserWithEmailAndPassword(auth, formData.email, formData.password)
+        .then((userCred) => {
+          // const user = userCred.user;
+          // navigate("/dash");
+          // setSelected("Login");
+          console.log("Account created");
+        })
+        .catch((error) => {
+          // setError(error.code);
+          console.log(error.code);
+        });
+    }
   };
-
-  useEffect(() => {
-    checkPasswordMatch();
-  }, [formData.password, formData.confirmPassword]);
 
   return (
     <Container
@@ -91,7 +150,7 @@ const LoginForm = () => {
             size="lg"
             placeholder="Email address"
             autoComplete="username"
-            className="custom-input"
+            className="position-relative"
             onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })
             }
@@ -103,7 +162,7 @@ const LoginForm = () => {
             size="lg"
             placeholder="Password"
             autoComplete="current-password"
-            className="custom-input"
+            className="position-relative"
             onChange={(e) =>
               setFormData({ ...formData, password: e.target.value })
             }
@@ -118,17 +177,12 @@ const LoginForm = () => {
             size="lg"
             placeholder="Confirm Password"
             autoComplete="confirm-password"
-            className="custom-input"
+            className="position-relative"
             value={formData.confirmPassword}
             onChange={(e) =>
               setFormData({ ...formData, confirmPassword: e.target.value })
             }
           />
-          {!passwordsMatch && (
-            <Form.Text className="text-danger">
-              Password do not match.
-            </Form.Text>
-          )}
         </Form.Group>
         <Form.Group
           className="d-flex justify-content-center mb-4"
@@ -153,21 +207,6 @@ const LoginForm = () => {
           </a>
         </span>
       </Form>
-
-      <Modal show={showModal} onHide={handleCloseModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Email Confirmation</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          Please check your email inbox and follow the instructions to confirm
-          your email address.
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseModal}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
     </Container>
   );
 };
