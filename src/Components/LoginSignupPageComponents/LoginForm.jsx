@@ -15,6 +15,8 @@ import { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { MdEmail } from "react-icons/md";
@@ -59,26 +61,25 @@ const LoginForm = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // const rememberedEmail = localStorage.getItem("rememberedEmail");
-    // const rememberedPassword = localStorage.getItem("rememberedPassword");
+    const rememberedEmail = localStorage.getItem("rememberedEmail");
+    const rememberedPassword = localStorage.getItem("rememberedPassword");
 
-    // if (rememberedEmail && rememberedPassword && rememberMe) {
-    // 	setFormData({
-    // 		...formData,
-    // 		email: rememberedEmail,
-    // 		password: rememberedPassword,
-    // 	});
-    // }
+    if (rememberedEmail && rememberedPassword && rememberMe) {
+      setFormData({
+        ...formData,
+        email: rememberedEmail,
+        password: rememberedPassword,
+      });
+    }
 
     onAuthStateChanged(auth, (user) => {
       if (user && !user.emailVerified) {
         // navigate("/");
-        // sendEmailVerification(user)
-        // .then(() => {
-        // setShowEmailVerification(true);
-        // signOut(auth);
-        // console.log("Email verification sent");
-        // });
+        sendEmailVerification(user).then(() => {
+          // setShowEmailVerification(true);
+          // signOut(auth);
+          console.log("Email verification sent");
+        });
       } else if (user && user.emailVerified) {
         // navigate("/dash");
       } else {
@@ -91,18 +92,21 @@ const LoginForm = () => {
     });
   }, [rememberMe]);
 
-  // const handleRememberMeChange = () => {
-  // 	setRememberMe(!rememberMe);
-  // };
+  const handleRememberMeChange = () => {
+    setRememberMe(!rememberMe);
+  };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    // if (rememberMe) {
-    // 	localStorage.setItem("rememberedEmail", formData.email);
-    // 	localStorage.setItem("rememberedPassword", formData.password);
-    // }
+    console.log(`email is ${formData.email}`);
+    console.log(`password is ${formData.password}`);
+    console.log(`confirmed password is ${formData.confirmPassword}`);
 
+    if (rememberMe) {
+      localStorage.setItem("rememberedEmail", formData.email);
+      localStorage.setItem("rememberedPassword", formData.password);
+    }
     setShowModal(true);
 
     setFormData({
@@ -146,97 +150,98 @@ const LoginForm = () => {
   }, [formData.password, formData.confirmPassword]);
 
   return (
-    <Container id="login-container">
-      <Row className="justify-content-center">
-        <Form id="sign-in-form" className="text-center p-3">
-          <img className="mb-4 sentra-logo" src={Logo} alt="Own logo" />
-          <h1 className="mb-4 fs-3 fw-normal">
-            {loginMode ? "Login" : "Create an Account"}
-          </h1>
-          <Form.Group className="mb-4" controlId="sign-in-email-address">
-            <Form.Control
-              type="email"
-              size="lg"
-              placeholder="Email address"
-              autoComplete="username"
-              className="custom-input"
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
-              }
-            />
-          </Form.Group>
-          <Form.Group className="mb-4" controlId="sign-in-password">
-            <Form.Control
-              type="password"
-              size="lg"
-              placeholder="Password"
-              autoComplete="current-password"
-              className="custom-input"
-              onChange={(e) =>
-                setFormData({ ...formData, password: e.target.value })
-              }
-            />
-          </Form.Group>
-          <Form.Group
-            className={`mb-4 ${loginMode ? "d-none" : ""}`}
-            controlId="confirm-password"
-          >
-            <Form.Control
-              type="password"
-              size="lg"
-              placeholder="Confirm Password"
-              autoComplete="confirm-password"
-              className="custom-input"
-              value={formData.confirmPassword}
-              onChange={(e) =>
-                setFormData({ ...formData, confirmPassword: e.target.value })
-              }
-            />
-            {!passwordsMatch && (
-              <Form.Text className="text-danger">
-                Password do not match.
-              </Form.Text>
-            )}
-          </Form.Group>
-          {/* <Form.Group
-						className="d-flex justify-content-center mb-4"
-						controlId="remember-me"
-					>
-						<Form.Check
-							label="Remember me"
-							checked={rememberMe}
-							onChange={handleRememberMeChange}
-						/>
-					</Form.Group> */}
-          <div className="mb-3">
-            <Button id="sign-in-button" size="lg" onClick={handleFormSubmit}>
-              {loginMode ? "Login" : "Sign up"}
-            </Button>
-          </div>
-          <p> {loginMode ? "Don't have an account?" : "Already registered?"}</p>
-          <span className="line">
-            <a href="#" onClick={handleModeChange}>
-              {loginMode ? "Create an account" : "Login"}
-            </a>
-          </span>
-        </Form>
+    <Container
+      id="main-container"
+      className="d-flex align-items-center justify-content-center h-100"
+    >
+      <Form id="sign-in-form" className="text-center p-3">
+        <img className="mb-4 sentra-logo" src={Logo} alt="Own logo" />
+        <h1 id="title" className="mb-3 fs-3 fw-normal">
+          {loginMode ? "Login" : "Create an Account"}
+        </h1>
+        <Form.Group className="mb-3" controlId="sign-in-email-address">
+          <Form.Control
+            type="email"
+            size="lg"
+            placeholder="Email address"
+            autoComplete="username"
+            className="custom-input"
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="sign-in-password">
+          <Form.Control
+            type="password"
+            size="lg"
+            placeholder="Password"
+            autoComplete="current-password"
+            className="custom-input"
+            onChange={(e) =>
+              setFormData({ ...formData, password: e.target.value })
+            }
+          />
+        </Form.Group>
+        <Form.Group
+          className={`mb-3 ${loginMode ? "d-none" : ""}`}
+          controlId="confirm-password"
+        >
+          <Form.Control
+            type="password"
+            size="lg"
+            placeholder="Confirm Password"
+            autoComplete="confirm-password"
+            className="custom-input"
+            value={formData.confirmPassword}
+            onChange={(e) =>
+              setFormData({ ...formData, confirmPassword: e.target.value })
+            }
+          />
+          {!passwordsMatch && (
+            <Form.Text className="text-danger">
+              Password do not match.
+            </Form.Text>
+          )}
+        </Form.Group>
+        <Form.Group
+          className="d-flex justify-content-center mb-4"
+          controlId="remember-me"
+        >
+          <Form.Check
+            label="Remember me"
+            checked={rememberMe}
+            onChange={handleRememberMeChange}
+          />
+        </Form.Group>
+        <div className="d-grid mb-3">
+          <Button id="sign-in-button" size="lg" onClick={handleFormSubmit}>
+            {loginMode ? "Login" : "Sign up"}
+          </Button>
+        </div>
+        <p> {loginMode ? "Don't have an account?" : "Already registered?"}</p>
+        <span className="line">
+          {/* {} */}
+          <a href="#" onClick={handleModeChange}>
+            {loginMode ? "Create an account" : "Login"}
+          </a>
+        </span>
+      </Form>
 
-        {/* Email Confirmation Modal */}
-        <Modal show={showModal} onHide={handleCloseModal}>
-          <Modal.Header closeButton>
-            <Modal.Title>Email Confirmation</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            Please check your email inbox and follow the instructions to confirm
-            your email address.
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleCloseModal}>
-              Close
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </Row>
+      <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Email Confirmation</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Please check your email inbox and follow the instructions to confirm
+          your email address.
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 };

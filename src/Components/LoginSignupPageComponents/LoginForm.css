@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #sign-in-form {
    background: transparent;
    border: 2px solid rgba(255, 255, 255, .2);
@@ -21,10 +22,13 @@
    border-radius: 40px;
 }
 
+=======
+>>>>>>> 51b2657 (fix login/signup form // Organization // CSS Overhaul)
 #sign-in-form {
    max-width: 600px;
 }
 
+<<<<<<< HEAD
 #sign-in-button {
    padding: 0.75rem;
    width: 50%;
@@ -34,6 +38,26 @@
    outline: none;
    border-radius: 40px;
    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+=======
+#login-container .sentra-logo {
+   width: 80px;
+   height: 80px;
+}
+
+#login-container h1 {
+   /* color: white; */
+}
+
+#login-container .custom-input {
+   height: 50px;
+   margin: 0 auto;
+}
+
+#sign-in-button {
+   padding: 0.75rem;
+   width: 100%;
+   margin: 0 auto;
+>>>>>>> 51b2657 (fix login/signup form // Organization // CSS Overhaul)
 }
 
 .modal-body,
