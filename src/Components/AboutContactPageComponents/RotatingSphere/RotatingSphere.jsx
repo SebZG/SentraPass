@@ -8,6 +8,10 @@ import './RotatingSphere.css';
 
 const RotatingSphere = (props) => {
 	// const [hideSkills, setHideSkills] = useState(false);
+<<<<<<< HEAD
+=======
+	// const [hideSkills, setHideSkills] = useState(false);
+>>>>>>> 1f3328f (fix login/signup form // Organization // CSS Overhaul)
 
 	const handleClick = () => {
 		props.setDisplayedCreatorId(null);
@@ -17,6 +21,17 @@ const RotatingSphere = (props) => {
 	//   return <AboutContact />
 	// }
 
+	// if (hideSkills) {
+	//   return <AboutContact />
+	// }
+
+<<<<<<< HEAD
+=======
+	// if (hideSkills) {
+	//   return <AboutContact />
+	// }
+
+>>>>>>> 1f3328f (fix login/signup form // Organization // CSS Overhaul)
 	useEffect(() => {
 		return () => {
 			const container = ".tagcloud";
