@@ -23,8 +23,6 @@ import { FaLock } from "react-icons/fa";
 import Logo from "../../assets/images/finalLogo.jpg";
 
 import "./LoginForm.css";
-import React, { useState, useEffect } from "react";
-import Modal from "react-bootstrap/Modal";
 
 const LoginForm = () => {
   // User Object
