@@ -90,14 +90,7 @@ const AboutContact = () => {
          setDisplayedCreatorId((prevState) => (prevState === id ? null : id));
       }
    }
-   // const [creators, setCreators] = useState(creatorsdata);
-   // const setShowSkills = (id) => {
-   //    const currentCreator = creators.find(creator => creator.id === id)
-   //    const creatorIndex = creators.indexOf(currentCreator);
-   //    const newCreators = [...creators];
-   //    newCreators[creatorIndex].showSkills = !currentCreator.showSkills;
-   //    setCreators(newCreators);
-   // }
+
    return (
       <div id='about-contact'>
          <Header />

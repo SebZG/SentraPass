@@ -2,7 +2,6 @@
    display: flex;
    flex-wrap: wrap;
    padding: 2em 1em;
-   text-align: center;
 }
 
 #creator-card .card {
@@ -13,6 +12,8 @@
    background: var(--Color-Tertiary);
    cursor: pointer;
    /* transition: background 1s ease; */
+   backface-visibility: hidden;
+   text-align: center;
 }
 
 #creator-card .card:hover {
@@ -32,6 +33,20 @@
    border-radius: 50%;
    border-color: var(--Color-Secondary);
    margin: 0 auto 2em auto;
+}
+
+#creator-card .card-flipper-container {
+   perspective: 1000px;
+}
+
+#creator-card .card-flipper {
+   transition: transform 0.7s;
+   transform-style: preserve-3d;
+   position: relative;
+}
+
+#creator-card .card-flipper-container.flipped .card-flipper {
+   transform: rotateY(180deg);
 }
 
 #creator-card .card img {
@@ -67,6 +82,13 @@
          color: var(--Color-Secondary)
       }
    }
+}
+
+#creator-card .card a {
+   text-decoration: none;
+   color: inherit;
+   font-size: 1.4em;
+   transition: all 0.3s ease;
 }
 
 #creator-card .card a {

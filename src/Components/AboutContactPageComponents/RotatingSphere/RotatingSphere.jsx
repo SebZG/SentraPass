@@ -7,15 +7,10 @@ import AboutContact from '../../../pages/AboutContact/';
 import './RotatingSphere.css';
 
 const RotatingSphere = (props) => {
-	// const [hideSkills, setHideSkills] = useState(false);
 
 	const handleClick = () => {
 		props.setDisplayedCreatorId(null);
 	}
-
-	// if (hideSkills) {
-	//   return <AboutContact />
-	// }
 
 	useEffect(() => {
 		return () => {
