@@ -11,7 +11,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="faq-section">
+    <section id='FAQ'>
       <div className="container">
         <h2>Frequently Asked Questions</h2>
         <div className="accordion" id="accordionExample">

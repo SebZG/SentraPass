@@ -1,5 +1,4 @@
-
-.text-sphere {
+#rotating-sphere .text-sphere {
     position: relative;
     top: 28%;
     left: 28%;
@@ -10,7 +9,7 @@
     align-items: center;
 }
 
-.tagcloud {
+#rotating-sphere .tagcloud {
     display: inline-block;
     top: 0;
     left: 0;
@@ -19,11 +18,21 @@
     font-size: 1.3em;
 }
 
-.tagcloud--item {
+#rotating-sphere .tagcloud--item {
     color: var(--Color-Text);
     text-transform: uppercase;
 }
 
-.tagcloud--item:hover {
+#rotating-sphere .tagcloud--item:hover {
     color: var(--Color-Secondary);
+}
+
+#rotating-sphere .hide-skills {
+    cursor: pointer;
+    color: var(--Color-Secondary);
+    text-shadow: 2px 2px 5px var(--Color-Secondary);
+    position: relative;
+    align-items: center;
+    top: 20%;
+    text-align: center;
 }
