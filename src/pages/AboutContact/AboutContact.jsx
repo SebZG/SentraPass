@@ -77,14 +77,24 @@ const creatorsdata =
    ]
 
 const AboutContact = () => {
-   const [creators, setCreators] = useState(creatorsdata);
-   const setShowSkills = (id) => {
-      const currentCreator = creators.find(creator => creator.id === id)
-      const creatorIndex = creators.indexOf(currentCreator);
-      const newCreators = [...creators];
-      newCreators[creatorIndex].showSkills = !currentCreator.showSkills;
-      setCreators(newCreators);
+
+   const [displayedCreatorId, setDisplayedCreatorId] = useState(null);
+
+   const anySkillsShown = displayedCreatorId !== null;
+
+   const toggleShowSkills = (id) => {
+      if (!anySkillsShown) {
+         setDisplayedCreatorId((prevState) => (prevState === id ? null : id));
+      }
    }
+   // const [creators, setCreators] = useState(creatorsdata);
+   // const setShowSkills = (id) => {
+   //    const currentCreator = creators.find(creator => creator.id === id)
+   //    const creatorIndex = creators.indexOf(currentCreator);
+   //    const newCreators = [...creators];
+   //    newCreators[creatorIndex].showSkills = !currentCreator.showSkills;
+   //    setCreators(newCreators);
+   // }
    return (
       <>
          <Header />
@@ -92,9 +102,9 @@ const AboutContact = () => {
             <h1 className="creators">The Creators</h1>
          </div>
          <div className="row">
-            {creators.map(creator => (
+            {creatorsdata.map(creator => (
                <div key={creator.id} className="col-md-6 col-lg-4">
-                  <CreatorCard setShowSkills={setShowSkills} id={creator.id} showSkills={creator.showSkills} img={creator.img} name={creator.name} desc={creator.desc} github={creator.github} linkedin={creator.linkedin} email={creator.email} skills={creator.skills} />
+                  <CreatorCard setShowSkills={toggleShowSkills} setDisplayedCreatorId={setDisplayedCreatorId} id={creator.id} showSkills={displayedCreatorId === creator.id} disableViewSkills={anySkillsShown} img={creator.img} name={creator.name} desc={creator.desc} github={creator.github} linkedin={creator.linkedin} email={creator.email} skills={creator.skills} />
                </div>  
                
             ))}

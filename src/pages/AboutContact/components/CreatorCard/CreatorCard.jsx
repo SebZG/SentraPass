@@ -11,12 +11,14 @@ function CreatorCard(props) {
    // const [showSkills, setShowSkills] = useState(false);
 
    const handleClick = () => {
-      props.setShowSkills(props.id); 
+      if (!props.diableViewSkills) {
+         props.setShowSkills(props.id);
+      } 
    }
 
    
    if (props.showSkills) {
-      return <RotatingSphere id={props.id} setShowSkills={props.setShowSkills} skills={props.skills} />
+      return <RotatingSphere id={props.id} setDisplayedCreatorId={props.setDisplayedCreatorId} skills={props.skills} />
    }
 
    return (
@@ -27,7 +29,7 @@ function CreatorCard(props) {
             </div>
             <h3 class="props.name">{props.name}</h3>
             <p>{props.desc}</p>
-            <p onClick={handleClick}>VIEW SKILLS</p>
+            <p onClick={!props.diableViewSkills ? handleClick : null}>VIEW SKILLS</p>
             <div className="icons">
                <a href={props.github} target="_blank">
                   <FontAwesomeIcon icon={faGithub} color="var(--Color-Secondary)" className="anchor-icon" />
