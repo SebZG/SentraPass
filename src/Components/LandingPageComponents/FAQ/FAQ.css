@@ -3,7 +3,6 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  min-height: 80vh; 
 }
 
 
@@ -11,8 +10,12 @@
 margin: 40px;
 }
 
-.faq-section h2 {
-  color: #FFD700; 
+#faq-container h1 {
+  display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--Color-Secondary);
+  padding: 10px;
 }
 
 .accordion-item {

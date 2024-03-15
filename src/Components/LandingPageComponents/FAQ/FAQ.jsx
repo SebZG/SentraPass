@@ -12,8 +12,8 @@ const FAQ = () => {
 
   return (
     <section id='FAQ'>
-      <div className="container">
-        <h2>Frequently Asked Questions</h2>
+      <div id="faq-container">
+        <h1>Frequently Asked Questions</h1>
         <div className="accordion" id="accordionExample">
           <div className="accordion-item">
             <h2 className="accordion-header">
@@ -121,6 +121,7 @@ const FAQ = () => {
             </div>
           </div>
         </div>
+      <br></br>
       </div>
     </section>
   );
