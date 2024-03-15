@@ -12,8 +12,21 @@
     border-radius: 0.6em;
     background: var(--Color-Tertiary);
     cursor: pointer;
-    /* transition: background 1s ease; */
-    
+    backface-visibility: hidden;
+}
+
+.card-flipper-container {
+    perspective: 1000px;
+}
+
+.card-flipper {
+transition: transform 0.7s;
+transform-style: preserve-3d;
+position: relative;
+}
+
+.card-flipper-container.flipped .card-flipper {
+transform: rotateY(180deg);
 }
 
 .card:hover {

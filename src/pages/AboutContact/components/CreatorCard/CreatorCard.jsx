@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CreatorCard.css'
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,14 +8,27 @@ import RotatingSphere from '../RotatingSphere/RotatingSphere'
 
 function CreatorCard(props) {
 
-   // const [showSkills, setShowSkills] = useState(false);
+   const [isFlipped, setIsFlipped] = useState(false);
 
    const handleClick = () => {
-      if (!props.diableViewSkills) {
-         props.setShowSkills(props.id);
+      if (!props.disableViewSkills) {
+         setIsFlipped(true);
       } 
    }
 
+   useEffect(() => {
+      if (isFlipped && !props.disableViewSkills) {
+         const timer = setTimeout(() => {
+            props.setShowSkills(props.id);
+         }, 700);
+
+         return () => clearTimeout(timer); 
+      }
+   }, [isFlipped, props]);
+   
+   useEffect(() => {
+      if (!props.showSkills) setIsFlipped(false);
+   }, [props.showSkills]);
    
    if (props.showSkills) {
       return <RotatingSphere id={props.id} setDisplayedCreatorId={props.setDisplayedCreatorId} skills={props.skills} />
@@ -23,6 +36,8 @@ function CreatorCard(props) {
 
    return (
       <>
+         <div className={`card-flipper-container ${isFlipped ? "flipped" : ""}`} onClick={handleClick}>
+         <div className="card-flipper">
          <div className="card" id='card'>
             <div className="img-container">
                <img src={props.img} alt="" />
@@ -41,6 +56,8 @@ function CreatorCard(props) {
                   <FontAwesomeIcon icon={faEnvelope} color="var(--Color-Secondary)" className="anchor-icon" />
                </a>
             </div>
+         </div>
+         </div>
          </div>
       </>
    )
