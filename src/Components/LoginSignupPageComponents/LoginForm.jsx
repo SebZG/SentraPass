@@ -209,7 +209,7 @@ const LoginForm = () => {
 							onChange={handleRememberMeChange}
 						/>
 					</Form.Group> */}
-					<div className="d-grid mb-3">
+					<div className="mb-3">
 						<Button id="sign-in-button" size="lg" onClick={handleFormSubmit}>
 							{loginMode ? "Login" : "Sign up"}
 						</Button>
