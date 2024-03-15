@@ -15,7 +15,7 @@ const Hero = () => {
 				/>
 			</div>
 			<div className="col-lg-6 text-start display-flex">
-				<h1 id= "welcomeHeader" className="display-5 fw-bold lh-1 mb-3">Welcome to SentraPass</h1>
+				<h1 id="welcomeHeader" className="display-5 fw-bold lh-1 mb-3">Welcome to SentraPass</h1>
 				<p className="lead">
 					Streamlined Password Management SentraPass offers free and secure
 					access to your passwords and usernames directly in your browser,
@@ -23,7 +23,11 @@ const Hero = () => {
 					credentials. Experience convenience without compromise. Welcome to a
 					worry-free online journey with SentraPass.
 				</p>
-				<Link to="/login" className="btn"><button type="button" className="btn btn-primary btn-lg px-4">Login</button></Link>
+				<div className="d-flex justify-content-center">
+					<Link to="/login" className="btn">
+						Login
+					</Link>
+				</div>
 				<div className="d-grid gap-2 d-md-flex justify-content-md-start"></div>
 			</div>
 		</div>

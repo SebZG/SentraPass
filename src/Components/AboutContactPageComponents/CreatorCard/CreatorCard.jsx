@@ -1,16 +1,25 @@
+<<<<<<< HEAD:src/pages/AboutContact/components/CreatorCard/CreatorCard.jsx
 import React, { useState, useEffect } from 'react';
 import './CreatorCard.css'
 import ReactDOM from 'react-dom'
+=======
+import { useState } from 'react';
+
+>>>>>>> 51b2657 (fix login/signup form // Organization // CSS Overhaul):src/Components/AboutContactPageComponents/CreatorCard/CreatorCard.jsx
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import {faLinkedin, faGithub} from '@fortawesome/free-brands-svg-icons'
-import RotatingSphere from '../RotatingSphere/RotatingSphere'
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+
+import RotatingSphere from '../RotatingSphere'
+
+import './CreatorCard.css'
 
 function CreatorCard(props) {
 
    const [isFlipped, setIsFlipped] = useState(false);
 
    const handleClick = () => {
+<<<<<<< HEAD:src/pages/AboutContact/components/CreatorCard/CreatorCard.jsx
       if (!props.disableViewSkills) {
          setIsFlipped(true);
       } 
@@ -30,15 +39,28 @@ function CreatorCard(props) {
       if (!props.showSkills) setIsFlipped(false);
    }, [props.showSkills]);
    
+=======
+      if (!props.diableViewSkills) {
+         props.setShowSkills(props.id);
+      }
+   }
+
+
+>>>>>>> 51b2657 (fix login/signup form // Organization // CSS Overhaul):src/Components/AboutContactPageComponents/CreatorCard/CreatorCard.jsx
    if (props.showSkills) {
       return <RotatingSphere id={props.id} setDisplayedCreatorId={props.setDisplayedCreatorId} skills={props.skills} />
    }
 
    return (
+<<<<<<< HEAD:src/pages/AboutContact/components/CreatorCard/CreatorCard.jsx
       <>
          <div className={`card-flipper-container ${isFlipped ? "flipped" : ""}`} onClick={handleClick}>
          <div className="card-flipper">
          <div className="card" id='card'>
+=======
+      <div id='creator-card' className='row'>
+         <div className="card">
+>>>>>>> 51b2657 (fix login/signup form // Organization // CSS Overhaul):src/Components/AboutContactPageComponents/CreatorCard/CreatorCard.jsx
             <div className="img-container">
                <img src={props.img} alt="" />
             </div>
@@ -50,17 +72,21 @@ function CreatorCard(props) {
                   <FontAwesomeIcon icon={faGithub} color="var(--Color-Secondary)" className="anchor-icon" />
                </a>
                <a href={props.linkedin} target="_blank">
-                  <FontAwesomeIcon icon={faLinkedin} color="var(--Color-Secondary)" className="anchor-icon"/>
+                  <FontAwesomeIcon icon={faLinkedin} color="var(--Color-Secondary)" className="anchor-icon" />
                </a>
                <a href={props.email} target="_blank">
                   <FontAwesomeIcon icon={faEnvelope} color="var(--Color-Secondary)" className="anchor-icon" />
                </a>
             </div>
          </div>
+<<<<<<< HEAD:src/pages/AboutContact/components/CreatorCard/CreatorCard.jsx
          </div>
          </div>
       </>
+=======
+      </div>
+>>>>>>> 51b2657 (fix login/signup form // Organization // CSS Overhaul):src/Components/AboutContactPageComponents/CreatorCard/CreatorCard.jsx
    )
 }
 
-export default CreatorCard
+export default CreatorCard;

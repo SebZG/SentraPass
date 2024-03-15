@@ -12,8 +12,9 @@ import { auth, db } from "../../firebase/init";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Logo from "../../assets/images/finalLogo.jpg";
 
@@ -96,6 +97,10 @@ const LoginForm = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
+    console.log(`email is ${formData.email}`);
+    console.log(`password is ${formData.password}`);
+    console.log(`confirmed password is ${formData.confirmPassword}`);
+
     if (rememberMe) {
       localStorage.setItem("rememberedEmail", formData.email);
       localStorage.setItem("rememberedPassword", formData.password);
@@ -134,6 +139,14 @@ const LoginForm = () => {
     }
   };
 
+  const checkPasswordMatch = () => {
+    setPasswordsMatch(formData.password === formData.confirmPassword);
+  };
+
+  useEffect(() => {
+    checkPasswordMatch();
+  }, [formData.password, formData.confirmPassword]);
+
   return (
     <Container
       id="main-container"
@@ -150,7 +163,7 @@ const LoginForm = () => {
             size="lg"
             placeholder="Email address"
             autoComplete="username"
-            className="position-relative"
+            className="custom-input"
             onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })
             }
@@ -162,7 +175,7 @@ const LoginForm = () => {
             size="lg"
             placeholder="Password"
             autoComplete="current-password"
-            className="position-relative"
+            className="custom-input"
             onChange={(e) =>
               setFormData({ ...formData, password: e.target.value })
             }
@@ -177,12 +190,17 @@ const LoginForm = () => {
             size="lg"
             placeholder="Confirm Password"
             autoComplete="confirm-password"
-            className="position-relative"
+            className="custom-input"
             value={formData.confirmPassword}
             onChange={(e) =>
               setFormData({ ...formData, confirmPassword: e.target.value })
             }
           />
+          {!passwordsMatch && (
+            <Form.Text className="text-danger">
+              Password do not match.
+            </Form.Text>
+          )}
         </Form.Group>
         <Form.Group
           className="d-flex justify-content-center mb-4"
@@ -207,6 +225,21 @@ const LoginForm = () => {
           </a>
         </span>
       </Form>
+
+      <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Email Confirmation</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Please check your email inbox and follow the instructions to confirm
+          your email address.
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 };

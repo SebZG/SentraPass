@@ -1,4 +1,4 @@
-import React from 'react'
+import './ContactUsForm.css'
 
 function ContactUsForm() {
   return (
@@ -6,4 +6,4 @@ function ContactUsForm() {
   )
 }
 
-export default ContactUsForm
+export default ContactUsForm;
