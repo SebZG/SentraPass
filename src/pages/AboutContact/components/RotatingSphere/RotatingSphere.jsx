@@ -8,7 +8,7 @@ const RotatingSphere = (props) => {
     // const [hideSkills, setHideSkills] = useState(false);
 
     const handleClick = () => {
-      props.setShowSkills(props.id); 
+      props.setDisplayedCreatorId(null); 
     }
 
     // if (hideSkills) {
