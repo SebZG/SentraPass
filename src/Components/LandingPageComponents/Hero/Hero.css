@@ -8,17 +8,17 @@
 	}
 }
 
-.col-lg-6 {
+#hero .col-lg-6 {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.display-5 {
+#hero .display-5 {
 	margin: 30px 30px 30px 30px;
 }
 
-.lead {
+#hero .lead {
 	margin: 30px 30px 30px 30px;
 }
 
@@ -27,8 +27,10 @@
 	font-weight: bold;
 }
 
-.btn {
-	margin-left: 0.5rem;
+#hero .btn {
+	margin-left: 0 auto;
+	padding: 1rem 2rem;
+	font-size: var(--F-L);
 }
 
 #welcomeHeader {

@@ -1,9 +1,8 @@
 header {
 	background-color: var(--Color-Primary);
 	color: var(--Color-Text);
-	font-size: var(--F-XXL);
+	font-size: var(--F-L);
 	padding: 4rem;
-	position: relative; /* Ensure proper stacking context */
 }
 
 .nav {
@@ -20,7 +19,7 @@ header {
 }
 
 .nav li a:hover {
- 	color: white;
+	color: white;
 	/* Ensure proper stacking context */
 	position: relative;
 }
@@ -34,8 +33,4 @@ header span {
 	/* padding-left: 2rem; */
 	/* text-shadow: 2px 2px 4px var(--Color-Secondary); */
 	font-weight: bold;
-}
-
-header ul {
-	/* padding-right: 7rem; */
 }

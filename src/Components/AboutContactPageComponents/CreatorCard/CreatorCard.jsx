@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
-import './CreatorCard.css'
-import ReactDOM from 'react-dom'
+import { useState } from 'react';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import {faLinkedin, faGithub} from '@fortawesome/free-brands-svg-icons'
-import RotatingSphere from '../RotatingSphere/RotatingSphere'
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+
+import RotatingSphere from '../RotatingSphere'
+
+import './CreatorCard.css'
 
 function CreatorCard(props) {
 
@@ -13,17 +15,17 @@ function CreatorCard(props) {
    const handleClick = () => {
       if (!props.diableViewSkills) {
          props.setShowSkills(props.id);
-      } 
+      }
    }
 
-   
+
    if (props.showSkills) {
       return <RotatingSphere id={props.id} setDisplayedCreatorId={props.setDisplayedCreatorId} skills={props.skills} />
    }
 
    return (
-      <>
-         <div className="card" id='card'>
+      <div id='creator-card' className='row'>
+         <div className="card">
             <div className="img-container">
                <img src={props.img} alt="" />
             </div>
@@ -35,15 +37,15 @@ function CreatorCard(props) {
                   <FontAwesomeIcon icon={faGithub} color="var(--Color-Secondary)" className="anchor-icon" />
                </a>
                <a href={props.linkedin} target="_blank">
-                  <FontAwesomeIcon icon={faLinkedin} color="var(--Color-Secondary)" className="anchor-icon"/>
+                  <FontAwesomeIcon icon={faLinkedin} color="var(--Color-Secondary)" className="anchor-icon" />
                </a>
                <a href={props.email} target="_blank">
                   <FontAwesomeIcon icon={faEnvelope} color="var(--Color-Secondary)" className="anchor-icon" />
                </a>
             </div>
          </div>
-      </>
+      </div>
    )
 }
 
-export default CreatorCard
+export default CreatorCard;

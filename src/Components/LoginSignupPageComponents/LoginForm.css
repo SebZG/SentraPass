@@ -1,37 +1,25 @@
-#main-container {
-   place-items: center center;
-}
-
 #sign-in-form {
    max-width: 600px;
 }
 
-#title {
-   color: white;
-}
-
-.sentra-logo {
+#login-container .sentra-logo {
    width: 80px;
    height: 80px;
 }
 
-.form-control {
-   width: fit-content;
+#login-container h1 {
+   /* color: white; */
 }
 
-.form-control:focus {
-   z-index: 5;
+#login-container .custom-input {
+   height: 50px;
+   margin: 0 auto;
 }
 
 #sign-in-button {
-   background-color: #79B4A9;
-   border: none
-}
-
-.custom-input {
-   height: 50px;
-   width: 120%;
-   margin: auto;
+   padding: 0.75rem;
+   width: 100%;
+   margin: 0 auto;
 }
 
 .modal-body,
