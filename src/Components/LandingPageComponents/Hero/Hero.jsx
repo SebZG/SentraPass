@@ -1,8 +1,9 @@
 import "./Hero.css";
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
 	return (
-		<div id="hero" className="row flex-lg-row-reverse align-items-center py-5">
+		<div id="hero" className="row flex-lg-row-reverse align-items-center py-5 ">
 			<div className="col-10 col-sm-8 col-lg-6">
 				<img
 					src="https://placehold.co/700x500"
@@ -13,8 +14,8 @@ const Hero = () => {
 					loading="lazy"
 				/>
 			</div>
-			<div className="col-lg-6 text-start">
-				<h1 className="display-5 fw-bold lh-1 mb-3">Welcome to SentraPass</h1>
+			<div className="col-lg-6 text-start display-flex">
+				<h1 id="welcomeHeader" className="display-5 fw-bold lh-1 mb-3">Welcome to SentraPass</h1>
 				<p className="lead">
 					Streamlined Password Management SentraPass offers free and secure
 					access to your passwords and usernames directly in your browser,
@@ -22,6 +23,11 @@ const Hero = () => {
 					credentials. Experience convenience without compromise. Welcome to a
 					worry-free online journey with SentraPass.
 				</p>
+				<div className="d-flex justify-content-center">
+					<Link to="/login" className="btn">
+						Login
+					</Link>
+				</div>
 				<div className="d-grid gap-2 d-md-flex justify-content-md-start"></div>
 			</div>
 		</div>
@@ -31,3 +37,4 @@ const Hero = () => {
 export default Hero;
 
 //@connor se lines 13 to 19 and replace with product demo/ features (as appropriate)
+//

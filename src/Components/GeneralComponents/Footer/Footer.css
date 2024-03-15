@@ -3,7 +3,6 @@ footer {
 	color: var(--Color-Text);
 	padding: 4rem;
 	font-size: var(--F-NORMAL);
-	position: relative;
 }
 
 footer ul {

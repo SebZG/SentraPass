@@ -17,6 +17,7 @@
 	--Color-Secondary: #FAE33E;
 	--Color-Tertiary: #79B4A9;
 	--Color-Background: #1C110A;
+	--Color-Btn-Hover: #49b19e;
 }
 
 /* Background image */
@@ -59,8 +60,8 @@ body {
 
 /* Heading Styles */
 h1 {
-	color: var(--Color-Primary);
-	font-size: var(--F-XXL);
+	color: #FFE347;
+	font-weight: bold;
 }
 
 h2 {
@@ -112,16 +113,17 @@ li {
 }
 
 /* Button Styles */
-button {
-	background-color: var(--Color-Primary);
+.btn {
+	background-color: var(--Color-Tertiary);
 	color: var(--Color-Text);
-	padding: 1rem 1.5rem;
+	/* padding: 1rem; */
 	border: none;
 	cursor: pointer;
+	transition: all 0.3s ease-in-out;
 }
 
-button:hover {
-	background-color: darken(var(--Color-Primary), 10%);
+.btn:hover {
+	background-color: var(--Color-Btn-Hover);
 }
 
 /* Input Styles */
