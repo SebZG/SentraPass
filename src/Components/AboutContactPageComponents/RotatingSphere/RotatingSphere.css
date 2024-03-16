@@ -46,6 +46,7 @@
   0% {
     text-shadow: 0px 0px 0px var(--Color-Text);
   }
+
   100% {
     text-shadow: 0px 0px 30px var(--Color-Text);
   }

@@ -16,11 +16,9 @@
 }
 
 #creator-card .card:hover {
-  background: linear-gradient(
-    to right,
-    var(--Color-Tertiary),
-    var(--Color-Primary)
-  );
+  background: linear-gradient(to right,
+      var(--Color-Tertiary),
+      var(--Color-Primary));
   backface-visibility: hidden;
 }
 
@@ -92,13 +90,6 @@
       color: var(--Color-Secondary);
     }
   }
-}
-
-#creator-card .card a {
-  text-decoration: none;
-  color: inherit;
-  font-size: 1.4em;
-  transition: all 0.3s ease;
 }
 
 #creator-card .card a {
