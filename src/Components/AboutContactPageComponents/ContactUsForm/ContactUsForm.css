@@ -7,15 +7,12 @@
   padding: 2rem;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--Color-Primary);
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
   margin: 0;
-}
-
-body {
 }
 
 .contact-form form {
@@ -29,6 +26,7 @@ body {
 .contact-form input,
 .contact-form textarea {
   width: 100%;
+  margin: 0px;
   padding: 7px;
   outline: none;
   border-radius: 5px;
@@ -47,7 +45,36 @@ body {
 .contact-form input[type="submit"] {
   margin-top: 2rem;
   cursor: pointer;
-  background: rgb(249, 105, 14);
+  background: var(--Color-Tertiary);
   color: white;
   border: none;
+}
+
+.email-sent-message {
+  text-align: center;
+  margin-top: 50vh;
+}
+
+.email-sent-message h1 {
+  font-size: 36px;
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff;
+  animation: neon-flashing 1s ease-in-out infinite alternate;
+}
+
+.email-sent-message p {
+  font-size: 24px;
+  color: --var(Color-Tertiary);
+  text-shadow: 0 0 10px --var(Color-Tertiary);
+}
+
+@keyframes neon-flashing {
+  0% {
+    text-shadow: 0 0 10px #ff00ff;
+  }
+  100% {
+    text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff,
+      0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff,
+      0 0 90px #ff00ff;
+  }
 }
