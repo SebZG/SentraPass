@@ -34,7 +34,9 @@ const AboutContact = () => {
           {showContactForm && <ContactUsForm />}
         </div>
       </div>
-      <Footer />
+      <div className="row mt-5">
+        <Footer />
+      </div>
     </div>
   );
 };

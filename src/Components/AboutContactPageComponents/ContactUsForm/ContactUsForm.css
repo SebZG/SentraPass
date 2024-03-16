@@ -7,7 +7,7 @@
   padding: 2rem;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--Color-Primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,6 +26,7 @@
 .contact-form input,
 .contact-form textarea {
   width: 100%;
+  margin: 0px;
   padding: 7px;
   outline: none;
   border-radius: 5px;
@@ -44,7 +45,7 @@
 .contact-form input[type="submit"] {
   margin-top: 2rem;
   cursor: pointer;
-  background: rgb(249, 105, 14);
+  background: var(--Color-Tertiary);
   color: white;
   border: none;
 }

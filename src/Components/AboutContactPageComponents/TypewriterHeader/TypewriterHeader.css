@@ -1,0 +1,29 @@
+.creators {
+  text-align: center;
+  font-size: 3.5em;
+  color: var(--Color-Secondary);
+  text-shadow: 0px 0px 10px var(--Color-Primary);
+  overflow: hidden;
+  border-right: 10px solid var(--Color-Secondary);
+  white-space: nowrap;
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-right-color: transparent;
+  }
+  50% {
+    border-right-color: var(--Color-Secondary);
+  }
+}

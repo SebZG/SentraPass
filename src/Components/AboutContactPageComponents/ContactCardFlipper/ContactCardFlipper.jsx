@@ -1,5 +1,7 @@
 import { useState } from "react";
 import CreatorCard from "../CreatorCard/CreatorCard";
+import "./ContactCardFlipper.css";
+import TypewriterEffect from "../TypewriterHeader/TypewriterHeader";
 
 const creatorsdata = [
   {
@@ -163,7 +165,7 @@ const ContactCardFlipper = () => {
   return (
     <div id="about-contact">
       <div className="row">
-        <h1 className="creators col">The Creators</h1>
+        <TypewriterEffect />
       </div>
       <div className="row">
         {creatorsdata.map((creator) => (
