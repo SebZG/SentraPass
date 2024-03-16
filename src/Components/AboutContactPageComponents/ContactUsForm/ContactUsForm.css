@@ -1,0 +1,53 @@
+/* ContactForm.css */
+
+.contact-form {
+  min-width: 400px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+}
+
+.contact-form form {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  font-size: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 7px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid rgb(220, 220, 220);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 2px solid rgba(0, 206, 158, 1);
+}
+
+.contact-form label {
+  margin-top: 1rem;
+}
+
+.contact-form input[type="submit"] {
+  margin-top: 2rem;
+  cursor: pointer;
+  background: rgb(249, 105, 14);
+  color: white;
+  border: none;
+}
