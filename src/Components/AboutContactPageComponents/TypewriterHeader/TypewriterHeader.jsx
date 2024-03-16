@@ -36,7 +36,7 @@ const TypewriterEffect = () => {
     return () => {
       clearTimeout(typingTimeout);
     };
-  }, []); // empty dependency array for componentDidMount behavior
+  }, []);
 
   return (
     <>
