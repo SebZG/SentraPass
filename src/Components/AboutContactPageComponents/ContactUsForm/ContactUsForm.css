@@ -15,9 +15,6 @@
   margin: 0;
 }
 
-body {
-}
-
 .contact-form form {
   display: flex;
   align-items: flex-start;
@@ -50,4 +47,33 @@ body {
   background: rgb(249, 105, 14);
   color: white;
   border: none;
+}
+
+.email-sent-message {
+  text-align: center;
+  margin-top: 50vh;
+}
+
+.email-sent-message h1 {
+  font-size: 36px;
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff;
+  animation: neon-flashing 1s ease-in-out infinite alternate;
+}
+
+.email-sent-message p {
+  font-size: 24px;
+  color: --var(Color-Tertiary);
+  text-shadow: 0 0 10px --var(Color-Tertiary);
+}
+
+@keyframes neon-flashing {
+  0% {
+    text-shadow: 0 0 10px #ff00ff;
+  }
+  100% {
+    text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff,
+      0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff,
+      0 0 90px #ff00ff;
+  }
 }
