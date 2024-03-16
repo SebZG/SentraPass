@@ -9,13 +9,17 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
+    const service_id = import.meta.env
+      .VITE_REACT_APP_SENTRA_PASS_EMAILJS_SERVICE_ID;
+    const template_id = import.meta.env
+      .VITE_REACT_APP_SENTRA_PASS_EMAILJS_TEMPLATE_ID;
+    const public_key = import.meta.env
+      .VITE_REACT_APP_SENTRA_PASS_EMAILJS_PUBLIC_KEY;
+
     emailjs
-      .sendForm(
-        SENTRA_PASS_EMAILJS_SERVICE_ID,
-        SENTRA_PASS_EMAILJS_TEMPLATE_ID,
-        form.current,
-        { publicKey: SENTRA_PASS_EMAILJS_PUBLIC_KEY }
-      )
+      .sendForm(service_id, template_id, form.current, {
+        publicKey: public_key,
+      })
       .then(
         (result) => {
           console.log(result.text);
