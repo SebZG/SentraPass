@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
-import "./AboutContact.css";
-import Header from "../../Components/GeneralComponents/Header";
-import Footer from "../../Components/GeneralComponents/Footer";
+import { useState } from "react";
+import CreatorCard from "../CreatorCard/CreatorCard";
 
 const creatorsdata = [
   {
@@ -151,28 +149,31 @@ const creatorsdata = [
   },
 ];
 
-const AboutContact = () => {
-  const [creators, setCreators] = useState(creatorsdata);
-  const setShowSkills = (id) => {
-    const currentCreator = creators.find((creator) => creator.id === id);
-    const creatorIndex = creators.indexOf(currentCreator);
-    const newCreators = [...creators];
-    newCreators[creatorIndex].showSkills = !currentCreator.showSkills;
-    setCreators(newCreators);
+const ContactCardFlipper = () => {
+  const [displayedCreatorId, setDisplayedCreatorId] = useState(null);
+
+  const anySkillsShown = displayedCreatorId !== null;
+
+  const toggleShowSkills = (id) => {
+    if (!anySkillsShown) {
+      setDisplayedCreatorId((prevState) => (prevState === id ? null : id));
+    }
   };
+
   return (
-    <>
-      <Header />
+    <div id="about-contact">
       <div className="row">
-        <h1 className="creators">The Creators</h1>
+        <h1 className="creators col">The Creators</h1>
       </div>
       <div className="row">
-        {creators.map((creator) => (
+        {creatorsdata.map((creator) => (
           <div key={creator.id} className="col-md-6 col-lg-4">
             <CreatorCard
-              setShowSkills={setShowSkills}
               id={creator.id}
-              showSkills={creator.showSkills}
+              setShowSkills={toggleShowSkills}
+              setDisplayedCreatorId={setDisplayedCreatorId}
+              showSkills={displayedCreatorId === creator.id}
+              disableViewSkills={anySkillsShown}
               img={creator.img}
               name={creator.name}
               desc={creator.desc}
@@ -184,9 +185,8 @@ const AboutContact = () => {
           </div>
         ))}
       </div>
-
-      <Footer />
-    </>
+    </div>
   );
 };
-export default AboutContact;
+
+export default ContactCardFlipper;

@@ -30,6 +30,7 @@ h3 {
 	align-items: center;
 	justify-content: center;
 	margin: 20px auto;
+	color: var(--Color-Secondary);
 }
 
 .background-image-container {
@@ -53,4 +54,8 @@ h3 {
 .row {
 	display: flex;
 	justify-content: space-between;
+}
+
+.row .feature-item {
+	height: 100%;
 }

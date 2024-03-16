@@ -13,10 +13,8 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { MdEmail } from "react-icons/md";

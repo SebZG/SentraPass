@@ -29,12 +29,10 @@
 
 #hero .btn {
 	margin-left: 0 auto;
-	<<<<<<< HEAD <<<<<<< HEAD padding: 0.5rem 2rem;
-	=======padding: 1rem 2rem;
-	>>>>>>>1f3328f (fix login/signup form // Organization // CSS Overhaul)
-		font-size: var(--F-L);
-	}
+	padding: 0.5rem 2rem;
+	font-size: var(--F-L);
+}
 
-	#welcomeHeader {
-		text-align: left;
-	}
+#welcomeHeader {
+	text-align: left;
+}

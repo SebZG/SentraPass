@@ -1,114 +1,51 @@
-<<<<<<< HEAD #sign-in-form {
-   background: transparent;
-   border: 2px solid rgba(255, 255, 255, .2);
-   box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-   backdrop-filter: blur(2px);
-   border-radius: 10px;
-   width: 420px;
-   background: transparent;
-   border: 2px solid rgba(255, 255, 255, .2);
-   box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-   backdrop-filter: blur(2px);
-   border-radius: 10px;
-   width: 420px;
-   max-width: 600px;
+#sign-in-form {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+  border-radius: 10px;
+  width: 420px;
+  max-width: 600px;
+}
+
+#sign-in-button {
+  padding: 0.75rem;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 #login-container .sentra-logo {
-   width: 80px;
-   height: 80px;
+  width: 80px;
+  height: 80px;
 }
 
 #login-container .custom-input {
-   height: 50px;
-   margin: 0 auto;
-   width: 100%;
-   border: 2px solid rgba(255, 255, 255, .2);
-   border-radius: 40px;
+  height: 50px;
+  margin: 0 auto;
+  width: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
 }
 
-=======>>>>>>>51b2657 (fix login/signup form // Organization // CSS Overhaul)
+.modal-body,
+.modal-title {
+  color: #000;
+}
 
-   #sign-in-form {
-      max-width: 600px;
-   }
+#sign-in-email-address .icon,
+#sign-in-password .icon,
+#confirm-password .icon {
+  top: 50%;
+  color: #ccc;
+  margin-left: 10px;
+}
 
-   <<<<<<< HEAD #sign-in-button {
-      padding: 0.75rem;
-      width: 50%;
-      margin: 0 auto;
-      margin-top: 50px;
-      border: none;
-      outline: none;
-      border-radius: 40px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-
-      =======#login-container .sentra-logo {
-         width: 80px;
-         height: 80px;
-      }
-
-      #login-container .custom-input {
-         height: 50px;
-         margin: 0 auto;
-         width: 100%;
-         border: 2px solid rgba(255, 255, 255, .2);
-         border-radius: 40px;
-      }
-
-      =======>>>>>>> 51b2657 (fix login/signup form // Organization // CSS Overhaul)
-
-         #sign-in-form {
-            max-width: 600px;
-         }
-
-         <<<<<<< HEAD #sign-in-button {
-            padding: 0.75rem;
-            width: 50%;
-            margin: 0 auto;
-            margin-top: 50px;
-            border: none;
-            outline: none;
-            border-radius: 40px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-
-            =======#login-container .sentra-logo {
-               width: 80px;
-               height: 80px;
-            }
-
-            #login-container .custom-input {
-               height: 50px;
-               margin: 0 auto;
-               width: 100%;
-               border: 2px solid rgba(255, 255, 255, .2);
-               border-radius: 40px;
-            }
-
-            #sign-in-form {
-               max-width: 600px;
-            }
-
-            #sign-in-button {
-               padding: 0.75rem;
-               width: 50%;
-               margin: 0 auto;
-            }
-
-            .modal-body,
-            .modal-title {
-               color: #000;
-            }
-
-            #sign-in-email-address .icon,
-            #sign-in-password .icon,
-            #confirm-password .icon {
-               top: 50%;
-               color: #ccc;
-               margin-left: 10px;
-            }
-
-            .with-icon {
-               padding-left: 40px;
-               margin-left: 10px;
-            }
+.with-icon {
+  padding-left: 40px;
+  margin-left: 10px;
+}

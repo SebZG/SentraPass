@@ -3,37 +3,49 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-}
-
-#FAQ .container {
-  padding: 20px 0;
-  background-image: url('../../assets/images/background.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: repeat;
 }
 
 
-#FAQ .container h2 {
-  color: #FFE347;
-  margin: 20px auto;
-  font-size: 32px;
+#faq-container {
+  margin: 40px;
 }
 
-#FAQ .container h3 {
-  color: #FFE347;
+#faq-container h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--Color-Secondary);
+  padding: 10px;
 }
 
-#FAQ .faq-item {
-  margin-bottom: 30px;
+.accordion-item {
+  background-color: transparent;
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: 5px;
 }
 
-#FAQ .faq-item h3 {
-  color: var(color-secondary);
+.accordion-item:hover {
+  color: transparent;
 }
 
-#FAQ .faq-item p {
-  color: white;
-  font-size: 18px;
+.accordion-item .accordion-header button {
+  color: #000000;
+}
+
+.accordion-item:hover .accordion-header button {
+  color: var(--Color-Primary);
+}
+
+.accordion-item .accordion-body {
+  color: #FFD700;/
+}
+
+.accordion-button {
+  color: #ff0800c1;
+  /* Default text color */
+}
+
+.accordion-button.expanded {
+  color: black;
+  /* Text color when expanded */
 }
