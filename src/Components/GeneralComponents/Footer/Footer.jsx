@@ -11,6 +11,7 @@ const Footer = () => {
 
       <a
         href="/"
+        id="logo"
         className="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
       >
         <img
@@ -23,7 +24,7 @@ const Footer = () => {
         <span className="fs-4">SentraPass</span>
       </a>
 
-      <ul className="nav col-md-4 justify-content-end">
+      <ul id="footerText" className="nav col-md-4 justify-content-end">
         <li className="">
           <Link to="/" className="">
             Home

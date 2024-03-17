@@ -21,3 +21,14 @@ footer ul {
     display: none;
   }
 }
+
+@media screen and (max-width: 1300px) {
+  #logo {
+    margin-left: auto;
+    justify-content: center;
+  }
+
+  #footerText {
+    display: none !important;
+  }
+}
