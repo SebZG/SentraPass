@@ -67,12 +67,14 @@ h3 {
 	}
 
 	.features-section .row .col-md-4 {
-		width: calc(100% - 4rem); /* Adjust the margin accordingly */
-		margin: 0 2rem; /* Set margin to space out the columns */
+		width: 100%;
+		margin: 0.2rem;
+		justify-content: center;
   }
 
 	.features-section .row .feature-item {
-		 padding: 1rem;
-		 width: 100%; /* Adjust the padding accordingly */
+		 padding: 0.5rem;
+		 width: 100%;
+		 justify-content: center;
 	}
 }
