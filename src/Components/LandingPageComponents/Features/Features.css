@@ -60,13 +60,19 @@ h3 {
 	height: 100%;
 }
 
-@media screen and (max-width: 900px) {
-	#features .row {
-		display: flex;
-		margin: 2rem;
+@media screen and (min-width: 768px) and (max-width: 900px) {
+	.features-section .row {
+		 flex-direction: column;
+		 margin: 2rem;
 	}
 
-	#features .row .feature-item {
-		padding: 1rem;
+	.features-section .row .col-md-4 {
+		width: calc(100% - 4rem); /* Adjust the margin accordingly */
+		margin: 0 2rem; /* Set margin to space out the columns */
+  }
+
+	.features-section .row .feature-item {
+		 padding: 1rem;
+		 width: 100%; /* Adjust the padding accordingly */
 	}
 }
