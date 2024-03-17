@@ -19,6 +19,7 @@ footer ul {
 @media (max-width: 767px) {
 	footer {
 		display: none;
+		
 	}
 }
 
