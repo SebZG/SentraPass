@@ -12,7 +12,8 @@
 	border: 1px solid #dee2e6;
 	margin-bottom: 30px;
 	border-radius: 8px;
-	background-color: #6457a6c1;;
+	background-color: #6457a6c1;
+	;
 }
 
 h3 {
@@ -62,19 +63,19 @@ h3 {
 
 @media screen and (min-width: 768px) and (max-width: 900px) {
 	.features-section .row {
-		 flex-direction: column;
-		 margin: 2rem;
+		flex-direction: column;
+		margin: 2rem;
 	}
 
 	.features-section .row .col-md-4 {
 		width: 100%;
 		margin: 0.2rem;
 		justify-content: center;
-  }
+	}
 
 	.features-section .row .feature-item {
-		 padding: 0.5rem;
-		 width: 100%;
-		 justify-content: center;
+		padding: 0.5rem;
+		width: 100%;
+		justify-content: center;
 	}
 }
