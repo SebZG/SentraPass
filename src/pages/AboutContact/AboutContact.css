@@ -1,6 +1,35 @@
-#about-contact .creators {
-    text-align: center;
-    font-size: 3.5em;
-    color: var(--Color-Secondary);
-    text-shadow: 2px 2px 5px var(--Color-Secondary);
+/* ButtonStyles.css */
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  margin: 0 20px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: var(--Color-Tertiary);
+  color: white;
+}
+
+.button-container button:hover {
+  background: linear-gradient(
+    to right,
+    var(--Color-Secondary),
+    var(--Color-Primary)
+  );
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-container button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
