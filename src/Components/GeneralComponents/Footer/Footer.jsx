@@ -49,8 +49,4 @@ const Footer = () => {
   );
 };
 export default Footer;
-// see line 15 for necessary logo change ✅
-// see lines 19 - 23 for links to be added at later date
-// edit CSS to alter placement of elements inside footer
-// edit CSS to alter color
-// edit CSS to alter issue regarding space not occupying whole width
+
