@@ -1,4 +1,4 @@
-.faq-section {
+#FAQ {
   width: 100%;
   text-align: center;
   display: flex;
@@ -7,20 +7,20 @@
 
 
 #faq-container {
-margin: 40px;
+  margin: 40px;
 }
 
 #faq-container h1 {
   display: flex;
-	align-items: center;
-	justify-content: center;
-	color: var(--Color-Secondary);
+  align-items: center;
+  justify-content: center;
+  color: var(--Color-Secondary);
   padding: 10px;
 }
 
 .accordion-item {
-  background-color: transparent; 
-  transition: background-color 0.3s, color 0.3s; 
+  background-color: transparent;
+  transition: background-color 0.3s, color 0.3s;
   margin-top: 5px;
 }
 
@@ -29,21 +29,23 @@ margin: 40px;
 }
 
 .accordion-item .accordion-header button {
-  color: #000000; 
+  color: #000000;
 }
 
 .accordion-item:hover .accordion-header button {
-  color: var(--Color-Primary); 
+  color: var(--Color-Primary);
 }
 
 .accordion-item .accordion-body {
-  color: #FFD700; /
+  color: #FFD700;/
 }
 
 .accordion-button {
-  color: #ff0800c1; /* Default text color */
+  color: #ff0800c1;
+  /* Default text color */
 }
 
 .accordion-button.expanded {
-  color: black; /* Text color when expanded */
+  color: black;
+  /* Text color when expanded */
 }

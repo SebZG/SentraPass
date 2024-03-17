@@ -16,3 +16,8 @@ footer ul {
 	color: var(--Color-Primary);
 }
 
+@media (max-width: 767px) {
+	footer {
+		display: none;
+	}
+}

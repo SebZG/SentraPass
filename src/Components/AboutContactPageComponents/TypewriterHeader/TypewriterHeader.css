@@ -1,0 +1,37 @@
+.creators {
+  text-align: center;
+  font-size: 3.5em;
+  color: var(--Color-Secondary);
+  text-shadow: 0px 0px 10px var(--Color-Primary);
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.flashing-text {
+  animation: flash 0.5s infinite alternate;
+}
+
+@keyframes flash {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.typewriter {
+  display: flex;
+  justify-content: center; /* Horizontally center the elements */
+  align-items: center;
+}
