@@ -15,9 +15,3 @@ footer ul {
 	font-weight: bold;
 	color: var(--Color-Primary);
 }
-
-@media (max-width: 1286px) {
-	footer {
-		 display: none;
-	}
-}
