@@ -121,7 +121,12 @@ const FAQ = () => {
             </div>
           </div>
         </div>
-        <br />
+        <div className="footerFix">
+          <br />
+          <br />
+          <br />
+          <br />
+        </div>
       </div>
     </section>
   );
