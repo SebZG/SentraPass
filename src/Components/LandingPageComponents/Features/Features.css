@@ -59,3 +59,14 @@ h3 {
 .row .feature-item {
 	height: 100%;
 }
+
+@media screen and (max-width: 900px) {
+	#features .row {
+		display: flex;
+		margin: 2rem;
+	}
+
+	#features .row .feature-item {
+		padding: 1rem;
+	}
+}
