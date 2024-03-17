@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="d-flex d-sm-none d-md-flex flex-wrap justify-content-between align-items-center py-3 border-top">
+    <footer className="d-flex d-sm-none d-md-flex flex-wrap justify-content-between align-items-center py-3 border-top d-none d-md-block">
       <p className="col-md-4 mb-0 text-body-secondary copyright">
         © {new Date().getFullYear()} SentraPass
       </p>

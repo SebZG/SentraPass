@@ -1,4 +1,7 @@
 footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 	background-color: var(--Color-Primary);
 	color: var(--Color-Text);
 	padding: 4rem;
@@ -19,6 +22,7 @@ footer ul {
 @media (max-width: 767px) {
 	footer {
 		display: none;
+		
 	}
 }
 
