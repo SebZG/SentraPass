@@ -20,7 +20,6 @@ header {
 
 .nav li a:hover {
 	color: white;
-	/* Ensure proper stacking context */
 	position: relative;
 }
 
