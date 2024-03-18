@@ -6,6 +6,10 @@ footer {
   color: var(--Color-Text);
   padding: 4rem;
   font-size: var(--F-NORMAL);
+  background-color: var(--Color-Primary);
+  color: var(--Color-Text);
+  padding: 4rem;
+  font-size: var(--F-NORMAL);
 }
 
 footer ul {
@@ -19,7 +23,7 @@ footer ul {
   color: var(--Color-Primary);
 }
 
-@media (max-width: 1286px) {
+@media (max-width: 767px) {
   footer {
     display: none;
   }

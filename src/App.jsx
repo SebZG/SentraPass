@@ -6,10 +6,16 @@ import LoginSignup from './pages/LoginSignup'
 import Dash from './pages/Dash'
 import Account from './pages/Account'
 
+import Header from "./Components/GeneralComponents/Header"
+import Footer from "./Components/GeneralComponents/Footer"
+
 function App() {
 
 	return (
 		<Router>
+
+			<Header />
+
 			<Routes>
 
 				<Route path='/' element={<Landing />} />
@@ -19,6 +25,9 @@ function App() {
 				<Route path='/account' element={<Account />} />
 
 			</Routes>
+
+			<Footer />
+
 		</Router>
 	)
 }
