@@ -29,7 +29,7 @@ const RotatingSphere = (props) => {
 
   return (
     <div id="rotating-sphere">
-      <h3 class="hide-skills" onClick={handleClick}>
+      <h3 className="hide-skills" onClick={handleClick}>
         HIDE SKILLS
       </h3>
       <div className="text-sphere">

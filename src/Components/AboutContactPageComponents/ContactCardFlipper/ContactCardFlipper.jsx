@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CreatorCard from "../CreatorCard/CreatorCard";
 import "./ContactCardFlipper.css";
 import TypewriterEffect from "../TypewriterHeader/TypewriterHeader";
-
+import SnakeGame from "../SnakeGame/SnakeGame";
 const creatorsdata = [
   {
     id: 1,
@@ -153,12 +153,26 @@ const creatorsdata = [
 
 const ContactCardFlipper = () => {
   const [displayedCreatorId, setDisplayedCreatorId] = useState(null);
-
+  const [skillToggleCount, setSkillToggleCount] = useState(0);
   const anySkillsShown = displayedCreatorId !== null;
+  const [timeoutId, setTimeoutId] = useState(null);
+
+  useEffect(() => {
+    if (skillToggleCount > 2) {
+      const id = setTimeout(() => {
+        setSkillToggleCount(0);
+      }, 2000);
+
+      setTimeoutId(id);
+    }
+
+    return () => clearTimeout(timeoutId);
+  }, [skillToggleCount]);
 
   const toggleShowSkills = (id) => {
     if (!anySkillsShown) {
       setDisplayedCreatorId((prevState) => (prevState === id ? null : id));
+      setSkillToggleCount((prevCount) => prevCount + 1);
     }
   };
 
