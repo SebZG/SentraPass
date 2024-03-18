@@ -1,8 +1,5 @@
 import { useState } from "react";
 
-import Header from "../../Components/GeneralComponents/Header";
-import Footer from "../../Components/GeneralComponents/Footer";
-
 import ContactUsForm from "../../Components/AboutContactPageComponents/ContactUsForm";
 import "./AboutContact.css";
 import ContactCardFlipper from "../../Components/AboutContactPageComponents/ContactCardFlipper/ContactCardFlipper";
@@ -32,7 +29,6 @@ const AboutContact = () => {
   return (
     <div id="about-contact">
       <div className="content-container">
-        <Header />
         <div className="row">
           <div className="button-container">
             <button onClick={toggleCreatorCard}>Meet The Creators</button>
@@ -45,9 +41,6 @@ const AboutContact = () => {
             {showSnakeGame && <SnakeGame />}
           </div>
         </div>
-      </div>
-      <div className="row mt-5 footer--pin">
-        <Footer />
       </div>
     </div>
   );
