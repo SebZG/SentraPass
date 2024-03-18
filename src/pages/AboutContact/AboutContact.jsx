@@ -1,8 +1,5 @@
 import { useState } from "react";
 
-import Header from "../../Components/GeneralComponents/Header";
-import Footer from "../../Components/GeneralComponents/Footer";
-
 import ContactUsForm from "../../Components/AboutContactPageComponents/ContactUsForm";
 import "./AboutContact.css";
 import ContactCardFlipper from "../../Components/AboutContactPageComponents/ContactCardFlipper/ContactCardFlipper";
