@@ -9,7 +9,7 @@ import {
   DIRECTIONS,
 } from "./constants";
 
-const App = () => {
+const SnakeGame = () => {
   const canvasRef = useRef();
   const [snake, setSnake] = useState(SNAKE_START);
   const [apple, setApple] = useState(APPLE_START);
@@ -103,4 +103,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default SnakeGame;
