@@ -23,18 +23,20 @@ const AboutContact = () => {
 
   return (
     <div id="about-contact">
-      <Header />
-      <div className="row">
-        <div className="button-container">
-          <button onClick={toggleCreatorCard}>Meet The Creators</button>
-          <button onClick={toggleContactForm}>Get In Contact</button>
-        </div>
-        <div className="col d-flex justify-content-center">
-          {showCreatorCard && <ContactCardFlipper />}
-          {showContactForm && <ContactUsForm />}
+      <div className="content-container">
+        <Header />
+        <div className="row">
+          <div className="button-container">
+            <button onClick={toggleCreatorCard}>Meet The Creators</button>
+            <button onClick={toggleContactForm}>Get In Contact</button>
+          </div>
+          <div className="col d-flex justify-content-center">
+            {showCreatorCard && <ContactCardFlipper />}
+            {showContactForm && <ContactUsForm />}
+          </div>
         </div>
       </div>
-      <div className="row mt-5">
+      <div className="row mt-5 footer--pin">
         <Footer />
       </div>
     </div>
