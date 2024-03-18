@@ -3,38 +3,49 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
-  // State for managing menu visibility
-  const [menuOpen, setMenuOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Function to toggle menu
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
 
-  return (
-    <header className="d-flex flex-wrap justify-content-between py-3 mb-4 border-bottom">
-      <div className="d-flex align-items-center mb-3 mb-md-0 me-auto link-body-emphasis text-decoration-none">
-        <img src="src\assets\images\finalLogo.jpg" alt="Logo" height="40rem" className="" />
-        <span className="fs-4">SentraPass</span>
-      </div>
+    return (
+        <header className="header-container d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="/" className="logo-container d-flex align-items-center mb-3 mb-md-0 me-auto link-body-emphasis text-decoration-none">
+                <img src="src\assets\images\finalLogo.jpg" alt="Logo" height="40rem" className="" />
+                <span className="fs-4">SentraPass</span>
+            </a>
 
-      {/* Menu button image */}
-      <img
-        src={menuOpen ? '../assets/images/closeIcon.png' : '../assets/images/menuIcon.png'}
-        alt="btn"
-        className="menu-btn"
-        onClick={toggleMenu}
-      />
+            {/* Display burger menu icon under media breakpoint */}
+            <div className={`burger-menu ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+    {isMenuOpen ? (
+        <img src="src\assets\images\closeIcon.png" alt="Close Icon" />
+    ) : (
+        <img src="src\assets\images\menuIcon.png" alt="Burger Icon" />
+    )}
+</div>
 
-      {/* Menu items */}
-      <ul className={`nav nav-pills ${menuOpen ? 'show' : ''}`}>
-        <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
-        <li><Link to="/dash" onClick={toggleMenu}>Dashboard</Link></li>
-        <li><Link to="/account" onClick={toggleMenu}>My Account</Link></li>
-        <li><Link to="/aboutcontact" onClick={toggleMenu}>Contact/About</Link></li>
-      </ul>
-    </header>
-  );
+            {/* Display nav items */}
+            <ul className={`nav nav-pills ${isMenuOpen ? 'open' : ''}`}>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/dash">Dashboard</Link></li>
+                <li><Link to="/account">My Account</Link></li>
+                <li><Link to="/aboutcontact">Contact/About</Link></li>
+            </ul>
+
+            {/* Display dropdown menu under media breakpoint */}
+            {isMenuOpen && (
+                <div className="dropdown-menu">
+                    <ul className="nav flex-column">
+                        <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+                        <li><Link to="/dash" onClick={() => setIsMenuOpen(false)}>Dashboard</Link></li>
+                        <li><Link to="/account" onClick={() => setIsMenuOpen(false)}>My Account</Link></li>
+                        <li><Link to="/aboutcontact" onClick={() => setIsMenuOpen(false)}>Contact/About</Link></li>
+                    </ul>
+                </div>
+            )}
+        </header>
+    );
 };
 
 export default Header;

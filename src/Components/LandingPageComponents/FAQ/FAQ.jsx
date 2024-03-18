@@ -1,4 +1,4 @@
-import "./FAQ.css";
+import './FAQ.css';
 
 const FAQ = () => {
   return (
