@@ -13,9 +13,13 @@ import "./CreatorCard.css";
 function CreatorCard(props) {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const handleClick = () => {
-    if (!props.disableViewSkills) {
-      setIsFlipped(true);
+  const handleClick = (event) => {
+    if (event.target.textContent === "VIEW SKILLS") {
+      if (!props.disableViewSkills) {
+        setIsFlipped(true);
+      }
+    } else {
+      setIsFlipped(!isFlipped);
     }
   };
 
@@ -45,10 +49,7 @@ function CreatorCard(props) {
 
   return (
     <div id="creator-card">
-      <div
-        className={`card-flipper-container ${isFlipped ? "flipped" : ""}`}
-        onClick={handleClick}
-      >
+      <div className={`card-flipper-container ${isFlipped ? "flipped" : ""}`}>
         <div className="card-flipper">
           <div className="card" id="card">
             <div className="img-container">
@@ -56,7 +57,10 @@ function CreatorCard(props) {
             </div>
             <h3 className="props.name">{props.name}</h3>
             <p>{props.desc}</p>
-            <p onClick={!props.diableViewSkills ? handleClick : null}>
+            <p
+              className="view-skills"
+              onClick={!props.diableViewSkills ? handleClick : null}
+            >
               VIEW SKILLS
             </p>
             <div className="icons">
