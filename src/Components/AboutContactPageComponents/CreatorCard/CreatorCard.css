@@ -16,9 +16,11 @@
 }
 
 #creator-card .card:hover {
-  background: linear-gradient(to right,
-      var(--Color-Tertiary),
-      var(--Color-Primary));
+  background: linear-gradient(
+    to right,
+    var(--Color-Tertiary),
+    var(--Color-Primary)
+  );
   backface-visibility: hidden;
 }
 
@@ -44,7 +46,7 @@
 }
 
 #creator-card .card-flipper {
-  transition: transform 0.7s;
+  transition: transform 2s;
   transform-style: preserve-3d;
   position: relative;
   backface-visibility: hidden;
