@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CreatorCard from "../CreatorCard/CreatorCard";
 import "./ContactCardFlipper.css";
 import TypewriterEffect from "../TypewriterHeader/TypewriterHeader";
@@ -155,6 +155,19 @@ const ContactCardFlipper = () => {
   const [displayedCreatorId, setDisplayedCreatorId] = useState(null);
   const [skillToggleCount, setSkillToggleCount] = useState(0);
   const anySkillsShown = displayedCreatorId !== null;
+  const [timeoutId, setTimeoutId] = useState(null);
+
+  useEffect(() => {
+    if (skillToggleCount > 2) {
+      const id = setTimeout(() => {
+        setSkillToggleCount(0);
+      }, 2000);
+
+      setTimeoutId(id);
+    }
+
+    return () => clearTimeout(timeoutId);
+  }, [skillToggleCount]);
 
   const toggleShowSkills = (id) => {
     if (!anySkillsShown) {
@@ -168,30 +181,26 @@ const ContactCardFlipper = () => {
       <div className="row">
         <TypewriterEffect />
       </div>
-      {skillToggleCount > 1 ? (
-        <SnakeGame />
-      ) : (
-        <div className="row">
-          {creatorsdata.map((creator) => (
-            <div key={creator.id} className="col-md-6 col-lg-4">
-              <CreatorCard
-                id={creator.id}
-                setShowSkills={toggleShowSkills}
-                setDisplayedCreatorId={setDisplayedCreatorId}
-                showSkills={displayedCreatorId === creator.id}
-                disableViewSkills={anySkillsShown}
-                img={creator.img}
-                name={creator.name}
-                desc={creator.desc}
-                github={creator.github}
-                linkedin={creator.linkedin}
-                email={creator.email}
-                skills={creator.skills}
-              />
-            </div>
-          ))}
-        </div>
-      )}
+      <div className="row">
+        {creatorsdata.map((creator) => (
+          <div key={creator.id} className="col-md-6 col-lg-4">
+            <CreatorCard
+              id={creator.id}
+              setShowSkills={toggleShowSkills}
+              setDisplayedCreatorId={setDisplayedCreatorId}
+              showSkills={displayedCreatorId === creator.id}
+              disableViewSkills={anySkillsShown}
+              img={creator.img}
+              name={creator.name}
+              desc={creator.desc}
+              github={creator.github}
+              linkedin={creator.linkedin}
+              email={creator.email}
+              skills={creator.skills}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
