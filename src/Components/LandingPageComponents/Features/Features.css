@@ -13,7 +13,6 @@
 	margin-bottom: 30px;
 	border-radius: 8px;
 	background-color: #6457a6c1;
-	;
 }
 
 h3 {
@@ -35,7 +34,7 @@ h3 {
 }
 
 .background-image-container {
-	background-image: url('../../assets/images/background.png');
+	background-image: url('/images/background.png');
 	background-size: cover;
 	background-position: center;
 	background-repeat: repeat;

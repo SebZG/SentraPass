@@ -27,15 +27,17 @@ footer ul {
   footer {
     display: none;
   }
-@media screen and (max-width: 1300px) {
-	#logo {
-		margin-left: auto;
-		justify-content: center;
-	}
+}
 
-	#footerText {
-		display: none !important;
-	}
+@media screen and (max-width: 1300px) {
+  #logo {
+    margin-left: auto;
+    justify-content: center;
+  }
+
+  #footerText {
+    display: none !important;
+  }
 }
 
 @media screen and (max-width: 1300px) {
