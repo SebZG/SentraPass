@@ -2,6 +2,8 @@ import "./Dash.css";
 import React, { useState } from "react";
 import { writePassword } from "./script";
 
+import Header from "../../Components/GeneralComponents/Header";
+
 const Dash = () => {
   const [password, setPassword] = useState("");
 
@@ -12,6 +14,7 @@ const Dash = () => {
 
   return (
     <div id="dash">
+      <Header />
       <div className="container-fluid text-center">
         <div className="row justify-content-between col-12">
           <div className="col-6">
