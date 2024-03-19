@@ -153,45 +153,51 @@ const LoginForm = () => {
           <h1 className="mb-4 fs-3 fw-normal">
             {loginMode ? "Login" : "Create an Account"}
           </h1>
-          <Form.Group className="mb-4" controlId="sign-in-email-address">
+          <Form.Group
+            className="mb-4 position-relative"
+            id="sign-in-email-address"
+          >
             <Form.Control
               type="email"
               size="lg"
               placeholder="Email address"
               autoComplete="username"
-              className="custom-input"
+              className="custom-input with-icon"
               onChange={(e) =>
                 setFormData({ ...formData, email: e.target.value })
               }
             />
+            <MdEmail className="icon position-absolute top-50 start-0 translate-middle-y" />
           </Form.Group>
-          <Form.Group className="mb-4" controlId="sign-in-password">
+          <Form.Group className="mb-4 position-relative" id="sign-in-password">
             <Form.Control
               type="password"
               size="lg"
               placeholder="Password"
               autoComplete="current-password"
-              className="custom-input"
+              className="custom-input with-icon"
               onChange={(e) =>
                 setFormData({ ...formData, password: e.target.value })
               }
             />
+            <FaLock className="icon position-absolute top-50 start-0 translate-middle-y" />
           </Form.Group>
           <Form.Group
-            className={`mb-4 ${loginMode ? "d-none" : ""}`}
-            controlId="confirm-password"
+            className={`mb-4 ${loginMode ? "d-none" : ""} position-relative`}
+            id="confirm-password"
           >
             <Form.Control
               type="password"
               size="lg"
               placeholder="Confirm Password"
               autoComplete="confirm-password"
-              className="custom-input"
+              className="custom-input with-icon"
               value={formData.confirmPassword}
               onChange={(e) =>
                 setFormData({ ...formData, confirmPassword: e.target.value })
               }
             />
+            <FaLock className="icon position-absolute top-50 start-0 translate-middle-y" />
             {!passwordsMatch && (
               <Form.Text className="text-danger">
                 Password do not match.

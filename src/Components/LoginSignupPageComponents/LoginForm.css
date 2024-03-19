@@ -30,6 +30,7 @@
   width: 100%;
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 40px;
+  position: relative;
 }
 
 .modal-body,
@@ -41,11 +42,11 @@
 #sign-in-password .icon,
 #confirm-password .icon {
   top: 50%;
+  transform: translateY(-50%);
   color: #ccc;
   margin-left: 10px;
 }
 
 .with-icon {
   padding-left: 40px;
-  margin-left: 10px;
 }
