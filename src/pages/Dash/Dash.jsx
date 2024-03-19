@@ -105,60 +105,58 @@ const Dash = () => {
 
           <div className="col-6">
             <div className="row">
-              <div className="row">
-                <div className="col-sm-12 mb-3 mb-sm-0">
-                  <div className="card">
-                    <div className="card-body">
-                      <form className="d-flex" role="search">
-                        <input
-                          className="form-control me-2"
-                          type="search"
-                          placeholder="Search Account Bar"
-                          aria-label="Search"
-                        />
-                        <button className="btn" type="submit">
-                          Search
-                        </button>
-                      </form>
-                      <button
-                        id="hidePassword"
-                        className="btn btn-primary"
-                        type="submit"
-                      >
-                        Hide all passwords...
+              <div className="col-sm-12 mb-3 mb-sm-0">
+                <div className="card">
+                  <div className="card-body">
+                    <form className="d-flex" role="search">
+                      <input
+                        className="form-control me-2"
+                        type="search"
+                        placeholder="Search Account Bar"
+                        aria-label="Search"
+                      />
+                      <button className="btn" type="submit">
+                        Search
                       </button>
+                    </form>
+                    <button
+                      id="hidePassword"
+                      className="btn btn-primary"
+                      type="submit"
+                    >
+                      Hide all passwords...
+                    </button>
 
-                      <h5 className="card-title">Special title treatment</h5>
-                      <p className="card-text">
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </p>
+                    <h5 className="card-title">Special title treatment</h5>
+                    <p className="card-text">
+                      With supporting text below as a natural lead-in to
+                      additional content.
+                    </p>
 
-                      <div className="row">
-                        <div className="card col-4">
-                          <ul className="list-group list-group-flush">
-                            <li className="list-group-item">Account</li>
-                            <li className="list-group-item">Username</li>
-                            <li className="list-group-item">Password</li>
-                            <li className="list-group-item">Link</li>
-                          </ul>
-                        </div>
-                        <div className="card col-4">
-                          <ul className="list-group list-group-flush">
-                            <li className="list-group-item">Account</li>
-                            <li className="list-group-item">Username</li>
-                            <li className="list-group-item">Password</li>
-                            <li className="list-group-item">Link</li>
-                          </ul>
-                        </div>
-                        <div className="card col-4">
-                          <ul className="list-group list-group-flush">
-                            <li className="list-group-item">Account</li>
-                            <li className="list-group-item">Username</li>
-                            <li className="list-group-item">Password</li>
-                            <li className="list-group-item">Link</li>
-                          </ul>
-                        </div>
+                    <div className="row">
+                      <div className="card col-4">
+                        <ul className="list-group list-group-flush">
+                          <li className="list-group-item">Account</li>
+                          <li className="list-group-item">Username</li>
+                          <li className="list-group-item">Password</li>
+                          <li className="list-group-item">Link</li>
+                        </ul>
+                      </div>
+                      <div className="card col-4">
+                        <ul className="list-group list-group-flush">
+                          <li className="list-group-item">Account</li>
+                          <li className="list-group-item">Username</li>
+                          <li className="list-group-item">Password</li>
+                          <li className="list-group-item">Link</li>
+                        </ul>
+                      </div>
+                      <div className="card col-4">
+                        <ul className="list-group list-group-flush">
+                          <li className="list-group-item">Account</li>
+                          <li className="list-group-item">Username</li>
+                          <li className="list-group-item">Password</li>
+                          <li className="list-group-item">Link</li>
+                        </ul>
                       </div>
                     </div>
                   </div>
