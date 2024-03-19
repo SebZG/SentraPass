@@ -23,7 +23,7 @@
 /* Background image */
 body {
 	 background-color: var(--Color-Background); /* Fallback color */
-	 background-image: url('/assets/background.png');
+	 background-image: url('/background.png');
 	 background-size: cover;
 	 background-repeat: repeat;
 	 background-position: center;
