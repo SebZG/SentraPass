@@ -1,26 +1,59 @@
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import './Header.css';
 
 const Header = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-	return (
-		<header className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-			<a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-auto link-body-emphasis text-decoration-none">
-				<img src="src\assets\images\finalLogo.jpg" alt="Logo" height="40rem" className="" />
-				<span className="fs-4">SentraPass</span>
-			</a>
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
 
-			<ul className="nav nav-pills">
-				<li className=""><Link to="/" className="">Home</Link></li>
-				<li className=""><Link to="/dash" className="">Dashboard</Link></li>
-				<li className=""><Link to="/account" className="">My Account</Link></li>
-				<li className=""><Link to="/aboutcontact" className="">Contact/About</Link></li>
-			</ul>
-		</header>
-	)
-}
+    const closeMenu = () => {
+        setIsMenuOpen(false); 
+    };
+
+    return (
+        <header className="header-container d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="/" className="logo-container d-flex align-items-center mb-3 mb-md-0 me-auto link-body-emphasis text-decoration-none">
+                <img src="src\assets\images\finalLogo.jpg" alt="Logo" height="40rem" className="" />
+                <span className="fs-4">SentraPass</span>
+            </a>
+
+            {/* Display burger menu icon under media breakpoint */}
+            <div className={`burger-menu ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+                {isMenuOpen ? (
+                    <img src="src\assets\images\closeIcon.png" alt="Close Icon" />
+                ) : (
+                    <img src="src\assets\images\menuIcon.png" alt="Burger Icon" />
+                )}
+            </div>
+
+            {/* Display nav items */}
+            <ul className={`nav nav-pills ${isMenuOpen ? 'open' : ''}`}>
+                <li><Link to="/" onClick={() => closeMenu()}>Home</Link></li>
+                <li><Link to="/dash" onClick={() => closeMenu()}>Dashboard</Link></li>
+                <li><Link to="/account" onClick={() => closeMenu()}>My Account</Link></li>
+                <li><Link to="/aboutcontact" onClick={() => closeMenu()}>Contact/About</Link></li>
+            </ul>
+
+            {/* Display dropdown menu under media breakpoint */}
+            {isMenuOpen && (
+                <div className="dropdown-menu">
+                    <ul className="nav flex-column">
+                        <li><Link to="/" onClick={() => closeMenu()}>Home</Link></li>
+                        <li><Link to="/dash" onClick={() => closeMenu()}>Dashboard</Link></li>
+                        <li><Link to="/account" onClick={() => closeMenu()}>My Account</Link></li>
+                        <li><Link to="/aboutcontact" onClick={() => closeMenu()}>Contact/About</Link></li>
+                    </ul>
+                </div>
+            )}
+        </header>
+    );
+};
+
 export default Header;
+
 
 // apply media query for burger menu on ul under 1200px
 
