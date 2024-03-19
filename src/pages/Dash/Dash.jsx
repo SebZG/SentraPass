@@ -18,24 +18,11 @@ const Dash = () => {
       <div className="container-fluid text-center">
         <div className="row justify-content-between col-12">
           <div className="col-6">
-            <div id="leftSide" className="row py-3">
+            <div id="leftSide" className="row py-0">
               <div className="col">
-                <button
-                  id="createPassword"
-                  className="btn btn-primary w-100"
-                  type="submit"
-                >
-                  Create new password
-                </button>
-              </div>
-              <div className="col">
-                <button
-                  id="addPassword"
-                  className="btn btn-primary w-100"
-                  type="submit"
-                >
-                  Add new password
-                </button>
+                <h1 id="passwordTitle">
+                  Password Generation
+                </h1>
               </div>
             </div>
             <div className="card-body py-3">
@@ -122,6 +109,13 @@ const Dash = () => {
                         Search
                       </button>
                     </form>
+                    <button
+                  id="addPassword"
+                  className="btn btn-primary w-100"
+                  type="submit"
+                >
+                  Add new password
+                </button>
                     <button
                       id="hidePassword"
                       className="btn btn-primary"
