@@ -1,4 +1,4 @@
-import "./FAQ.css";
+import './FAQ.css';
 
 const FAQ = () => {
   return (
@@ -9,7 +9,7 @@ const FAQ = () => {
           <div className="accordion-item">
             <h2 className="accordion-header">
               <button
-                className="accordion-button"
+                className="accordion-button collapsed"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseOne"
@@ -33,7 +33,7 @@ const FAQ = () => {
           <div className="accordion-item">
             <h2 className="accordion-header">
               <button
-                className="accordion-button"
+                className="accordion-button collapsed"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseTwo"
@@ -56,7 +56,7 @@ const FAQ = () => {
           <div className="accordion-item">
             <h2 className="accordion-header">
               <button
-                className="accordion-button"
+                className="accordion-button collapsed"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseThree"
@@ -80,7 +80,7 @@ const FAQ = () => {
           <div className="accordion-item">
             <h2 className="accordion-header">
               <button
-                className="accordion-button"
+                className="accordion-button collapsed"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseFour"
@@ -101,7 +101,7 @@ const FAQ = () => {
           <div className="accordion-item">
             <h2 className="accordion-header">
               <button
-                className="accordion-button"
+                className="accordion-button collapsed"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseFive"
@@ -121,12 +121,10 @@ const FAQ = () => {
             </div>
           </div>
         </div>
-        <div className="footerFix">
           <br />
           <br />
           <br />
           <br />
-        </div>
       </div>
     </section>
   );
