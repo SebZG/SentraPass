@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 
 import Logo from "../../../assets/images/finalLogo.jpg"
+import CloseIcon from "../../../assets/images/closeIcon.png"
+import MenuIcon from "../../../assets/images/menuIcon.png"
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,9 +27,9 @@ const Header = () => {
             {/* Display burger menu icon under media breakpoint */}
             <div className={`burger-menu ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
                 {isMenuOpen ? (
-                    <img src="src\assets\images\closeIcon.png" alt="Close Icon" />
+                    <img src={CloseIcon} alt="Close Icon" />
                 ) : (
-                    <img src="src\assets\images\menuIcon.png" alt="Burger Icon" />
+                    <img src={MenuIcon} alt="Burger Icon" />
                 )}
             </div>
 
