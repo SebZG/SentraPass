@@ -50,11 +50,11 @@ function Accounts() {
                 Add new password
               </button>
               <button
-                id="hidePassword"
+                id="showPassword"
                 className="btn btn-primary"
                 type="submit"
               >
-                Hide all passwords...
+                Show all passwords...
               </button>
 
               <h5 className="card-title">Your Accounts</h5>
