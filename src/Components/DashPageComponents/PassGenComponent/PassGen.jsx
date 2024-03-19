@@ -11,23 +11,23 @@ const PassGen = () => {
   };
 
   return (
-      <div className="container-fluid text-center">
-        <div className="row justify-content-between col-12">
-          <div className="col-6">
-            <div id="leftSide" className="row py-0">
-              <div className="col">
-                <h1 id="passwordTitle">
-                  Password Generation
-                </h1>
-              </div>
-            </div>
-            <div className="card-body py-3">
-              <label htmlFor="passwordLength">
+    <div className="container-fluid text-center">
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+          <div className="card" id="passGenBody">
+            <div className="card-body">
+              <h1 className="card-title" id="passwordTitle">Password Generation</h1>
+              <label htmlFor="passwordLength" className="form-label" id="passLength">
                 Password Length (8-128 characters):
               </label>
-              <input type="number" id="passwordLength" min="8" max="128" />
-              <br />
-              <div className="form-check">
+              <input
+                type="number"
+                id="passwordLength"
+                min="8"
+                max="128"
+                className="form-control mb-3"
+              />
+              <div className="form-check mb-3">
                 <input
                   type="checkbox"
                   className="form-check-input"
@@ -37,7 +37,7 @@ const PassGen = () => {
                   Include Uppercase Characters
                 </label>
               </div>
-              <div className="form-check">
+              <div className="form-check mb-3">
                 <input
                   type="checkbox"
                   className="form-check-input"
@@ -47,7 +47,7 @@ const PassGen = () => {
                   Include Lowercase Characters
                 </label>
               </div>
-              <div className="form-check">
+              <div className="form-check mb-3">
                 <input
                   type="checkbox"
                   className="form-check-input"
@@ -57,7 +57,7 @@ const PassGen = () => {
                   Include Numbers
                 </label>
               </div>
-              <div className="form-check">
+              <div className="form-check mb-3">
                 <input
                   type="checkbox"
                   className="form-check-input"
@@ -67,12 +67,12 @@ const PassGen = () => {
                   Include Special Characters
                 </label>
               </div>
-              <br />
-              <button onClick={handleGeneratePassword} className="btn">
+              <button
+                onClick={handleGeneratePassword}
+                className="btn btn-primary mb-3"
+              >
                 Generate Password
               </button>
-              <br />
-              <br />
               <div className="input-group mb-3">
                 <input
                   type="text"
@@ -82,14 +82,18 @@ const PassGen = () => {
                   value={password}
                   readOnly
                 />
-                <button className="btn" type="button" id="button-addon2">
-                  Copy button
+                <button className="btn btn-outline-secondary" type="button">
+                  Copy
                 </button>
               </div>
             </div>
           </div>
         </div>
+        <div className="col-md-6">
+          {/* This empty column ensures the content is on the left-hand side */}
+        </div>
       </div>
+    </div>
   );
 };
 
