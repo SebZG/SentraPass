@@ -10,5 +10,13 @@
 
 #passwordTitle {
   text-align: center;
+  color: var(--Color-Secondary);
 }
 
+#passGenBody {
+  background-color: var(--Color-Primary);;
+}
+
+#passLength {
+  color: var(--Color-Text);
+}
