@@ -61,8 +61,8 @@ const AccountCard = () => {
           <Card>
             <Card.Body>
               <Row>
-                <Col md={6}>
-                  <Card.Title>
+                <Col md={6} className="text-center">
+                  <Card.Title className="hiGreeting">
                     {formData.displayName
                       ? `Hi ${formData.displayName}`
                       : "Hi there"}
@@ -94,7 +94,7 @@ const AccountCard = () => {
                       }
                     ></div>
                   )}
-                  <Form.Group controlId="profilePicture" className="d-none">
+                  <Form.Group id="profilePicture" className="d-none">
                     <Form.Control
                       type="file"
                       onChange={handlePictureChange}
@@ -102,7 +102,7 @@ const AccountCard = () => {
                     />
                   </Form.Group>
                   <ul>
-                    <li>
+                    <li className="mb-2">
                       <Button
                         variant="link"
                         onClick={() => {
@@ -114,7 +114,7 @@ const AccountCard = () => {
                         Personal Details
                       </Button>
                     </li>
-                    <li>
+                    <li className="mb-2">
                       <Button
                         variant="link"
                         onClick={() => {
@@ -133,11 +133,11 @@ const AccountCard = () => {
                 <Col md={6}>
                   {showPersonalDetails && (
                     <Form onSubmit={handleSubmit}>
-                      <Form.Group controlId="displayName">
+                      <Form.Group id="displayName">
                         <Form.Label>Display Name</Form.Label>
                         <Form.Control
                           type="text"
-                          placeholder="Enter your full name"
+                          placeholder="Enter your display name"
                           name="displayName"
                           value={formData.displayName}
                           onChange={handleChange}
@@ -145,7 +145,7 @@ const AccountCard = () => {
                         />
                       </Form.Group>
 
-                      <Form.Group controlId="email">
+                      <Form.Group id="email">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control
                           type="email"
@@ -163,7 +163,7 @@ const AccountCard = () => {
                   )}
                   {showChangePassword && (
                     <Form onSubmit={handleSubmit}>
-                      <Form.Group controlId="oldPassword">
+                      <Form.Group id="oldPassword">
                         <Form.Label>Old Password</Form.Label>
                         <Form.Control
                           type="password"
@@ -174,7 +174,7 @@ const AccountCard = () => {
                         />
                       </Form.Group>
 
-                      <Form.Group controlId="newPassword">
+                      <Form.Group id="newPassword">
                         <Form.Label>New Password</Form.Label>
                         <Form.Control
                           type="password"
