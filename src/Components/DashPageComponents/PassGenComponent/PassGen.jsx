@@ -1,6 +1,8 @@
 import "./PassGen.css";
 import React, { useState } from "react";
-import { writePassword } from "./script";
+import { writePassword, copyToClipboard } from "./script"; // Import copyToClipboard function
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopy } from "@fortawesome/free-solid-svg-icons";
 
 const PassGen = () => {
   const [password, setPassword] = useState("");
@@ -16,7 +18,9 @@ const PassGen = () => {
         <div className="col-md-6">
           <div className="card" id="passGenBody">
             <div className="card-body">
-              <h1 className="card-title" id="passwordTitle">Password Generation</h1>
+              <h1 className="card-title" id="passwordTitle">
+                Password Generation
+              </h1>
               <label htmlFor="passwordLength" className="form-label" id="passLength">
                 Password Length (8-128 characters):
               </label>
@@ -82,8 +86,13 @@ const PassGen = () => {
                   value={password}
                   readOnly
                 />
-                <button className="btn btn-outline-secondary" type="button">
-                  Copy
+                <button
+                  onClick={() => copyToClipboard(password)}
+                  className="btn btn-outline-secondary"
+                  id="generatedPassword"
+                  type="button"
+                >
+                  <FontAwesomeIcon icon={faCopy} />
                 </button>
               </div>
             </div>
