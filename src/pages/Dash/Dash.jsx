@@ -1,6 +1,8 @@
 import "./Dash.css";
 import React, { useState } from "react";
-import { writePassword } from "./script";
+import { writePassword, copyToClipboard } from "./script";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopy } from "@fortawesome/free-solid-svg-icons";
 
 import Header from "../../Components/GeneralComponents/Header";
 
@@ -39,10 +41,12 @@ const Dash = () => {
               </div>
             </div>
             <div className="card-body py-3">
-              <label htmlFor="passwordLength">
-                Password Length (8-128 characters):
-              </label>
-              <input type="number" id="passwordLength" min="8" max="128" />
+              <div id="passwordLengthWrapper">
+                <input type="number" id="passwordLength" min="8" max="128" />
+                <label htmlFor="passwordLength" id="passwordLengthText">
+                  Password Length (8-128 characters):
+                </label>
+              </div>
               <br />
               <div className="form-check">
                 <input
@@ -90,7 +94,7 @@ const Dash = () => {
               </button>
               <br />
               <br />
-              <div className="input-group mb-3">
+              <div className="input-group mb-3" style={{ width: "90%" }}>
                 <input
                   type="text"
                   className="form-control"
@@ -98,9 +102,17 @@ const Dash = () => {
                   aria-label="Generated Password"
                   value={password}
                   readOnly
+                  id="generatedPassword"
+                  style={{ width: "40px" }}
                 />
-                <button className="btn" type="button" id="button-addon2">
-                  Copy button
+                <button
+                  onClick={copyToClipboard}
+                  id="copyButton"
+                  className="btn"
+                  type="button"
+                  aria-label="Copy To Clipboard"
+                >
+                  <FontAwesomeIcon icon={faCopy} id="copyIcon" />
                 </button>
               </div>
             </div>

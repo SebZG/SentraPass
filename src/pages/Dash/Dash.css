@@ -1,9 +1,23 @@
 .form-check {
-    display: block;
-    margin-bottom: 6px;
-  }
+  display: flex;
+  margin-bottom: 6px;
+}
 
-  .form-check .form-check-input {
-    float: left;
-    margin-left: 0.5em;
+.form-check .form-check-input {
+  float: left;
+  margin-left: 0.5em;
+}
+
+#passwordLengthWrapper {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+#passwordLengthText {
+  margin-right: 1em;
+}
+
+#copyButton {
+  z-index: 0; 
 }
