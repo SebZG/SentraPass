@@ -17,6 +17,11 @@ const AccountCard = () => {
   const [showPersonalDetails, setShowPersonalDetails] = useState(false);
   const [showChangePassword, setShowChangePassword] = useState(false);
   const [changesSaved, setChangesSaved] = useState(false);
+  const [profilePicture, setProfilePicture] = useState(() => {
+    const savedImage = localStorage.getItem("profilePicture");
+    return savedImage ? savedImage : null;
+  });
+  const [uploadedImage, setUploadedImage] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,8 +31,15 @@ const AccountCard = () => {
     });
   };
 
+  const handlePictureChange = (e) => {
+    const file = e.target.files[0];
+    setProfilePicture(URL.createObjectURL(file));
+    setUploadedImage(URL.createObjectURL(file));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(formData);
     localStorage.setItem("accountFormData", JSON.stringify(formData));
     setChangesSaved(true);
   };
@@ -35,6 +47,12 @@ const AccountCard = () => {
   useEffect(() => {
     localStorage.setItem("accountFormData", JSON.stringify(formData));
   }, [formData]);
+
+  useEffect(() => {
+    if (profilePicture) {
+      localStorage.setItem("profilePicture", profilePicture);
+    }
+  }, [profilePicture]);
 
   return (
     <Container>
@@ -46,9 +64,43 @@ const AccountCard = () => {
                 <Col md={6}>
                   <Card.Title>
                     {formData.displayName
-                      ? `Hi, ${formData.displayName}!`
+                      ? `Hi ${formData.displayName}`
                       : "Hi there"}
                   </Card.Title>
+                  {profilePicture ? (
+                    <img
+                      src={profilePicture}
+                      alt="Profile"
+                      className="rounded-circle mb-3"
+                      style={{
+                        width: "150px",
+                        height: "150px",
+                        cursor: "pointer",
+                      }}
+                      onClick={() =>
+                        document.getElementById("profilePictureInput").click()
+                      }
+                    />
+                  ) : (
+                    <div
+                      className="rounded-circle bg-secondary mb-3"
+                      style={{
+                        width: "150px",
+                        height: "150px",
+                        cursor: "pointer",
+                      }}
+                      onClick={() =>
+                        document.getElementById("profilePictureInput").click()
+                      }
+                    ></div>
+                  )}
+                  <Form.Group controlId="profilePicture" className="d-none">
+                    <Form.Control
+                      type="file"
+                      onChange={handlePictureChange}
+                      id="profilePictureInput"
+                    />
+                  </Form.Group>
                   <ul>
                     <li>
                       <Button
@@ -85,7 +137,7 @@ const AccountCard = () => {
                         <Form.Label>Display Name</Form.Label>
                         <Form.Control
                           type="text"
-                          placeholder="Enter your display name"
+                          placeholder="Enter your full name"
                           name="displayName"
                           value={formData.displayName}
                           onChange={handleChange}
@@ -93,12 +145,14 @@ const AccountCard = () => {
                         />
                       </Form.Group>
 
-                      <Form.Group>
+                      <Form.Group controlId="email">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control
                           type="email"
                           placeholder="Enter email"
                           name="email"
+                          value={formData.email}
+                          onChange={handleChange}
                           required
                         />
                       </Form.Group>
