@@ -17,8 +17,29 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 		crossorigin="anonymous"></script>
-		<script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-<script src="https://mediafiles.botpress.cloud/bbc64ef1-f806-469a-a2ae-aa1bb3944c60/webchat/config.js" defer></script>
+
+	<!-- script for the chat bot from BotPress Studio -->
+	<script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+	<script>
+		window.botpressWebChat.init({
+			"composerPlaceholder": "Chat with SentraPass ChatBot",
+			"botConversationDescription": "SentraPass AI ChatBot",
+			"botId": "bbc64ef1-f806-469a-a2ae-aa1bb3944c60",
+			"hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+			"messagingUrl": "https://messaging.botpress.cloud",
+			"clientId": "bbc64ef1-f806-469a-a2ae-aa1bb3944c60",
+			"webhookId": "903404ec-35bb-4d54-89c5-89fc4c657272",
+			"lazySocket": true,
+			"themeName": "prism",
+			"botName": "SentraPass ChatBot",
+			"avatarUrl": "https://i.ibb.co/yVgT4pH/final-Favicon-3.png",
+			"stylesheet": "https://webchat-styler-css.botpress.app/prod/70c2c733-1d75-4c0d-b90f-a9d26c918632/v59203/style.css",
+			"frontendVersion": "v1",
+			"useSessionStorage": true,
+			"theme": "prism",
+			"themeColor": "#2563eb"
+		});
+	</script>
 </body>
 
 </html>
