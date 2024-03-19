@@ -3,7 +3,7 @@ import "./TypewriterHeader.css";
 
 const TypewriterEffect = () => {
   const [text, setText] = useState("");
-  const phrases = ["Sentras Pass Creators", "EdX Bootcamp"];
+  const phrases = ["Sentra Pass Creators", "EdX Bootcamp"];
   const typingSpeed = 100;
   const phraseChangeDelay = 1500;
 
@@ -36,7 +36,7 @@ const TypewriterEffect = () => {
     return () => {
       clearTimeout(typingTimeout);
     };
-  }, []); // empty dependency array for componentDidMount behavior
+  }, []);
 
   return (
     <>
