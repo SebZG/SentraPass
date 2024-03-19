@@ -1,9 +1,12 @@
 import { useState } from "react";
 
+import Header from "../../Components/GeneralComponents/Header";
 import ContactUsForm from "../../Components/AboutContactPageComponents/ContactUsForm";
 import "./AboutContact.css";
 import ContactCardFlipper from "../../Components/AboutContactPageComponents/ContactCardFlipper/ContactCardFlipper";
 import SnakeGame from "../../Components/AboutContactPageComponents/SnakeGame/SnakeGame";
+
+
 const AboutContact = () => {
   const [showCreatorCard, setShowCreatorCard] = useState(false);
   const [showContactForm, setShowContactForm] = useState(false);
@@ -28,6 +31,7 @@ const AboutContact = () => {
 
   return (
     <div id="about-contact">
+      <Header />
       <div className="content-container">
         <div className="row">
           <div className="button-container">
