@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 
+import Logo from "../../../assets/images/finalLogo.jpg"
+
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -16,7 +18,7 @@ const Header = () => {
     return (
         <header className="header-container d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
             <a href="/" className="logo-container d-flex align-items-center mb-3 mb-md-0 me-auto link-body-emphasis text-decoration-none">
-                <img src="src\assets\images\finalLogo.jpg" alt="Logo" height="40rem" className="" />
+                <img src={Logo} alt="Logo" height="40rem" className="" />
                 <span className="fs-4">SentraPass</span>
             </a>
 
