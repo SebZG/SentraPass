@@ -1,0 +1,53 @@
+#rotating-sphere {
+  margin: 2em;
+}
+
+#rotating-sphere .text-sphere {
+  position: relative;
+  top: 28%;
+  left: 28%;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#rotating-sphere .tagcloud {
+  display: inline-block;
+  top: 0;
+  left: 0;
+  font-weight: 300;
+  letter-spacing: 0.0625em;
+  font-size: 1.3em;
+}
+
+#rotating-sphere .tagcloud--item {
+  color: var(--Color-Text);
+  text-transform: uppercase;
+}
+
+#rotating-sphere .tagcloud--item:hover {
+  color: var(--Color-Secondary);
+}
+
+#rotating-sphere .hide-skills {
+  cursor: pointer;
+  color: var(--Color-Secondary);
+  text-shadow: 0px 0px 0px var(--Color-Text);
+  animation: throb 1s infinite alternate;
+  position: relative;
+  align-items: center;
+  top: 20%;
+  text-align: center;
+}
+
+@keyframes throb {
+  0% {
+    text-shadow: 0px 0px 0px var(--Color-Text);
+  }
+
+  100% {
+    text-shadow: 0px 0px 30px var(--Color-Text);
+  }
+}

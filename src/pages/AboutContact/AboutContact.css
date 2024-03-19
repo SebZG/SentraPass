@@ -1,0 +1,44 @@
+.footer--pin {
+  position: relative;
+  left: 0;
+  bottom: 0;
+}
+.content-container {
+  min-height: calc(100vh - 121px);
+}
+
+/* ButtonStyles.css */
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  margin: 0 20px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: var(--Color-Tertiary);
+  color: white;
+}
+
+.button-container button:hover {
+  background: linear-gradient(
+    to right,
+    var(--Color-Secondary),
+    var(--Color-Primary)
+  );
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-container button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

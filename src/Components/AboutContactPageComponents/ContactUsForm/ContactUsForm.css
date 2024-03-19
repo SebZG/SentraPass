@@ -1,0 +1,80 @@
+/* ContactForm.css */
+
+.contact-form {
+  min-width: 400px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: var(--Color-Primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0;
+}
+
+.contact-form form {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  font-size: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin: 0px;
+  padding: 7px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid rgb(220, 220, 220);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 2px solid rgba(0, 206, 158, 1);
+}
+
+.contact-form label {
+  margin-top: 1rem;
+}
+
+.contact-form input[type="submit"] {
+  margin-top: 2rem;
+  cursor: pointer;
+  background: var(--Color-Tertiary);
+  color: white;
+  border: none;
+}
+
+.email-sent-message {
+  text-align: center;
+  margin-top: 50vh;
+}
+
+.email-sent-message h1 {
+  font-size: 36px;
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff;
+  animation: neon-flashing 1s ease-in-out infinite alternate;
+}
+
+.email-sent-message p {
+  font-size: 24px;
+  color: --var(Color-Tertiary);
+  text-shadow: 0 0 10px --var(Color-Tertiary);
+}
+
+@keyframes neon-flashing {
+  0% {
+    text-shadow: 0 0 10px #ff00ff;
+  }
+  100% {
+    text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff,
+      0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff,
+      0 0 90px #ff00ff;
+  }
+}

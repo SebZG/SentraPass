@@ -1,0 +1,136 @@
+/* Variables */
+:root {
+	/** FONT FAMILY */
+	--F-Family: 'Montserrat', sans-serif;
+
+	/** FONT SIZES */
+	--F-SM: 0.75rem;
+	--F-NORMAL: 1rem;
+	--F-M: 1.25rem;
+	--F-L: 1.5rem;
+	--F-XL: 1.75rem;
+	--F-XXL: 2rem;
+
+	/** COLORS */
+	--Color-Text: white;
+	--Color-Primary: #6457A6;
+	--Color-Secondary: #FAE33E;
+	--Color-Tertiary: #79B4A9;
+	--Color-Background: #1C110A;
+	--Color-Btn-Hover: #49b19e;
+}
+
+/* Background image */
+body {
+	 background-color: var(--Color-Background); /* Fallback color */
+	 background-image: url('../src/assets/images/background.png');
+	 background-size: cover;
+	 background-repeat: repeat;
+	 background-position: center;
+	 background-attachment: fixed;
+ }
+
+/* footer containment */
+html,
+body,
+#root {
+	height: 100%;
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+}
+
+footer {
+	margin-top: auto;
+}
+
+/* Global Styles */
+body {
+	background-color: var(--Color-Background);
+	color: var(--Color-Text);
+	font-family: var(--F-Family);
+	font-size: var(--F-NORMAL);
+}
+
+.row {
+   margin-right: 0;
+}
+
+/* Heading Styles */
+h1 {
+	color: #FFE347;
+	font-weight: bold;
+}
+
+h2 {
+	color: var(--Color-Primary);
+	font-size: var(--F-XL);
+}
+
+h3 {
+	color: var(--Color-Primary);
+	font-size: var(--F-L);
+}
+
+/* Navigation Styles */
+nav {
+	background-color: var(--Color-Tertiary);
+	color: var(--Color-Text);
+	padding: 1rem;
+}
+
+/* Generic Container Styles */
+div {
+	color: var(--Color-Text);
+}
+
+/* Paragraph Styles */
+p {
+	color: var(--Color-Text);
+	font-size: var(--F-NORMAL);
+}
+
+/* Link Styles */
+a {
+	color: var(--Color-Secondary);
+	text-decoration: none;
+}
+
+a:hover {
+	color: lighten(var(--Color-Secondary), 20%);
+}
+
+/* List Styles */
+ol,
+ul {
+	list-style-type: none;
+}
+
+li {
+	color: var(--Color-Text);
+}
+
+/* Button Styles */
+.btn {
+	background-color: var(--Color-Tertiary);
+	color: var(--Color-Text);
+	/* padding: 1rem; */
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+	background-color: var(--Color-Btn-Hover);
+}
+
+/* Input Styles */
+input {
+	padding: 0.5rem;
+	margin: 0.5rem;
+	border: 1px solid var(--Color-Primary);
+	border-radius: 0.5rem;
+}
+

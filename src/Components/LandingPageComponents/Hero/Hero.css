@@ -1,0 +1,38 @@
+@media screen and (max-width: 1200px) {
+	#hero .btn {
+
+		display: flex;
+		justify-content: center;
+		text-align: center;
+
+	}
+}
+
+#hero .col-lg-6 {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#hero .display-5 {
+	margin: 30px 30px 30px 30px;
+}
+
+#hero .lead {
+	margin: 30px 30px 30px 30px;
+}
+
+#hero h1 {
+	color: #FFE347;
+	font-weight: bold;
+}
+
+#hero .btn {
+	margin-left: 0 auto;
+	padding: 0.5rem 2rem;
+	font-size: var(--F-L);
+}
+
+#welcomeHeader {
+	text-align: left;
+}
