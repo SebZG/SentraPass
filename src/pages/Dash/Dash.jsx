@@ -13,8 +13,10 @@ const Dash = () => {
   return (
     <div id="dash">
       <Header />
-      <PassGen />
-      <Accounts />
+      <div className="row">
+        <PassGen />
+        <Accounts />
+      </div>
     </div>
   );
 };
