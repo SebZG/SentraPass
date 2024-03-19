@@ -51,9 +51,3 @@
   color: black;
   /* Text color when expanded */
 }
-@media (max-width: 767px) {
-
-  .footerFix {
-    display: none;
-  }
-}
