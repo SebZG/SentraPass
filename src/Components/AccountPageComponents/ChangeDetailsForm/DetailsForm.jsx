@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Container, Row, Col, Card, Button } from "react-bootstrap";
 
 const AccountCard = () => {
-  const [formData, setFormData] = useState({
-    displayName: "",
-    email: "",
-    oldPassword: "",
-    newPassword: "",
+  const [formData, setFormData] = useState(() => {
+    const storedData = localStorage.getItem("accountFormData");
+    return storedData
+      ? JSON.parse(storedData)
+      : {
+          displayName: "",
+          email: "",
+          oldPassword: "",
+          newPassword: "",
+        };
   });
 
   const [showPersonalDetails, setShowPersonalDetails] = useState(false);
@@ -23,8 +28,13 @@ const AccountCard = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    localStorage.setItem("accountFormData", JSON.stringify(formData));
     setChangesSaved(true);
   };
+
+  useEffect(() => {
+    localStorage.setItem("accountFormData", JSON.stringify(formData));
+  }, [formData]);
 
   return (
     <Container>
@@ -34,6 +44,11 @@ const AccountCard = () => {
             <Card.Body>
               <Row>
                 <Col md={6}>
+                  <Card.Title>
+                    {formData.displayName
+                      ? `Hi, ${formData.displayName}!`
+                      : "Hi there"}
+                  </Card.Title>
                   <ul>
                     <li>
                       <Button
@@ -66,12 +81,14 @@ const AccountCard = () => {
                 <Col md={6}>
                   {showPersonalDetails && (
                     <Form onSubmit={handleSubmit}>
-                      <Form.Group>
+                      <Form.Group controlId="displayName">
                         <Form.Label>Display Name</Form.Label>
                         <Form.Control
                           type="text"
                           placeholder="Enter your display name"
                           name="displayName"
+                          value={formData.displayName}
+                          onChange={handleChange}
                           required
                         />
                       </Form.Group>
