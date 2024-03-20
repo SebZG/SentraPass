@@ -15,7 +15,7 @@
   margin-top: 50px;
 }
 
-.button-container button {
+#about-button {
   padding: 10px 20px;
   margin: 0 20px 20px;
   border: none;
@@ -28,7 +28,7 @@
   color: white;
 }
 
-.button-container button:hover {
+#about-button:hover {
   background: linear-gradient(
     to right,
     var(--Color-Secondary),

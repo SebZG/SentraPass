@@ -6,7 +6,6 @@ import "./AboutContact.css";
 import ContactCardFlipper from "../../Components/AboutContactPageComponents/ContactCardFlipper/ContactCardFlipper";
 import SnakeGame from "../../Components/AboutContactPageComponents/SnakeGame/SnakeGame";
 
-
 const AboutContact = () => {
   const [showCreatorCard, setShowCreatorCard] = useState(false);
   const [showContactForm, setShowContactForm] = useState(false);
@@ -35,9 +34,15 @@ const AboutContact = () => {
       <div className="content-container">
         <div className="row">
           <div className="button-container">
-            <button onClick={toggleCreatorCard}>Meet The Creators</button>
-            <button onClick={toggleContactForm}>Get In Contact</button>
-            <button onClick={toggleSnakeGame}>Play Snake</button>
+            <button id="about-button" onClick={toggleCreatorCard}>
+              Meet The Creators
+            </button>
+            <button id="about-button" onClick={toggleContactForm}>
+              Get In Contact
+            </button>
+            <button id="about-button" onClick={toggleSnakeGame}>
+              Play Snake
+            </button>
           </div>
           <div className="col d-flex justify-content-center">
             {showCreatorCard && <ContactCardFlipper />}
