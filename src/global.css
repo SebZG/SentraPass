@@ -22,7 +22,7 @@
 
 /* Background image */
 body {
-	 background-color: var(--Color-Background); /* Fallback color */
+	 background-color: var(--Color-Background);
 	 background-image: url('/images/background.png');
 	 background-size: cover;
 	 background-repeat: repeat;
