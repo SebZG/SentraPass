@@ -41,7 +41,7 @@ function Accounts() {
   };
 
   const handleAddPassword = () => {
-    setModalOpen(true); 
+    setModalOpen(true);
   };
 
   const handleSubmit = (e) => {
@@ -63,9 +63,9 @@ function Accounts() {
 
   return (
     <>
-      <div className="col-md-6">
-        <div className="card">
-          <div className="card-body">
+      <div className="col-md-6 px-5 py-5">
+        <div className="card" id="passGenBody">
+          <div className="card-body" id="card">
             <h5 className="card-title">Your Accounts</h5>
             <form className="d-flex" role="search">
               <input
@@ -112,84 +112,84 @@ function Accounts() {
 
       {/* Modal */}
       {modalOpen && (
-  <div className="modal">
-    <div className="modal-dialog" onClick={(e) => e.stopPropagation()}>
-      <div className="modal-content">
-        <div className="modal-header">
-          <h5 className="modal-title">Add New Account</h5>
-          <button
-            type="button"
-            className="btn-close"
-            onClick={() => setModalOpen(false)}
-          ></button>
+        <div className="modal">
+          <div className="modal-dialog" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">Add New Account</h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  onClick={() => setModalOpen(false)}
+                ></button>
+              </div>
+              <div className="modal-body">
+                <form onSubmit={handleSubmit}>
+                  <div className="mb-3">
+                    <label htmlFor="account" className="form-label">
+                      Account
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="account"
+                      name="Account"
+                      value={newAccount.Account}
+                      onChange={handleInputChange}
+                      placeholder="Account"
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="username" className="form-label">
+                      Username
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="username"
+                      name="UserName"
+                      value={newAccount.UserName}
+                      onChange={handleInputChange}
+                      placeholder="Email"
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="password" className="form-label">
+                      Password
+                    </label>
+                    <input
+                      type="password"
+                      className="form-control"
+                      id="password"
+                      name="Password"
+                      value={newAccount.Password}
+                      onChange={handleInputChange}
+                      placeholder="Password"
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="link" className="form-label">
+                      Link
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="link"
+                      name="Link"
+                      value={newAccount.Link}
+                      onChange={handleInputChange}
+                      placeholder="Website/app link"
+                    />
+                  </div>
+                  <button type="submit" className="btn btn-primary">
+                    Add Account
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="modal-body">
-          <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <label htmlFor="account" className="form-label">
-                Account
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="account"
-                name="Account"
-                value={newAccount.Account}
-                onChange={handleInputChange}
-                placeholder="Account"
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="username" className="form-label">
-                Username
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="username"
-                name="UserName"
-                value={newAccount.UserName}
-                onChange={handleInputChange}
-                placeholder="Email"
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="password" className="form-label">
-                Password
-              </label>
-              <input
-                type="password"
-                className="form-control"
-                id="password"
-                name="Password"
-                value={newAccount.Password}
-                onChange={handleInputChange}
-                placeholder="Password"
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="link" className="form-label">
-                Link
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="link"
-                name="Link"
-                value={newAccount.Link}
-                onChange={handleInputChange}
-                placeholder="Website/app link"
-              />
-            </div>
-            <button type="submit" className="btn btn-primary">
-              Add Account
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-)}
+      )}
     </>
   );
 }
