@@ -13,9 +13,8 @@ const PassGen = () => {
   };
 
   return (
-    <div className="container-fluid text-center">
-      <div className="row justify-content-center">
-        <div className="col-md-6">
+
+        <div className="col-md-6 px-5 py-5">
           <div className="card" id="passGenBody">
             <div className="card-body">
               <h1 className="card-title" id="passwordTitle">
@@ -98,11 +97,6 @@ const PassGen = () => {
             </div>
           </div>
         </div>
-        <div className="col-md-6">
-          {/* This empty column ensures the content is on the left-hand side */}
-        </div>
-      </div>
-    </div>
   );
 };
 
