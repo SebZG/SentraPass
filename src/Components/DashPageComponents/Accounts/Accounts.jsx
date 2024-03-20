@@ -93,7 +93,7 @@ function Accounts() {
             </form>
             <button
               id="addPassword"
-              className="btn btn-primary mx-1"
+              className="btn btn-primary mx-1 mt-1"
               onClick={handleAddPassword}
               type="button"
             >
@@ -101,7 +101,7 @@ function Accounts() {
             </button>
             <button
               id="showPassword"
-              className="btn btn-primary"
+              className="btn btn-primary mt-1"
               onClick={() =>
                 setPasswords(
                   passwords.map((password) => ({
