@@ -13,7 +13,6 @@ const PassGen = () => {
   };
 
   return (
-
         <div className="col-md-6 px-5 py-5">
           <div className="card" id="passGenBody">
             <div className="card-body">
@@ -103,7 +102,7 @@ const PassGen = () => {
                 />
                 <button
                   onClick={() => copyToClipboard(password)}
-                  className="btn btn-outline-secondary"
+                  className="btn btn-outline-secondary px-3"
                   id="generatedPassword"
                   type="button"
                 >
