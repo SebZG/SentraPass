@@ -1,18 +1,20 @@
 import "./Hero.css";
 import { Link } from "react-router-dom";
+import websiteMockupsImage from "../../../assets/images/website_mockups.png";
+
 
 const Hero = () => {
   return (
     <div id="hero" className="row flex-lg-row-reverse align-items-center py-5">
       <div className="col-10 col-sm-8 col-lg-6">
         <img
-          src="https://placehold.co/700x500"
+          src={websiteMockupsImage}
           className="d-block img-fluid"
           alt="Product Demo"
-          max-width="700"
+          maxWidth="700"
           height="500"
           loading="lazy"
-        />
+        />        <img src="./website_mockups.png" alt="" srcset="" />
       </div>
       <div className="col-lg-6 text-start display-flex">
         <h1 id="welcomeHeader" className="display-5 fw-bold lh-1 mb-3">
