@@ -20,9 +20,14 @@ const PassGen = () => {
               <h1 className="card-title" id="passwordTitle">
                 Password Generation
               </h1>
+              <div className="d-flex justify-content-center">
               <label htmlFor="passwordLength" className="form-label" id="passLength">
                 Password Length (8-128 characters):
               </label>
+              </div>
+              </div>
+            <div className="row justify-content-center">
+            <div className="col-md-2 mb-3">
               <input
                 type="number"
                 id="passwordLength"
@@ -30,7 +35,10 @@ const PassGen = () => {
                 max="128"
                 className="form-control mb-3"
               />
-              <div className="form-check mb-3">
+            </div>
+          </div>
+          <div className="row px-5">
+              <div className="form-check mb-3 ">
                 <input
                   type="checkbox"
                   className="form-check-input"
@@ -39,7 +47,9 @@ const PassGen = () => {
                 <label className="form-check-label" htmlFor="upperCase">
                   Include Uppercase Characters
                 </label>
+                </div>
               </div>
+              <div className="row px-5">
               <div className="form-check mb-3">
                 <input
                   type="checkbox"
@@ -50,6 +60,8 @@ const PassGen = () => {
                   Include Lowercase Characters
                 </label>
               </div>
+              </div>
+              <div className="row px-5">
               <div className="form-check mb-3">
                 <input
                   type="checkbox"
@@ -59,7 +71,9 @@ const PassGen = () => {
                 <label className="form-check-label" htmlFor="numbers">
                   Include Numbers
                 </label>
+                </div>
               </div>
+              <div className="row px-5">
               <div className="form-check mb-3">
                 <input
                   type="checkbox"
@@ -69,13 +83,15 @@ const PassGen = () => {
                 <label className="form-check-label" htmlFor="specialChars">
                   Include Special Characters
                 </label>
+                </div>
               </div>
               <button
                 onClick={handleGeneratePassword}
-                className="btn btn-primary mb-3"
+                className="btn btn-primary d-block mx-auto mb-3 px-5 py-3"
               >
                 Generate Password
               </button>
+              <div className="row px-5 py-3">
               <div className="input-group mb-3">
                 <input
                   type="text"
@@ -93,10 +109,10 @@ const PassGen = () => {
                 >
                   <FontAwesomeIcon icon={faCopy} />
                 </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
   );
 };
 
