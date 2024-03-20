@@ -35,6 +35,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-//@connor se lines 13 to 19 and replace with product demo/ features (as appropriate)
-//
