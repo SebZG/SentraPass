@@ -13,6 +13,7 @@ const PassGen = () => {
   };
 
   return (
+
     <div className="col-lg-6 px-5 py-5">
       <div className="card" id="passGenBody">
         <div className="card-body">
@@ -39,6 +40,7 @@ const PassGen = () => {
               />
             </div>
           </div>
+
         </div>
         <div className="row px-5">
           <div className="form-check mb-3 ">
@@ -108,6 +110,7 @@ const PassGen = () => {
             >
               <FontAwesomeIcon icon={faCopy} />
             </button>
+
           </div>
         </div>
       </div>
@@ -117,4 +120,6 @@ const PassGen = () => {
 
 export default PassGen;
 
+
 //media query for 1000 px below
+
