@@ -55,7 +55,6 @@
 	color: var(--Color-Text);
 }
 
-/* Media query for small screens */
 @media (max-width: 768px) {
 	.burger-menu {
 		 display: block;

@@ -1,6 +1,6 @@
 import "./PassGen.css";
 import React, { useState } from "react";
-import { writePassword, copyToClipboard } from "./script"; // Import copyToClipboard function
+import { writePassword, copyToClipboard } from "./script";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
 
@@ -120,6 +120,4 @@ const PassGen = () => {
 
 export default PassGen;
 
-
-//media query for 1000 px below
 

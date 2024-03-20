@@ -44,10 +44,8 @@
 
 .accordion-button {
   color: #ff0800c1;
-  /* Default text color */
 }
 
 .accordion-button.expanded {
   color: black;
-  /* Text color when expanded */
 }

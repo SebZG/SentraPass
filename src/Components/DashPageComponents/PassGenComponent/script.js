@@ -155,15 +155,12 @@ export function writePassword() {
 }
 
 export function copyToClipboard() {
-  // Get the text field
+  
   var copyText = document.querySelector('input[aria-label="Generated Password"]');
 
-
-  // Select the text field
   copyText.select();
-  copyText.setSelectionRange(0, 99999); // For mobile devices
+  copyText.setSelectionRange(0, 99999);
 
-   // Copy the text inside the text field
   navigator.clipboard.writeText(copyText.value);
 
 }
