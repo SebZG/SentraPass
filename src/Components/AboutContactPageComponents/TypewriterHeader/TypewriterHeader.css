@@ -35,3 +35,9 @@
   justify-content: center; /* Horizontally center the elements */
   align-items: center;
 }
+
+@media screen and (max-width: 768px) {
+  .creators {
+    font-size: 1.5em;
+  }
+}

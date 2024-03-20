@@ -76,7 +76,7 @@ function Accounts() {
 
   return (
     <>
-      <div className="col-md-6 px-5 py-5">
+      <div className="col-lg-6 px-5 py-5">
         <div className="card" id="passGenBody">
           <div className="card-body" id="card">
             <h1 className="card-title">Your Accounts</h1>
@@ -93,7 +93,7 @@ function Accounts() {
             </form>
             <button
               id="addPassword"
-              className="btn btn-primary mx-1"
+              className="btn btn-primary mx-1 mt-1"
               onClick={handleAddPassword}
               type="button"
             >
@@ -101,7 +101,7 @@ function Accounts() {
             </button>
             <button
               id="showPassword"
-              className="btn btn-primary"
+              className="btn btn-primary mt-1"
               onClick={() =>
                 setPasswords(
                   passwords.map((password) => ({
