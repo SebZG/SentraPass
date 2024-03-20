@@ -2,6 +2,7 @@ import "./Hero.css";
 import { Link } from "react-router-dom";
 import websiteMockupsImage from "../../../assets/images/website_mockups.png";
 
+
 const Hero = () => {
   return (
     <div id="hero" className="row flex-lg-row-reverse align-items-center py-5">
@@ -13,8 +14,7 @@ const Hero = () => {
           maxWidth="700"
           height="500"
           loading="lazy"
-        />
-        <img src="./website_mockups.png" alt="" srcset="" />
+        />        <img src="./website_mockups.png" alt="" srcset="" />
       </div>
       <div className="col-lg-6 text-start display-flex">
         <h1 id="welcomeHeader" className="display-5 fw-bold lh-1 mb-3">

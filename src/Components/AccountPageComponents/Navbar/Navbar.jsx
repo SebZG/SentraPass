@@ -3,6 +3,7 @@ import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Logo from "../../../assets/images/finalLogo.jpg";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
@@ -21,8 +22,12 @@ function Navbar() {
         </a>
 
         <DropdownButton id="dropdown-basic-button" title="My Account">
-          <Dropdown.Item href="/login">Login</Dropdown.Item>
-          <Dropdown.Item href="/dash">Dashboard</Dropdown.Item>
+          <Dropdown.Item as={Link} to="/login">
+            Login
+          </Dropdown.Item>
+          <Dropdown.Item as={Link} to="/dash">
+            Dashboard
+          </Dropdown.Item>
           <Dropdown.Item href="#/logout">Logout</Dropdown.Item>
         </DropdownButton>
       </header>
