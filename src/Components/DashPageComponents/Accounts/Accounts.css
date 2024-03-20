@@ -35,6 +35,7 @@
   max-width: 500px;
   background-color: var(--Color-Primary);
   padding: 20px;
+  border-radius: 10px;
 }
 
 .modal-header {
