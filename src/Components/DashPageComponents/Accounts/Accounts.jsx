@@ -10,6 +10,7 @@ function Accounts() {
       UserName: "email@gmail.com",
       Password: "123456",
       Link: "https://www.amazon.com",
+      showPassword: false,
     },
     {
       id: 2,
@@ -17,6 +18,7 @@ function Accounts() {
       UserName: "email@gmail.com",
       Password: "123456",
       Link: "https://www.ebay.com",
+      showPassword: false,
     },
     {
       id: 3,
@@ -24,6 +26,7 @@ function Accounts() {
       UserName: "email@gmail.com",
       Password: "123456",
       Link: "https://www.pornhub.com",
+      showPassword: false,
     },
   ]);
 
@@ -61,12 +64,22 @@ function Accounts() {
     });
   };
 
+  const togglePasswordVisibility = (id) => {
+    setPasswords(
+      passwords.map((password) =>
+        password.id === id
+          ? { ...password, showPassword: !password.showPassword }
+          : password
+      )
+    );
+  };
+
   return (
     <>
       <div className="col-md-6 px-5 py-5">
         <div className="card" id="passGenBody">
           <div className="card-body" id="card">
-            <h5 className="card-title">Your Accounts</h5>
+            <h1 className="card-title">Your Accounts</h1>
             <form className="d-flex" role="search">
               <input
                 className="form-control me-2"
@@ -80,30 +93,51 @@ function Accounts() {
             </form>
             <button
               id="addPassword"
-              className="btn btn-primary"
+              className="btn btn-primary mx-1"
               onClick={handleAddPassword}
               type="button"
             >
               Add new password
             </button>
-            <button id="showPassword" className="btn btn-primary" type="submit">
-              Show all passwords...
+            <button
+              id="showPassword"
+              className="btn btn-primary"
+              onClick={() =>
+                setPasswords(
+                  passwords.map((password) => ({
+                    ...password,
+                    showPassword: !password.showPassword,
+                  }))
+                )
+              }
+              type="button"
+            >
+              {passwords.every((password) => password.showPassword)
+                ? "Hide all passwords"
+                : "Show all passwords"}
             </button>
 
-            <p className="card-text">
+            <p className="card-text mt-3">
               Manage your accounts here, add new ones or remove them.
               <br />
             </p>
 
             <div className="row">
               {passwords.map((account) => (
-                <AccountCard
-                  key={account.id}
-                  Account={account.Account}
-                  UserName={account.UserName}
-                  Password={account.Password}
-                  Link={account.Link}
-                />
+                <div className="col-md-4 mt-3">
+                  <AccountCard
+                    key={account.id}
+                    Account={account.Account}
+                    UserName={account.UserName}
+                    Password={
+                      account.showPassword ? account.Password : "********"
+                    }
+                    Link={account.Link}
+                    togglePasswordVisibility={() =>
+                      togglePasswordVisibility(account.id)
+                    }
+                  />
+                </div>
               ))}
             </div>
           </div>
