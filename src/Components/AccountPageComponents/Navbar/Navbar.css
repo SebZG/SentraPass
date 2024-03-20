@@ -2,3 +2,16 @@
   background-color: #6457a6;
   padding: 20px;
 }
+
+#dropdown-basic-button:focus {
+  background-color: #79b4a9;
+  background: transparent;
+  backdrop-filter: blur(2px);
+}
+
+.dropdown-item {
+  background: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+  color: #ffe347;
+}
