@@ -3,12 +3,18 @@ import CreatorCard from "../CreatorCard/CreatorCard";
 import "./ContactCardFlipper.css";
 import TypewriterEffect from "../TypewriterHeader/TypewriterHeader";
 import SnakeGame from "../SnakeGame/SnakeGame";
+import SebImg from "../../../assets/images/seb_profile_pic.png";
+import AnaImg from "../../../assets/images/ana_profile_pic.png";
+import HarryImg from "../../../assets/images/harry_profile_pic.png";
+import AaronImg from "../../../assets/images/aaron_profile_pic.png";
+import ConorImg from "../../../assets/images/conner_profile_pic.png";
+import TomImg from "../../../assets/images/tom_profile_pic.png";
 const creatorsdata = [
   {
     id: 1,
     showSkills: false,
     name: "Seb",
-    img: "../../../assets/images/seb_profile_pic.png",
+    img: SebImg,
     desc: "Back End Bandit & Server Sorcerer",
     github: "https://github.com/SebZG",
     linkedin: "https://www.linkedin.com/in/sebastian-z-g/",
@@ -33,7 +39,7 @@ const creatorsdata = [
     id: 2,
     showSkills: false,
     name: "Ana",
-    img: "../../../assets/images/ana_profile_pic.png",
+    img: AnaImg,
     desc: "React Sorceress & JavaScript Jester",
     github: "https://github.com/anadomuta",
     linkedin: "https://www.linkedin.com/in/ana-domuta/",
@@ -58,7 +64,7 @@ const creatorsdata = [
     id: 3,
     showSkills: false,
     name: "Harry",
-    img: "../../../assets/images/harry_profile_pic.png",
+    img: HarryImg,
     desc: "Script Juggler & Exception Exterminator",
     github: "https://github.com/hpro97",
     linkedin: "https://www.linkedin.com/in/harryprobert/",
@@ -83,7 +89,7 @@ const creatorsdata = [
     id: 4,
     showSkills: false,
     name: "Aaron",
-    img: "../../../assets/images/aaron_profile_pic.png",
+    img: AaronImg,
     desc: "Array Avenger & Coding Chameleon",
     github: "https://github.com/aaron1490",
     linkedin:
@@ -109,7 +115,7 @@ const creatorsdata = [
     id: 5,
     showSkills: false,
     name: "Conor",
-    img: "../../../assets/images/conner_profile_pic.png",
+    img: ConorImg,
     desc: "Bootstrap Buccaneer & Script Scribe",
     github: "https://github.com/Crar96",
     linkedin: "https://www.linkedin.com/in/conor-grogan-a09a7a216/",
@@ -129,7 +135,7 @@ const creatorsdata = [
     id: 6,
     showSkills: false,
     name: "Tom",
-    img: "../../../assets/images/tom_profile_pic.png",
+    img: TomImg,
     desc: "CSS Magician & SASS Sauron",
     github: "https://github.com/DrWho1369",
     linkedin: "https://www.linkedin.com/in/thomas-baker-anutr-0b9758222/",

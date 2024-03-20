@@ -27,7 +27,7 @@ const creatorsdata = [
 function Accounts() {
   return (
     <>
-      <div className="col-md-6">
+      <div className="col-md-6 p-0">
         <div className="card">
           <div className="card-body">
             <h5 className="card-title">Your Accounts</h5>
