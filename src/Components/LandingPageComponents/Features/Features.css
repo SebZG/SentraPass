@@ -19,13 +19,13 @@ h3 {
 	color: #6457A6;
 }
 
-.container {
+#features .container {
 	width: 100%;
 	max-width: 1200px;
 	margin: 0 auto;
 }
 
-.container h1 {
+#features .container h1 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -51,12 +51,12 @@ h3 {
 	font-weight: bold;
 }
 
-.row {
+#features .row {
 	display: flex;
 	justify-content: space-between;
 }
 
-.row .feature-item {
+#features .row .feature-item {
 	height: 100%;
 }
 
