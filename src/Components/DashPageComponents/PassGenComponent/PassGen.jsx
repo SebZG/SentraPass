@@ -13,7 +13,7 @@ const PassGen = () => {
   };
 
   return (
-    <div className="col-md-6">
+    <div className="col-md-6 px-5 py-5">
       <div className="card" id="passGenBody">
         <div className="card-body">
           <h1 className="card-title" id="passwordTitle">
