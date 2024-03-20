@@ -1,3 +1,44 @@
+#accountForm {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+  border-radius: 10px;
+}
+
 .hiGreeting {
-  color: black !important;
+  color: white !important;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.profilePic {
+  display: inline-block;
+}
+
+.button-container button {
+  text-decoration: none;
+  color: inherit;
+}
+
+#accountForm .custom-input {
+  height: 50px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 80%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  position: relative;
+  padding: 20px;
+}
+
+.with-icon {
+  padding-left: 40px;
+}
+
+#oldPassword .icon {
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ccc;
+  margin-left: 10px;
 }
