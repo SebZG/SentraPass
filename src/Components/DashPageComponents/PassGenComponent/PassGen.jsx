@@ -20,14 +20,13 @@ const PassGen = () => {
               <h1 className="card-title" id="passwordTitle">
                 Password Generation
               </h1>
-              <div className="d-flex justify-content-center">
+              <div className="row px-5">
+              <div className="col-md-8 mb-3 d-flex align-items-center">
               <label htmlFor="passwordLength" className="form-label" id="passLength">
                 Password Length (8-128 characters):
               </label>
-              </div>
-              </div>
-            <div className="row justify-content-center">
-            <div className="col-md-2 mb-3">
+            </div>
+            <div className="col-md-4 mb-3 justify-content-center d-flex align-items-center">
               <input
                 type="number"
                 id="passwordLength"
@@ -35,6 +34,7 @@ const PassGen = () => {
                 max="128"
                 className="form-control mb-3"
               />
+            </div>
             </div>
           </div>
           <div className="row px-5">
@@ -117,3 +117,5 @@ const PassGen = () => {
 };
 
 export default PassGen;
+
+//media query for 1000 px below
