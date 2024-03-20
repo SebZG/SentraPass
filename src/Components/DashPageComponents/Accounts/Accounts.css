@@ -59,7 +59,7 @@
   color: var(--Color-Secondary);
 }
 
-.btn {
+.modal .btn {
   margin-left: 10px;
   margin-top: 10px;
 }
