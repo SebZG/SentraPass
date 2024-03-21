@@ -9,8 +9,11 @@ const Landing = () => {
       <div id="landing">
          <Header />
          <Hero />
+         <br /><br /><br />
          <Features />
+         <br /><br /><br /><br /><br /><br />
          <FAQ />
+         <br /><br /><br /><br /><br /><br />
       </div>
    )
 }
