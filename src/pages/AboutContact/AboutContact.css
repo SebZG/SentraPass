@@ -1,28 +1,34 @@
 .footer--pin {
-	position: relative;
-	left: 0;
-	bottom: 0;
+  position: relative;
+  left: 0;
+  bottom: 0;
 }
 
 .content-container {
-	min-height: calc(100vh - 121px);
+  min-height: calc(100vh - 121px);
 }
 
 /* ButtonStyles.css */
 
 .button-container {
-	display: flex;
-	justify-content: center;
-	margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 .button-container button:active {
-	transform: translateY(1px);
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #about-contact .btn {
-	font-size: var(--F-M);
-	padding: 10px 20px;
-	margin: 0 20px 20px;
+  font-size: var(--F-M);
+  padding: 10px 20px;
+  margin: 0 20px 20px;
+}
+
+@media screen and (max-width: 768px) {
+  #play-snake {
+    display: none;
+  }
 }
