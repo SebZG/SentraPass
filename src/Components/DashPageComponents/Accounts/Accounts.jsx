@@ -3,32 +3,32 @@ import AccountCard from "../AccountCard/AccountCard";
 import "./Accounts.css";
 
 function Accounts() {
-	const [passwords, setPasswords] = useState([
-		{
-			id: 1,
-			Account: "Amazon",
-			UserName: "email@gmail.com",
-			Password: "123456",
-			Link: "https://www.amazon.com",
-			showPassword: false,
-		},
-		{
-			id: 2,
-			Account: "Ebay",
-			UserName: "email@gmail.com",
-			Password: "123456",
-			Link: "https://www.ebay.com",
-			showPassword: false,
-		},
-		{
-			id: 3,
-			Account: "Pornhub",
-			UserName: "email@gmail.com",
-			Password: "123456",
-			Link: "https://www.pornhub.com",
-			showPassword: false,
-		},
-	]);
+  const [passwords, setPasswords] = useState([
+    {
+      id: 1,
+      Account: "Amazon",
+      UserName: "email@gmail.com",
+      Password: "123456",
+      Link: "https://www.amazon.com",
+      showPassword: false,
+    },
+    {
+      id: 2,
+      Account: "Ebay",
+      UserName: "email@gmail.com",
+      Password: "123456",
+      Link: "https://www.ebay.com",
+      showPassword: false,
+    },
+    {
+      id: 3,
+      Account: "TheHub",
+      UserName: "email@gmail.com",
+      Password: "123456",
+      Link: "https://www.thehub.com",
+      showPassword: false,
+    },
+  ]);
 
   const [searchTerm, setSearchTerm] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
@@ -41,33 +41,33 @@ function Accounts() {
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
-  }
+  };
 
-	const handleInputChange = (e) => {
-		const { name, value } = e.target;
-		setNewAccount({ ...newAccount, [name]: value });
-	};
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewAccount({ ...newAccount, [name]: value });
+  };
 
-	const handleAddPassword = () => {
-		setModalOpen(true);
-	};
+  const handleAddPassword = () => {
+    setModalOpen(true);
+  };
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		const newId = passwords.length + 1;
-		const accountToAdd = {
-			id: newId,
-			...newAccount,
-		};
-		setPasswords([...passwords, accountToAdd]);
-		setModalOpen(false); // Close the modal
-		setNewAccount({
-			Account: "",
-			UserName: "",
-			Password: "",
-			Link: "",
-		});
-	};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newId = passwords.length + 1;
+    const accountToAdd = {
+      id: newId,
+      ...newAccount,
+    };
+    setPasswords([...passwords, accountToAdd]);
+    setModalOpen(false); // Close the modal
+    setNewAccount({
+      Account: "",
+      UserName: "",
+      Password: "",
+      Link: "",
+    });
+  };
 
   const togglePasswordVisibility = (id) => {
     setPasswords(
@@ -80,8 +80,8 @@ function Accounts() {
   };
 
   const filteredPasswords = passwords.filter((account) =>
-  account.Account.toLowerCase().includes(searchTerm.toLowerCase())
-);
+    account.Account.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <>
@@ -92,7 +92,7 @@ function Accounts() {
             <form className="d-flex" role="search">
               <input
                 className="form-control me-2 mb-2"
-				id="search-bar"
+                id="search-bar"
                 type="search"
                 placeholder="Search Account Bar"
                 aria-label="Search"
@@ -126,10 +126,10 @@ function Accounts() {
                 : "Show all passwords"}
             </button>
 
-						<p className="card-text my-5">
-							Manage your accounts here, add new ones or remove them.
-							<br />
-						</p>
+            <p className="card-text my-5">
+              Manage your accounts here, add new ones or remove them.
+              <br />
+            </p>
 
             <div className="row">
               {filteredPasswords.map((account) => (
@@ -153,88 +153,88 @@ function Accounts() {
         </div>
       </div>
 
-			{/* Modal */}
-			{modalOpen && (
-				<div className="modal">
-					<div className="modal-dialog" onClick={(e) => e.stopPropagation()}>
-						<div className="modal-content">
-							<div className="modal-header">
-								<h5 className="modal-title">Add New Account</h5>
-								<button
-									type="button"
-									className="btn-close"
-									onClick={() => setModalOpen(false)}
-								></button>
-							</div>
-							<div className="modal-body">
-								<form onSubmit={handleSubmit}>
-									<div className="mb-3">
-										<label htmlFor="account" className="form-label">
-											Account
-										</label>
-										<input
-											type="text"
-											className="form-control"
-											id="account"
-											name="Account"
-											value={newAccount.Account}
-											onChange={handleInputChange}
-											placeholder="Account"
-										/>
-									</div>
-									<div className="mb-3">
-										<label htmlFor="username" className="form-label">
-											Username
-										</label>
-										<input
-											type="text"
-											className="form-control"
-											id="username"
-											name="UserName"
-											value={newAccount.UserName}
-											onChange={handleInputChange}
-											placeholder="Email"
-										/>
-									</div>
-									<div className="mb-3">
-										<label htmlFor="password" className="form-label">
-											Password
-										</label>
-										<input
-											type="password"
-											className="form-control"
-											id="password"
-											name="Password"
-											value={newAccount.Password}
-											onChange={handleInputChange}
-											placeholder="Password"
-										/>
-									</div>
-									<div className="mb-3">
-										<label htmlFor="link" className="form-label">
-											Link
-										</label>
-										<input
-											type="text"
-											className="form-control"
-											id="link"
-											name="Link"
-											value={newAccount.Link}
-											onChange={handleInputChange}
-											placeholder="Website/app link"
-										/>
-									</div>
-									<button type="submit" className="btn btn-primary">
-										Add Account
-									</button>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			)}
-		</>
-	);
+      {/* Modal */}
+      {modalOpen && (
+        <div className="modal">
+          <div className="modal-dialog" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">Add New Account</h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  onClick={() => setModalOpen(false)}
+                ></button>
+              </div>
+              <div className="modal-body">
+                <form onSubmit={handleSubmit}>
+                  <div className="mb-3">
+                    <label htmlFor="account" className="form-label">
+                      Account
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="account"
+                      name="Account"
+                      value={newAccount.Account}
+                      onChange={handleInputChange}
+                      placeholder="Account"
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="username" className="form-label">
+                      Username
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="username"
+                      name="UserName"
+                      value={newAccount.UserName}
+                      onChange={handleInputChange}
+                      placeholder="Email"
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="password" className="form-label">
+                      Password
+                    </label>
+                    <input
+                      type="password"
+                      className="form-control"
+                      id="password"
+                      name="Password"
+                      value={newAccount.Password}
+                      onChange={handleInputChange}
+                      placeholder="Password"
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="link" className="form-label">
+                      Link
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="link"
+                      name="Link"
+                      value={newAccount.Link}
+                      onChange={handleInputChange}
+                      placeholder="Website/app link"
+                    />
+                  </div>
+                  <button type="submit" className="btn btn-primary">
+                    Add Account
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
 }
 
 export default Accounts;
