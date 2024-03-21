@@ -34,7 +34,7 @@ const AboutContact = () => {
       <Header />
       <div className="content-container">
         <div className="row">
-          <div className="button-container mb-5">
+          <div className="button-container p-0 mb-5">
             <button className="btn" onClick={toggleCreatorCard}>
               Meet The Creators
             </button>
@@ -45,7 +45,7 @@ const AboutContact = () => {
               Play Snake
             </button>
           </div>
-          <div className="col d-flex justify-content-center">
+          <div className="col d-flex justify-content-center p-0">
             {showCreatorCard && <ContactCardFlipper />}
             {showContactForm && <ContactUsForm />}
             {showSnakeGame && <SnakeGame />}
