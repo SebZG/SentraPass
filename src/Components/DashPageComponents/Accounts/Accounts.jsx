@@ -91,16 +91,14 @@ function Accounts() {
             <h1 className="card-title">Your Accounts</h1>
             <form className="d-flex" role="search">
               <input
-                className="form-control me-2"
+                className="form-control me-2 mb-2"
+				id="search-bar"
                 type="search"
                 placeholder="Search Account Bar"
                 aria-label="Search"
                 value={searchTerm}
                 onChange={handleSearchChange}
               />
-              <button className="btn" type="submit">
-                Search
-              </button>
             </form>
             <button
               id="addPassword"
