@@ -271,7 +271,7 @@ const data = [
 
 function DataBreachesAreaChart() {
   return (
-    <div className="col " style={{ width: "100%" }} id="chart">
+    <div className="col" style={{ width: "100%" }} id="chart">
       <h1 className="text-center pt-2">Data Breaches Worldwide - Area Chart</h1>
       <div className="col d-flex justify-content-center">
         <ResponsiveContainer width="90%" height={500}>

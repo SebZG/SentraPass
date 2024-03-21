@@ -23,28 +23,7 @@ const PassGen = () => {
 					<h1 className="card-title" id="passwordTitle">
 						Password Generation
 					</h1>
-					<div className="row px-5">
-						<div className="col-md-8 mb-3 d-flex align-items-center">
-							<label
-								htmlFor="passwordLength"
-								className="form-label"
-								id="passLength"
-							>
-								Password Length (8-128 characters):
-							</label>
-						</div>
-						<div className="col-md-4 mb-3 justify-content-center d-flex align-items-center">
-							<input
-								type="number"
-								id="passwordLength"
-								min="8"
-								max="128"
-								className="form-control mb-3 w-auto"
-							/>
-						</div>
 					</div>
-
-				</div>
 				<div className="row px-5">
 					<div className="form-check mb-3 ">
 						<input
@@ -91,7 +70,28 @@ const PassGen = () => {
 							Include Special Characters
 						</label>
 					</div>
+					
 				</div>
+				<div className="row px-5">
+						<div className="col-md-8 mb-3 d-flex align-items-center">
+							<label
+								htmlFor="passwordLength"
+								className="form-label"
+								id="passLength"
+							>
+								Password Length (8-128 characters):
+							</label>
+						</div>
+						<div className="col-md-4 mb-3 justify-content-center d-flex align-items-center">
+							<input
+								type="number"
+								id="passwordLength"
+								min="8"
+								max="128"
+								className="form-control mb-3 w-auto"
+							/>
+						</div>
+					</div>
 				<button
 					onClick={handleGeneratePassword}
 					className="btn d-block mx-auto my-3 px-5 py-3"
