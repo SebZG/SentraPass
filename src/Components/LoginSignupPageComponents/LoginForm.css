@@ -8,15 +8,11 @@
   max-width: 600px;
 }
 
-#sign-in-button {
+#login-container .btn {
   padding: 0.75rem;
   width: 50%;
   margin: 0 auto;
   margin-top: 50px;
-  border: none;
-  outline: none;
-  border-radius: 40px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 #login-container .sentra-logo {

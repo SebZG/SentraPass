@@ -22,13 +22,13 @@
 
 /* Background image */
 body {
-	 background-color: var(--Color-Background);
-	 background-image: url('/images/background.png');
-	 background-size: cover;
-	 background-repeat: repeat;
-	 background-position: center;
-	 background-attachment: fixed;
- }
+	background-color: var(--Color-Background);
+	background-image: url('/images/background.png');
+	background-size: cover;
+	background-repeat: repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
 
 /* footer containment */
 html,
@@ -55,7 +55,7 @@ body {
 }
 
 .row {
-   margin-right: 0;
+	margin-right: 0;
 }
 
 /* Heading Styles */
@@ -114,23 +114,49 @@ li {
 
 /* Button Styles */
 .btn {
+	border: none;
+	border-radius: 10rem;
+	transition: all 0.25s ease-in-out;
 	background-color: var(--Color-Tertiary);
 	color: var(--Color-Text);
-	/* padding: 1rem; */
-	border: none;
-	cursor: pointer;
-	transition: all 0.3s ease-in-out;
 }
 
 .btn:hover {
-	background-color: var(--Color-Btn-Hover);
+	background: linear-gradient(to right,
+			var(--Color-Secondary),
+			var(--Color-Primary));
+	transform: translateY(-3px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+/* #about-button {
+	padding: 10px 20px;
+	margin: 0 20px 20px;
+	border: none;
+	border-radius: 20px;
+	font-size: 18px;
+	cursor: pointer;
+	outline: none;
+	transition: all 0.3s ease;
+	background-color: var(--Color-Tertiary);
+	color: white;
+}
+
+#about-button:hover {
+	background: linear-gradient(to right,
+			var(--Color-Secondary),
+			var(--Color-Primary));
+	transform: translateY(-3px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+} */
 
 /* Input Styles */
 input {
 	padding: 0.5rem;
-	margin: 0.5rem;
-	border: 1px solid var(--Color-Primary);
-	border-radius: 0.5rem;
+	/* margin: 0.5rem; */
+	border-radius: 10rem;
 }
 
+.form-control {
+	border-radius: 10rem;
+}

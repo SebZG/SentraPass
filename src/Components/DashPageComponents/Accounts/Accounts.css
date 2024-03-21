@@ -1,65 +1,67 @@
-#card {
-  text-align: center;
-  color: var(--Color-Secondary);
+#yourAccounts {
+	background-color: var(--Color-Primary);
+	height: 100%;
 }
 
-#passGenBody {
-  background-color: var(--Color-Primary);
+#yourAccounts .card-body {
+	text-align: center;
+	color: var(--Color-Secondary);
 }
 
 #passLength {
-  color: var(--Color-Text);
+	color: var(--Color-Text);
 }
 
 .modal {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1000;
 }
 
 .modal-content {
-  background-color: var(--Color-Primary);
+	background-color: var(--Color-Primary);
+	border: 0;
 }
 
 .modal-dialog {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  margin: 0 auto;
-  width: 80%;
-  max-width: 500px;
-  background-color: var(--Color-Primary);
-  padding: 20px;
-  border-radius: 10px;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	margin: 0 auto;
+	width: 80%;
+	max-width: 500px;
+	background-color: var(--Color-Primary);
+	padding: 20px;
+	border-radius: 10px;
 }
 
 .modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
 }
 
 .modal-body {
-  margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 .modal-title {
-  margin: 0;
-  font-size: 1.5rem;
-  color: var(--Color-Secondary);
+	margin: 0;
+	font-size: 1.5rem;
+	color: var(--Color-Secondary);
 }
 
 .form-label {
-  color: var(--Color-Secondary);
+	color: var(--Color-Secondary);
 }
 
 .modal .btn {
-  margin-left: 10px;
-  margin-top: 10px;
+	margin-left: 10px;
+	margin-top: 10px;
 }
