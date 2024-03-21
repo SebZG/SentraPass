@@ -11,6 +11,8 @@ SentraPass is a password security website that allows users to store passwords a
 - **License:** MIT License
 - **Type:** Module
 
+![Image of Product](./src/assets/images/website_mockups.png)
+
 ## Features
 
 - **Account Management:** Users can create an account to securely store and manage passwords.

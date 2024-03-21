@@ -92,10 +92,10 @@ function CustomTooltip({ active, payload, label }) {
     return (
       <div className="custom-tooltip">
         <p className="label">
-          {Entity}: {Records}
+          {Entity}: {Records} million
         </p>
         <p className="intro">The Number of records lost in {Year}</p>
-        <p className="desc">{Method}.</p>
+        <p className="desc">The data breach: {Method}.</p>
       </div>
     );
   }
