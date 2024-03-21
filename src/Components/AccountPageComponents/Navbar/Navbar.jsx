@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-// import Dropdown from "react-bootstrap/Dropdown";
-// import DropdownButton from "react-bootstrap/DropdownButton";
 import Logo from "../../../assets/images/finalLogo.jpg";
 import "./Navbar.css";
 
