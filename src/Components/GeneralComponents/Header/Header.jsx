@@ -7,7 +7,7 @@ import CloseIcon from "../../../assets/images/closeIcon.png";
 import MenuIcon from "../../../assets/images/menuIcon.png";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] =  useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
