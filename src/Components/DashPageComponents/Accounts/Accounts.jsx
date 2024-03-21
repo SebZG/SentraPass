@@ -7,24 +7,27 @@ function Accounts() {
     {
       id: 1,
       Account: "Amazon",
-      UserName: "email@gmail.com",
+      UserName: "AD143",
       Password: "123456",
+      Email: "email@gmail.com",
       Link: "https://www.amazon.com",
       showPassword: false,
     },
     {
       id: 2,
       Account: "Ebay",
-      UserName: "email@gmail.com",
+      UserName: "TJ107",
       Password: "123456",
+      Email: "email@gmail.com",
       Link: "https://www.ebay.com",
       showPassword: false,
     },
     {
       id: 3,
       Account: "TheHub",
-      UserName: "email@gmail.com",
+      UserName: "SG570",
       Password: "123456",
+      Email: "email@gmail.com",
       Link: "https://www.thehub.com",
       showPassword: false,
     },
@@ -35,6 +38,7 @@ function Accounts() {
   const [newAccount, setNewAccount] = useState({
     Account: "",
     UserName: "",
+    Email: "",
     Password: "",
     Link: "",
   });
@@ -64,6 +68,7 @@ function Accounts() {
     setNewAccount({
       Account: "",
       UserName: "",
+      Email: "",
       Password: "",
       Link: "",
     });
@@ -138,6 +143,7 @@ function Accounts() {
                     key={account.id}
                     Account={account.Account}
                     UserName={account.UserName}
+                    Email={account.Email}
                     Password={
                       account.showPassword ? account.Password : "********"
                     }
@@ -193,8 +199,22 @@ function Accounts() {
                       name="UserName"
                       value={newAccount.UserName}
                       onChange={handleInputChange}
-                      placeholder="Email"
+                      placeholder="Username"
                     />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="email" className="form-label">
+                    Email
+                    </label>
+                    <input
+                    type="email"
+                    className="form-control"
+                    id="email"
+                    name="Email"
+                    value={newAccount.Email}
+                    onChange={handleInputChange}
+                    placeholder="Email"
+                  />
                   </div>
                   <div className="mb-3">
                     <label htmlFor="password" className="form-label">
