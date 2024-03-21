@@ -30,6 +30,7 @@ function Accounts() {
     },
   ]);
 
+  const [searchTerm, setSearchTerm] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
   const [newAccount, setNewAccount] = useState({
     Account: "",
@@ -37,6 +38,10 @@ function Accounts() {
     Password: "",
     Link: "",
   });
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  }
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -74,6 +79,10 @@ function Accounts() {
     );
   };
 
+  const filteredPasswords = passwords.filter((account) =>
+  account.Account.toLowerCase().includes(searchTerm.toLowerCase())
+);
+
   return (
     <>
       <div className="col-lg-6 px-5 py-5">
@@ -86,6 +95,8 @@ function Accounts() {
                 type="search"
                 placeholder="Search Account Bar"
                 aria-label="Search"
+                value={searchTerm}
+                onChange={handleSearchChange}
               />
               <button className="btn" type="submit">
                 Search
@@ -123,7 +134,7 @@ function Accounts() {
             </p>
 
             <div className="row">
-              {passwords.map((account) => (
+              {filteredPasswords.map((account) => (
                 <div className="col-md-4 mt-3">
                   <AccountCard
                     key={account.id}
