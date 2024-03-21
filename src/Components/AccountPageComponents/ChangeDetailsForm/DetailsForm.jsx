@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Form, Container, Row, Col, Card, Button } from "react-bootstrap";
 import "./DetailsForm.css";
+import PlaceholderAvatar from "../../../assets/images/avatar-placeholder.png";
 
 const AccountCard = () => {
   const [formData, setFormData] = useState(() => {
@@ -22,7 +23,8 @@ const AccountCard = () => {
     const savedImage = localStorage.getItem("profilePicture");
     return savedImage ? savedImage : null;
   });
-  const [uploadedImage, setUploadedImage] = useState(null);
+
+  const [setUploadedImage] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -66,33 +68,38 @@ const AccountCard = () => {
                   ? `Hi ${formData.displayName}!`
                   : "Hi there!"}
               </Card.Title>
-              {profilePicture ? (
-                <img
-                  src={profilePicture}
-                  alt="Profile"
-                  className="rounded-circle mb-3"
-                  style={{
-                    width: "150px",
-                    height: "150px",
-                    cursor: "pointer",
-                  }}
-                  onClick={() =>
-                    document.getElementById("profilePictureInput").click()
-                  }
-                />
-              ) : (
-                <div
-                  className="profilePic rounded-circle bg-secondary mb-3"
-                  style={{
-                    width: "150px",
-                    height: "150px",
-                    cursor: "pointer",
-                  }}
-                  onClick={() =>
-                    document.getElementById("profilePictureInput").click()
-                  }
-                ></div>
-              )}
+              <label htmlFor="profilePictureInput">
+                {profilePicture ? (
+                  <img
+                    src={profilePicture}
+                    alt="Profile"
+                    className="rounded-circle mb-3"
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      cursor: "pointer",
+                    }}
+                  />
+                ) : (
+                  <div
+                    className="profilePic mb-3"
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <img
+                      src={PlaceholderAvatar}
+                      alt="Placeholder"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    />
+                  </div>
+                )}
+              </label>
               <Form.Group className="d-none">
                 <Form.Control
                   type="file"
@@ -186,12 +193,7 @@ const AccountCard = () => {
                       onChange={handleChange}
                     />
                   </Form.Group>
-                  <Button
-                    className="btn"
-                    variant="primary"
-                    // className="button-container"
-                    type="submit"
-                  >
+                  <Button className="btn" variant="primary" type="submit">
                     Save Changes
                   </Button>
                 </Form>

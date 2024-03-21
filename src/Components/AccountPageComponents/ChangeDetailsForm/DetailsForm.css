@@ -15,6 +15,7 @@
 .profilePic {
   display: inline-block;
   cursor: pointer;
+  z-index: 1;
 }
 
 .button-container .btn {
