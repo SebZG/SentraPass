@@ -1,22 +1,28 @@
-.form-check {
-    display: block;
-    margin-bottom: 6px;
-  }
+#passGenBody {
+	background-color: var(--Color-Primary);
+	height: 100%;
+}
 
-  .form-check .form-check-input {
-    float: left;
-    margin-left: 0.5em;
+#passGenBody .card-body {
+	text-align: center;
+	color: var(--Color-Secondary);
+}
+
+.form-check {
+	display: block;
+	margin-bottom: 6px;
+}
+
+.form-check .form-check-input {
+	float: left;
+	margin-left: 0.5em;
 }
 
 #passwordTitle {
-  text-align: center;
-  color: var(--Color-Secondary);
-}
-
-#passGenBody {
-  background-color: var(--Color-Primary);;
+	text-align: center;
+	color: var(--Color-Secondary);
 }
 
 #passLength {
-  color: var(--Color-Text);
+	color: var(--Color-Text);
 }
