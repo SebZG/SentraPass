@@ -26,3 +26,11 @@
 #passLength {
 	color: var(--Color-Text);
 }
+
+.btn {
+	border: none;
+	border-radius: 10rem;
+	transition: all 0.25s ease-in-out;
+	background-color: var(--Color-Tertiary);
+	color: var(--Color-Text)!important;
+}
