@@ -34,7 +34,7 @@ const AboutContact = () => {
 			<Header />
 			<div className="content-container">
 				<div className="row">
-					<div className="button-container">
+					<div className="button-container mb-5">
 						<button className="btn" onClick={toggleCreatorCard}>
 							Meet The Creators
 						</button>
