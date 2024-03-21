@@ -73,7 +73,7 @@ const PassGen = () => {
 					
 				</div>
 				<div className="row px-5">
-						<div className="col-md-8 mb-3 d-flex align-items-center">
+						<div className="col-md-8 mb-3 d-flex align-items-center justify-content-end">
 							<label
 								htmlFor="passwordLength"
 								className="form-label"
@@ -82,7 +82,7 @@ const PassGen = () => {
 								Password Length (8-128 characters):
 							</label>
 						</div>
-						<div className="col-md-4 mb-3 justify-content-center d-flex align-items-center">
+						<div className="col-md-4 mb-3 justify-content-start d-flex align-items-center">
 							<input
 								type="number"
 								id="passwordLength"
