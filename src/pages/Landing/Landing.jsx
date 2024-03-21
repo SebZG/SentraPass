@@ -7,7 +7,7 @@ import Header from "../../Components/GeneralComponents/Header";
 const Landing = () => {
    return (
       <div id="landing">
-      <Header />
+         <Header />
          <Hero />
          <Features />
          <FAQ />
