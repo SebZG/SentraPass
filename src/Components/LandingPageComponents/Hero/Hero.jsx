@@ -6,7 +6,7 @@ import websiteMockupsImage from "../../../assets/images/website_mockups.png";
 const Hero = () => {
 	return (
 		<div id="hero" className="row flex-lg-row-reverse align-items-center py-5">
-			<div className="col-10 col-sm-8 col-lg-6">
+			<div className="col-10 col-sm-8 col-lg-6 mt-5 pt-5">
 				<img
 					src={websiteMockupsImage}
 					className="d-block img-fluid"
