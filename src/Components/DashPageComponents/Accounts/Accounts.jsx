@@ -22,6 +22,7 @@ import AccountCard from "../AccountCard/AccountCard";
 import "./Accounts.css";
 
 function Accounts() {
+	const [createOrUpdate, setCreateOrUpdate] = useState("");
 	const [userProfile, setUserProfile] = useState({});
 	const [searchTerm, setSearchTerm] = useState("");
 	const [modalOpen, setModalOpen] = useState(false);
@@ -34,8 +35,10 @@ function Accounts() {
 		Link: "",
 	});
 
+	// Other hooks
 	const navigate = useNavigate();
 
+	// Event handlers
 	const handleSearchChange = (e) => {
 		setSearchTerm(e.target.value);
 	};
@@ -46,7 +49,25 @@ function Accounts() {
 	};
 
 	const handleAddPassword = () => {
+		setCreateOrUpdate("Create");
 		setModalOpen(true);
+	};
+
+	const handleShowUpdate = (id) => {
+		setCreateOrUpdate("Update");
+		setModalOpen(true);
+		const selectedAccount = accounts.find(account => account.id === id);
+		setNewAccount(selectedAccount);
+	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+
+		if (createOrUpdate === "Create") {
+			addAccount();
+		} else if (createOrUpdate === "Update") {
+			updateAccount();
+		}
 	};
 
 	// Effects
@@ -75,6 +96,7 @@ function Accounts() {
 		});
 	}, []);
 
+	// Get all accounts
 	const getAccountsByUid = async (uid) => {
 		const postCollectionUidRef = query(collection(db, "accounts"), where("uid", "==", uid));
 		const { docs } = await getDocs(postCollectionUidRef);
@@ -83,9 +105,7 @@ function Accounts() {
 	};
 
 	// Add new account
-	const handleSubmit = (e) => {
-		e.preventDefault();
-
+	const addAccount = async () => {
 		const accountToAdd = {
 			...newAccount,
 			uid: auth.currentUser.uid
@@ -101,9 +121,20 @@ function Accounts() {
 			Password: "",
 			Link: "",
 		});
-		setModalOpen(false); // Close the modal
-	};
 
+		setModalOpen(false); // Close the modal
+	}
+
+	// Update account
+	const updateAccount = async () => {
+		const { id, ...rest } = newAccount;
+		const docRef = doc(db, "accounts", id);
+		await updateDoc(docRef, rest);
+		await getAccountsByUid(auth.currentUser.uid);
+		setModalOpen(false);
+	}
+
+	// Delete account
 	const deleteAccount = async (id) => {
 		const docRef = doc(db, "accounts", id);
 		await deleteDoc(docRef);
@@ -192,6 +223,7 @@ function Accounts() {
 										}
 										Id={account.id}
 										deleteAccount={deleteAccount}
+										handleShowUpdate={handleShowUpdate}
 									/>
 								</div>
 							))}
@@ -210,7 +242,16 @@ function Accounts() {
 								<button
 									type="button"
 									className="btn-close"
-									onClick={() => setModalOpen(false)}
+									onClick={() => {
+										setModalOpen(false);
+										setNewAccount({
+											Account: "",
+											UserName: "",
+											Email: "",
+											Password: "",
+											Link: "",
+										});
+									}}
 								></button>
 							</div>
 							<div className="modal-body">
@@ -286,7 +327,7 @@ function Accounts() {
 										/>
 									</div>
 									<button type="submit" className="btn btn-primary">
-										Add Account
+										Save
 									</button>
 								</form>
 							</div>
