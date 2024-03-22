@@ -1,15 +1,21 @@
+import { signOut } from 'firebase/auth';
+import { auth } from '../../../firebase/init';
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import "./Header.css";
+import { Link, useNavigate } from "react-router-dom";
 
 import Logo from "../../../assets/images/finalLogo.jpg";
 import CloseIcon from "../../../assets/images/closeIcon.png";
 import MenuIcon from "../../../assets/images/menuIcon.png";
 
+import "./Header.css";
+
 const Header = () => {
 	const path = window.location.pathname;
 
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+	const navigate = useNavigate();
 
 	const toggleMenu = () => {
 		setIsMenuOpen(!isMenuOpen);
@@ -18,6 +24,11 @@ const Header = () => {
 	const closeMenu = () => {
 		setIsMenuOpen(false);
 	};
+
+	const handleLogOut = () => {
+		signOut(auth);
+		navigate("/login");
+	}
 
 	return (
 		<header className="header-container d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
@@ -46,12 +57,12 @@ const Header = () => {
 						Home
 					</Link>
 				</li>
-				<li className={path === "/" || path === "/aboutcontact" ? "d-none" : ""}>
+				<li className={path === "/" || path === "/aboutcontact" || path === "/login" ? "d-none" : ""}>
 					<Link to="/dash" onClick={() => closeMenu()}>
 						Dashboard
 					</Link>
 				</li>
-				<li className={path === "/" || path === "/aboutcontact" ? "d-none" : ""}>
+				<li className={path === "/" || path === "/aboutcontact" || path === "/login" ? "d-none" : ""}>
 					<Link to="/account" onClick={() => closeMenu()}>
 						My Account
 					</Link>
@@ -62,7 +73,7 @@ const Header = () => {
 					</Link>
 				</li>
 				<li className={path === "/" || path === "/aboutcontact" ? "d-none" : ""}>
-					<Link to="/aboutcontact" onClick={() => closeMenu()}>
+					<Link onClick={handleLogOut}>
 						Logout
 					</Link>
 				</li>

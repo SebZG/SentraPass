@@ -1,10 +1,21 @@
-import { Link } from "react-router-dom";
+import { signOut } from 'firebase/auth';
+import { auth } from '../../../firebase/init';
+
+import { Link, useNavigate } from "react-router-dom";
 
 import Logo from "../../../assets/images/finalLogo.jpg";
 
 import "./Navbar.css";
 
 function Navbar() {
+
+	const navigate = useNavigate();
+
+	const handleLogOut = () => {
+		signOut(auth);
+		navigate("/login");
+	}
+
 	return (
 		<div>
 			<header
@@ -36,7 +47,7 @@ function Navbar() {
 							</Link>
 						</li>
 						<li>
-							<Link className="dropdown-item" href="#/logout">
+							<Link className="dropdown-item" onClick={handleLogOut}>
 								Logout
 							</Link>
 						</li>
