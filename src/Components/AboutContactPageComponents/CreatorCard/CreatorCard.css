@@ -5,23 +5,24 @@
 }
 
 #creator-card .card {
-  box-shadow: 0 0 2.2em rgba(25, 0, 58, 0.15);
-  padding: 5em 1em;
-  margin: 2em;
-  border-radius: 0.6em;
-  background: var(--Color-Tertiary);
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  background: #79b4a9c1;
   cursor: pointer;
   backface-visibility: hidden;
   text-align: center;
 }
 
 #creator-card .card:hover {
-  background: linear-gradient(
-    to right,
-    var(--Color-Tertiary),
-    var(--Color-Primary)
-  );
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #dee2e6;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  background-color: #6457a6c1;
   backface-visibility: hidden;
+  transition: 3s ease;
 }
 
 #creator-card .card:hover .img-container {
