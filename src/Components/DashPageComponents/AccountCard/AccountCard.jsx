@@ -1,5 +1,5 @@
-import React from "react";
 import "./AccountCard.css";
+
 function AccountCard(props) {
 	return (
 		<>

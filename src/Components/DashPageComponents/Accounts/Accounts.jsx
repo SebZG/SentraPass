@@ -21,13 +21,7 @@ import AccountCard from "../AccountCard/AccountCard";
 
 import "./Accounts.css";
 
-// const auth = getAuth();
-// const user = auth.currentUser;
-
 function Accounts() {
-	// const auth = getAuth();
-	// const user = auth.currentUser;
-
 	const [userProfile, setUserProfile] = useState({});
 	const [searchTerm, setSearchTerm] = useState("");
 	const [modalOpen, setModalOpen] = useState(false);
@@ -100,7 +94,6 @@ function Accounts() {
 		addDoc(collection(db, "accounts"), accountToAdd)
 			.then(() => getAccountsByUid(auth.currentUser.uid));
 
-		// setAccounts([...accounts, accountToAdd]);
 		setNewAccount({
 			Account: "",
 			UserName: "",
@@ -175,9 +168,11 @@ function Accounts() {
 
 						<div className="row">
 							{filteredAccounts.map((account) => (
-								<div className="col-md-4 mt-3">
+								<div
+									className="col-md-4 mt-3"
+									key={account.id}
+								>
 									<AccountCard
-										key={account.id}
 										Account={account.Account}
 										UserName={account.UserName}
 										Email={account.Email}
