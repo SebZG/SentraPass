@@ -67,7 +67,7 @@ const Header = () => {
 						My Account
 					</Link>
 				</li>
-				<li className={path === "/dash" || path === "/aboutcontact" ? "d-none" : ""}>
+				<li className={path === "/dash" ? "d-none" : ""}>
 					<Link to="/aboutcontact" onClick={() => closeMenu()}>
 						Contact/About
 					</Link>
