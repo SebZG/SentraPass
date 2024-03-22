@@ -223,22 +223,24 @@ const LoginForm = () => {
 					</span>
 				</Form>
 
-				{/* Email Confirmation Modal */}
-				<Modal show={showModal} onHide={handleCloseModal}>
-					<Modal.Header closeButton>
-						<Modal.Title>Email Confirmation</Modal.Title>
-					</Modal.Header>
-					<Modal.Body>
-						Please check your email inbox and follow the instructions to confirm
-						your email address.
-					</Modal.Body>
-					<Modal.Footer>
-						<Button variant="secondary" onClick={handleCloseModal}>
-							Close
-						</Button>
-					</Modal.Footer>
-				</Modal>
 			</Row>
+
+			{/* Email Confirmation Modal */}
+			<Modal show={showModal} onHide={handleCloseModal}>
+				<Modal.Header closeButton>
+					<Modal.Title>Email Confirmation</Modal.Title>
+				</Modal.Header>
+				<Modal.Body>
+					Please check your email inbox and follow the instructions to confirm
+					your email address.
+				</Modal.Body>
+				<Modal.Footer>
+					<Button variant="secondary" onClick={handleCloseModal}>
+						Close
+					</Button>
+				</Modal.Footer>
+			</Modal>
+			
 		</Container>
 	);
 };
