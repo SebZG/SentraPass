@@ -73,23 +73,23 @@ const LoginForm = () => {
 		onAuthStateChanged(auth, (user) => {
 			if (user && !user.emailVerified) {
 				// navigate("/");
-				// sendEmailVerification(user)
-				// .then(() => {
-				// setShowEmailVerification(true);
-				// signOut(auth);
-				// console.log("Email verification sent");
-				// });
+				sendEmailVerification(user)
+					.then(() => {
+						setShowModal(true);
+						signOut(auth);
+						console.log("Email verification sent");
+					});
 			} else if (user && user.emailVerified) {
-				// navigate("/dash");
+				navigate("/dash");
 			} else {
-				// navigate("/");
+				navigate("/login");
 			}
 
 			// setInterval(() => {
 			// 	setIsLoading(false);
 			// }, 500);
 		});
-	}, [rememberMe]);
+	}, []);
 
 	// const handleRememberMeChange = () => {
 	// 	setRememberMe(!rememberMe);
@@ -103,7 +103,7 @@ const LoginForm = () => {
 		// 	localStorage.setItem("rememberedPassword", formData.password);
 		// }
 
-		setShowModal(true);
+		// setShowModal(true);
 
 		setFormData({
 			email: "",
@@ -115,7 +115,7 @@ const LoginForm = () => {
 			signInWithEmailAndPassword(auth, formData.email, formData.password)
 				.then((userCred) => {
 					// const user = userCred.user;
-					// navigate("/dash");
+					navigate("/dash");
 					console.log("Logged in");
 				})
 				.catch((error) => {
@@ -126,7 +126,7 @@ const LoginForm = () => {
 			createUserWithEmailAndPassword(auth, formData.email, formData.password)
 				.then((userCred) => {
 					// const user = userCred.user;
-					// navigate("/dash");
+					navigate("/dash");
 					// setSelected("Login");
 					console.log("Account created");
 				})
