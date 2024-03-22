@@ -1,3 +1,8 @@
 #chart {
-  background-color: var(--Color-Primary);
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #dee2e6;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  background-color: #6457a6c1;
 }

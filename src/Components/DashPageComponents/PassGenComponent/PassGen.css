@@ -1,36 +1,40 @@
 #passGenBody {
-	background-color: var(--Color-Primary);
-	height: 100%;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #dee2e6;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  background-color: #6457a6c1;
 }
 
 #passGenBody .card-body {
-	text-align: center;
-	color: var(--Color-Secondary);
+  text-align: center;
+  color: var(--Color-Secondary);
 }
 
 .form-check {
-	display: block;
-	margin-bottom: 6px;
+  display: block;
+  margin-bottom: 6px;
 }
 
 .form-check .form-check-input {
-	float: left;
-	margin-left: 0.5em;
+  float: left;
+  margin-left: 0.5em;
 }
 
 #passwordTitle {
-	text-align: center;
-	color: var(--Color-Secondary);
+  text-align: center;
+  color: var(--Color-Secondary);
 }
 
 #passLength {
-	color: var(--Color-Text);
+  color: var(--Color-Text);
 }
 
 .btn {
-	border: none;
-	border-radius: 10rem;
-	transition: all 0.25s ease-in-out;
-	background-color: var(--Color-Tertiary);
-	color: var(--Color-Text)!important;
+  border: none;
+  border-radius: 10rem;
+  transition: all 0.25s ease-in-out;
+  background-color: var(--Color-Tertiary);
+  color: var(--Color-Text) !important;
 }
