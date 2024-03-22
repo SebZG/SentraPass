@@ -183,6 +183,7 @@ function Accounts() {
 										togglePasswordVisibility={() =>
 											togglePasswordVisibility(account.id)
 										}
+
 									/>
 								</div>
 							))}

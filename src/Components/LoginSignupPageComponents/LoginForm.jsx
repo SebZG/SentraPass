@@ -7,7 +7,7 @@ import {
 	signInWithEmailAndPassword,
 	signOut,
 } from "firebase/auth";
-import { auth, db } from "../../firebase/init";
+import { auth } from "../../firebase/init";
 
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -25,10 +25,6 @@ import Logo from "../../assets/images/finalLogo.jpg";
 import "./LoginForm.css";
 
 const LoginForm = () => {
-	// User Object
-	const auth = getAuth();
-	const user = auth.currentUser;
-
 	const [formData, setFormData] = useState({
 		// Set the component's initial state
 		email: "",
