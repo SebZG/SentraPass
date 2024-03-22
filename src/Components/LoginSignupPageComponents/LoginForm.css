@@ -46,3 +46,7 @@
 .with-icon {
   padding-left: 40px;
 }
+
+.modal-backdrop.show {
+  opacity: 0;
+}

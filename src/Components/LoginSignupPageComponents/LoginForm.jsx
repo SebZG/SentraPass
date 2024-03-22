@@ -7,7 +7,7 @@ import {
 	signInWithEmailAndPassword,
 	signOut,
 } from "firebase/auth";
-import { auth, db } from "../../firebase/init";
+import { auth } from "../../firebase/init";
 
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -25,10 +25,6 @@ import Logo from "../../assets/images/finalLogo.jpg";
 import "./LoginForm.css";
 
 const LoginForm = () => {
-	// User Object
-	const auth = getAuth();
-	const user = auth.currentUser;
-
 	const [formData, setFormData] = useState({
 		// Set the component's initial state
 		email: "",
@@ -73,23 +69,23 @@ const LoginForm = () => {
 		onAuthStateChanged(auth, (user) => {
 			if (user && !user.emailVerified) {
 				// navigate("/");
-				// sendEmailVerification(user)
-				// .then(() => {
-				// setShowEmailVerification(true);
-				// signOut(auth);
-				// console.log("Email verification sent");
-				// });
+				sendEmailVerification(user)
+					.then(() => {
+						setShowModal(true);
+						signOut(auth);
+						console.log("Email verification sent");
+					});
 			} else if (user && user.emailVerified) {
-				// navigate("/dash");
+				navigate("/dash");
 			} else {
-				// navigate("/");
+				navigate("/login");
 			}
 
 			// setInterval(() => {
 			// 	setIsLoading(false);
 			// }, 500);
 		});
-	}, [rememberMe]);
+	}, []);
 
 	// const handleRememberMeChange = () => {
 	// 	setRememberMe(!rememberMe);
@@ -103,7 +99,7 @@ const LoginForm = () => {
 		// 	localStorage.setItem("rememberedPassword", formData.password);
 		// }
 
-		setShowModal(true);
+		// setShowModal(true);
 
 		setFormData({
 			email: "",
@@ -115,7 +111,7 @@ const LoginForm = () => {
 			signInWithEmailAndPassword(auth, formData.email, formData.password)
 				.then((userCred) => {
 					// const user = userCred.user;
-					// navigate("/dash");
+					navigate("/dash");
 					console.log("Logged in");
 				})
 				.catch((error) => {
@@ -126,7 +122,7 @@ const LoginForm = () => {
 			createUserWithEmailAndPassword(auth, formData.email, formData.password)
 				.then((userCred) => {
 					// const user = userCred.user;
-					// navigate("/dash");
+					navigate("/dash");
 					// setSelected("Login");
 					console.log("Account created");
 				})
@@ -227,22 +223,24 @@ const LoginForm = () => {
 					</span>
 				</Form>
 
-				{/* Email Confirmation Modal */}
-				<Modal show={showModal} onHide={handleCloseModal}>
-					<Modal.Header closeButton>
-						<Modal.Title>Email Confirmation</Modal.Title>
-					</Modal.Header>
-					<Modal.Body>
-						Please check your email inbox and follow the instructions to confirm
-						your email address.
-					</Modal.Body>
-					<Modal.Footer>
-						<Button variant="secondary" onClick={handleCloseModal}>
-							Close
-						</Button>
-					</Modal.Footer>
-				</Modal>
 			</Row>
+
+			{/* Email Confirmation Modal */}
+			<Modal show={showModal} onHide={handleCloseModal}>
+				<Modal.Header closeButton>
+					<Modal.Title>Email Confirmation</Modal.Title>
+				</Modal.Header>
+				<Modal.Body>
+					Please check your email inbox and follow the instructions to confirm
+					your email address.
+				</Modal.Body>
+				<Modal.Footer>
+					<Button variant="secondary" onClick={handleCloseModal}>
+						Close
+					</Button>
+				</Modal.Footer>
+			</Modal>
+			
 		</Container>
 	);
 };

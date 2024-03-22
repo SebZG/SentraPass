@@ -1,8 +1,18 @@
-import "./Footer.css";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+
 import logo from "../../../assets/images/finalLogo.jpg";
-import { Link } from "react-router-dom";
+
+import "./Footer.css";
 
 const Footer = () => {
+	const location = useLocation();
+	const [currentPath, setCurrentPath] = useState(location.pathname);
+
+	useEffect(() => {
+		setCurrentPath(location.pathname);
+  }, [location.pathname]);
+
 	return (
 		<footer className="d-flex d-md-flex flex-wrap justify-content-between align-items-center py-3 border-top d-none d-md-block">
 			<p className="col-md-4 mb-0 text-body-secondary copyright">
@@ -25,17 +35,17 @@ const Footer = () => {
 			</a>
 
 			<ul id="footerText" className="nav col-md-4 justify-content-end">
-				<li className="">
+				<li className={currentPath === "/dash" ? "d-none" : ""}>
 					<Link to="/" className="">
 						Home
 					</Link>
 				</li>
-				<li className="">
+				<li className={currentPath === "/" || currentPath === "/aboutcontact" || currentPath === "/login" ? "d-none" : ""}>
 					<Link to="/dash" className="">
 						Dashboard
 					</Link>
 				</li>
-				<li className="">
+				<li className={currentPath === "/" || currentPath === "/aboutcontact" || currentPath === "/login" ? "d-none" : ""}>
 					<Link to="/account" className="">
 						My Account
 					</Link>

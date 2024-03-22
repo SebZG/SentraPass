@@ -6,10 +6,12 @@ import "./LoginSignup.css";
 
 const LoginSignup = () => {
 	return (
-		<div>
+		<>
+
 			<Header />
 			<LoginForm />
-		</div>
+
+		</>
 	);
 };
 
