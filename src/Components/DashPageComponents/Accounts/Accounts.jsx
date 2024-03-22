@@ -195,8 +195,8 @@ function Accounts() {
 							type="button"
 						>
 							{accounts.every((password) => password.showPassword)
-								? "Hide all accounts"
-								: "Show all accounts"}
+								? "Hide all passwords"
+								: "Show all passwords"}
 						</button>
 
 						<p className="card-text my-5">
