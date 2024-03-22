@@ -4,31 +4,35 @@ import { auth } from "../../../firebase/init";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import PlaceholderAvatar from "../../../assets/images/avatar-placeholder.png";
-
 import { Form, Container, Row, Col, Card, Button } from "react-bootstrap";
 
 import "./DetailsForm.css";
 
 const AccountCard = () => {
-	const [userProfile, setUserProfile] = useState({});
-	const [formData, setFormData] = useState({
-		displayName: "",
-		email: "",
-		oldPassword: "",
-		newPassword: "",
+	const [formData, setFormData] = useState(() => {
+		const storedData = localStorage.getItem("accountFormData");
+		return storedData
+			? JSON.parse(storedData)
+			: {
+				displayName: "",
+				email: "",
+				oldPassword: "",
+				newPassword: "",
+			};
 	});
 
 	const [showPersonalDetails, setShowPersonalDetails] = useState(false);
 	const [showChangePassword, setShowChangePassword] = useState(false);
 	const [changesSaved, setChangesSaved] = useState(false);
-	const [profilePicture, setProfilePicture] = useState(userProfile?.photoURL || PlaceholderAvatar);
+	const [profilePicture, setProfilePicture] = useState(() => {
+		const savedImage = localStorage.getItem("profilePicture");
+		return savedImage ? savedImage : null;
+	});
 	const [uploadedImage, setUploadedImage] = useState(null);
 
 	// Other hooks
 	const navigate = useNavigate();
 
-	// Event handlers
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setFormData({
@@ -50,29 +54,27 @@ const AccountCard = () => {
 		setChangesSaved(true);
 	};
 
-	// Effects
+	useEffect(() => {
+		localStorage.setItem("accountFormData", JSON.stringify(formData));
+	}, [formData]);
+
+	useEffect(() => {
+		if (profilePicture) {
+			localStorage.setItem("profilePicture", profilePicture);
+		}
+	}, [profilePicture]);
+
 	useEffect(() => {
 		onAuthStateChanged(auth, (user) => {
 			if (user && !user.emailVerified) {
 				navigate("/login");
 			} else if (user && user.emailVerified) {
 				navigate("/account");
-				setUserProfile({
-					displayName: user.displayName,
-					email: user.email,
-					photoURL: user.photoURL,
-					emailVerified: user.emailVerified,
-					uid: user.uid
-				});
 			} else {
 				navigate("/login");
 			}
-
-			setInterval(() => {
-				// setIsLoading(false);
-			}, 500);
 		});
-	}, []);
+	})
 
 	return (
 		<Container>
@@ -85,38 +87,33 @@ const AccountCard = () => {
 									? `Hi ${formData.displayName}!`
 									: "Hi there!"}
 							</Card.Title>
-							<label htmlFor="profilePictureInput">
-								{profilePicture ? (
-									<img
-										src={profilePicture}
-										alt="Profile"
-										className="rounded-circle mb-3"
-										style={{
-											width: "150px",
-											height: "150px",
-											cursor: "pointer",
-										}}
-									/>
-								) : (
-									<div
-										className="profilePic mb-3"
-										style={{
-											width: "150px",
-											height: "150px",
-											cursor: "pointer",
-										}}
-									>
-										<img
-											src={PlaceholderAvatar}
-											alt="Placeholder"
-											style={{
-												width: "100%",
-												height: "100%",
-											}}
-										/>
-									</div>
-								)}
-							</label>
+							{profilePicture ? (
+								<img
+									src={profilePicture}
+									alt="Profile"
+									className="rounded-circle mb-3"
+									style={{
+										width: "150px",
+										height: "150px",
+										cursor: "pointer",
+									}}
+									onClick={() =>
+										document.getElementById("profilePictureInput").click()
+									}
+								/>
+							) : (
+								<div
+									className="profilePic rounded-circle bg-secondary mb-3"
+									style={{
+										width: "150px",
+										height: "150px",
+										cursor: "pointer",
+									}}
+									onClick={() =>
+										document.getElementById("profilePictureInput").click()
+									}
+								></div>
+							)}
 							<Form.Group className="d-none">
 								<Form.Control
 									type="file"
@@ -210,7 +207,12 @@ const AccountCard = () => {
 											onChange={handleChange}
 										/>
 									</Form.Group>
-									<Button className="btn" variant="primary" type="submit">
+									<Button
+										className="btn"
+										variant="primary"
+										// className="button-container"
+										type="submit"
+									>
 										Save Changes
 									</Button>
 								</Form>

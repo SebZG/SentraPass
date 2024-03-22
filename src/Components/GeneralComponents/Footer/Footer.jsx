@@ -3,6 +3,8 @@ import logo from "../../../assets/images/finalLogo.jpg";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+	const path = window.location.pathname;
+
 	return (
 		<footer className="d-flex d-md-flex flex-wrap justify-content-between align-items-center py-3 border-top d-none d-md-block">
 			<p className="col-md-4 mb-0 text-body-secondary copyright">
@@ -25,17 +27,17 @@ const Footer = () => {
 			</a>
 
 			<ul id="footerText" className="nav col-md-4 justify-content-end">
-				<li className="">
+				<li className={path === "/dash" ? "d-none" : ""}>
 					<Link to="/" className="">
 						Home
 					</Link>
 				</li>
-				<li className="">
+				<li className={path === "/" || path === "/aboutcontact" ? "d-none" : ""}>
 					<Link to="/dash" className="">
 						Dashboard
 					</Link>
 				</li>
-				<li className="">
+				<li className={path === "/" || path === "/aboutcontact" ? "d-none" : ""}>
 					<Link to="/account" className="">
 						My Account
 					</Link>
