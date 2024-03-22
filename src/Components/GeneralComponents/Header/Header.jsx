@@ -72,7 +72,7 @@ const Header = () => {
 						Contact/About
 					</Link>
 				</li>
-				<li className={path === "/" || path === "/aboutcontact" ? "d-none" : ""}>
+				<li className={path === "/" || path === "/login" || path === "/aboutcontact" ? "d-none" : ""}>
 					<Link onClick={handleLogOut}>
 						Logout
 					</Link>
