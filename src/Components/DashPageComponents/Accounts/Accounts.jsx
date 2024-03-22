@@ -1,7 +1,5 @@
-import {
-	getAuth,
-	onAuthStateChanged
-} from 'firebase/auth';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth, db } from "../../../firebase/init";
 import {
 	addDoc,
 	collection,
@@ -12,7 +10,6 @@ import {
 	updateDoc,
 	where
 } from 'firebase/firestore';
-import { auth, db } from "../../../firebase/init";
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -23,7 +20,6 @@ import "./Accounts.css";
 
 function Accounts() {
 	const [createOrUpdate, setCreateOrUpdate] = useState("");
-	const [userProfile, setUserProfile] = useState({});
 	const [searchTerm, setSearchTerm] = useState("");
 	const [modalOpen, setModalOpen] = useState(false);
 	const [accounts, setAccounts] = useState([]);
@@ -77,13 +73,6 @@ function Accounts() {
 				navigate("/login");
 			} else if (user && user.emailVerified) {
 				navigate("/dash");
-				setUserProfile({
-					displayName: user.displayName,
-					email: user.email,
-					photoURL: user.photoURL,
-					emailVerified: user.emailVerified,
-					uid: user.uid
-				});
 			} else {
 				navigate("/login");
 			}
