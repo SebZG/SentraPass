@@ -15,8 +15,8 @@ function AccountCard(props) {
 						</a>
 					</li>
 					<li className="list-group-item d-flex justify-content-evenly">
-						<i onClick={() => handleShowUpdate(props.Id)} className="fa-solid fa-pen-nib me-2"></i>
-						<i onClick={() => deleteNote(props.Id)} className="fa-regular fa-trash-can"></i>
+						{/* <i onClick={() => handleShowUpdate(props.Id)} className="fa-solid fa-pen-nib me-2"></i> */}
+						<i onClick={() => props.deleteAccount(props.Id)} className="fa-regular fa-trash-can"></i>
 					</li>
 				</ul>
 			</div>

@@ -104,6 +104,13 @@ function Accounts() {
 		setModalOpen(false); // Close the modal
 	};
 
+	const deleteAccount = async (id) => {
+		const docRef = doc(db, "accounts", id);
+		await deleteDoc(docRef);
+		const newAccounts = accounts.filter(account => account.id !== id);
+		setAccounts(newAccounts);
+	};
+
 	const togglePasswordVisibility = (id) => {
 		setAccounts(
 			accounts.map((password) =>
@@ -183,7 +190,8 @@ function Accounts() {
 										togglePasswordVisibility={() =>
 											togglePasswordVisibility(account.id)
 										}
-
+										Id={account.id}
+										deleteAccount={deleteAccount}
 									/>
 								</div>
 							))}
